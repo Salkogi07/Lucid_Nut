@@ -3,33 +3,35 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 10f;
-    public float coyoteTime = 0.2f;
-    public float jumpBufferTime = 0.2f;
-    public Transform groundCheck1;
-    public Transform groundCheck2;
-    public LayerMask groundLayer;
-    public float gravityScale = 3f;
-    public float lowJumpMultiplier = 2.5f;
-    public float fallMultiplier = 2.5f;
-    public float dashSpeed = 20f;
-    public float dashTime = 0.2f;
-    public float dashCooldown = 1f;
-    public float umbrellaFallMultiplier = 0.5f;
-    public GameObject umbrella;
+    public float moveSpeed = 5f;                // 이동 속도
+    public float jumpForce = 10f;               // 점프 힘
+    public float coyoteTime = 0.2f;             // 코요테 타임 (공중에 떨어지기 전에 점프 가능한 시간)
+    public float jumpBufferTime = 0.2f;         // 점프 버퍼링 시간 (버튼 입력을 받아들이는 시간)
+    public Transform groundCheck1;              // 바닥 체크 위치 1
+    public Transform groundCheck2;              // 바닥 체크 위치 2
+    public LayerMask groundLayer;               // 바닥 레이어 마스크
+    public float gravityScale = 3f;             // 중력 크기
+    public float lowJumpMultiplier = 2.5f;      // 낮은 점프 감속 멀티플라이어
+    public float fallMultiplier = 2.5f;         // 낙하 감속 멀티플라이어
+    public float dashSpeed = 20f;               // 대쉬 속도
+    public float dashTime = 0.2f;               // 대쉬 지속 시간
+    public float dashCooldown = 1f;             // 대쉬 쿨다운 시간
+    public float umbrellaFallMultiplier = 0.5f; // 우산 열림 중 중력 멀티플라이어
+    public GameObject umbrella;                 // 우산 오브젝트
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-    private bool isGrounded;
-    private float coyoteTimeCounter;
-    private float jumpBufferCounter;
-    private bool isJumping;
-    private bool isDashing;
-    private bool isUmbrellaOpen;
-    private float dashCooldownCounter;
-    private float dashTimeCounter;
-    private bool isFacingRight = true; // 플레이어가 오른쪽을 보고 있는지 여부를 나타내는 변수
+    private bool isGrounded;                    // 바닥에 있는지 여부
+    private float coyoteTimeCounter;            // 코요테 타임 카운터
+    private float jumpBufferCounter;            // 점프 버퍼링 카운터
+    private bool isJumping;                     // 점프 중인지 여부
+    private bool isDashing;                     // 대쉬 중인지 여부
+    private bool isUmbrellaOpen;                // 우산이 열려 있는지 여부
+    private float dashCooldownCounter;          // 대쉬 쿨다운 카운터
+    private float dashTimeCounter;              // 대쉬 시간 카운터
+    private bool isFacingRight = true;          // 플레이어가 오른쪽을 보고 있는지 여부
+
+    public bool isChargingJump;                // 차징 점프 중인지 여부
 
     void Start()
     {
@@ -40,9 +42,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (isDashing)
+        // 대쉬 중일 때는 입력을 무시
+        if (isDashing || isChargingJump)
         {
-            return; // 대쉬 중일 때는 다른 입력을 무시
+            return;
         }
 
         // 좌우 이동
@@ -136,6 +139,8 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator ChargeJumpCoroutine()
     {
+        isChargingJump = true; // 차징 점프 시작
+
         float chargeTime = 0f;
         float maxChargeTime = 1f; // 최대 차징 시간 (예시로 2초로 설정)
 
@@ -153,6 +158,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             coyoteTimeCounter = 0; // 코요테 타임 초기화
         }
+
+        isChargingJump = false; // 차징 점프 종료
     }
 
     private void StartDash()
@@ -167,7 +174,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(DashCoroutine());
     }
 
-    private System.Collections.IEnumerator DashCoroutine()
+    private IEnumerator DashCoroutine()
     {
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0;
