@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -124,6 +125,33 @@ public class PlayerController : MonoBehaviour
         {
             isUmbrellaOpen = !isUmbrellaOpen;
             umbrella.SetActive(isUmbrellaOpen);
+        }
+
+        // 슈퍼 점프 (차징)
+        if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.A) && coyoteTimeCounter > 0)
+        {
+            StartCoroutine(ChargeJumpCoroutine());
+        }
+    }
+
+    private IEnumerator ChargeJumpCoroutine()
+    {
+        float chargeTime = 0f;
+        float maxChargeTime = 1f; // 최대 차징 시간 (예시로 2초로 설정)
+
+        // 차징 시간 동안 키를 누르고 있으면 점프 힘을 축적
+        while (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.A) && chargeTime < maxChargeTime)
+        {
+            chargeTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // 차징 시간이 끝나면 점프 실행
+        if (chargeTime > 0)
+        {
+            float jumpPower = jumpForce * (0.5f + chargeTime / maxChargeTime); // 차징 시간에 따라 점프 힘 조정
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            coyoteTimeCounter = 0; // 코요테 타임 초기화
         }
     }
 
