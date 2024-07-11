@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,9 +30,15 @@ public class PlayerController : MonoBehaviour
     private bool isUmbrellaOpen;                // 우산이 열려 있는지 여부
     private float dashCooldownCounter;          // 대쉬 쿨다운 카운터
     private float dashTimeCounter;              // 대쉬 시간 카운터
-    private bool isFacingRight = true;          // 플레이어가 오른쪽을 보고 있는지 여부
+    private bool isFacingRight = false;          // 플레이어가 오른쪽을 보고 있는지 여부
+    private int moveInput = 0;
 
-    public bool isChargingJump;                // 차징 점프 중인지 여부
+    public bool isChargingJump;                 // 차징 점프 중인지 여부
+    public Image chargeIndicator;               // UI Image 참조 변수
+    public Image chargeIndicator_back;          // UI Image 참조 변수
+
+    public float stopSmoothTime = 0.2f;         // 멈출 때의 감속 시간
+    private float currentVelocityX;             // 현재 속도 (감속용)
 
     void Start()
     {
@@ -42,61 +49,78 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // 대쉬 중일 때는 입력을 무시
+        // 대쉬 중이거나 차징 중일 때는 이동 입력을 무시
         if (isDashing || isChargingJump)
         {
             return;
         }
 
         // 좌우 이동
-        float moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        MoveInput();
 
         // 캐릭터 방향 설정
-        if (moveInput < 0)
-        {
-            isFacingRight = false;
-            spriteRenderer.flipX = false;
-        }
-        else if (moveInput > 0)
-        {
-            isFacingRight = true;
-            spriteRenderer.flipX = true;
-        }
+        CharacterFlip();
 
         // 바닥 체크
-        isGrounded = Physics2D.OverlapCircle(groundCheck1.position, 0.1f, groundLayer)
-                   || Physics2D.OverlapCircle(groundCheck2.position, 0.1f, groundLayer);
+        GroundCheck();
 
         // 코요테 타임
-        if (isGrounded)
-        {
-            coyoteTimeCounter = coyoteTime;
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.deltaTime;
-        }
+        CoyoteTime();
 
         // 점프 버퍼링
-        if (Input.GetButtonDown("Jump"))
-        {
-            jumpBufferCounter = jumpBufferTime;
-        }
-        else
-        {
-            jumpBufferCounter -= Time.deltaTime;
-        }
+        JumpBuffering();
 
         // 점프
-        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            jumpBufferCounter = 0;
-            coyoteTimeCounter = 0;
-        }
+        Jump();
 
         // 중력 조정
+        GravitySetting();
+
+        // 대쉬
+        Dash();
+
+        // 우산 열기/닫기
+        Umbrella();
+
+        // 슈퍼 점프 (차징)
+        ChargeJump();
+    }
+
+    private void ChargeJump()
+    {
+        if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.A) && coyoteTimeCounter > 0)
+        {
+            StartCoroutine(ChargeJumpCoroutine());
+        }
+
+        chargeIndicator.fillAmount = 0f; // 처음에는 차징이 되지 않은 상태이므로 0으로 초기화
+    }
+
+    private void Umbrella()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            isUmbrellaOpen = !isUmbrellaOpen;
+            umbrella.SetActive(isUmbrellaOpen);
+        }
+    }
+
+    private void Dash()
+    {
+        if (Input.GetKeyDown(KeyCode.D) && dashCooldownCounter <= 0)
+        {
+            StartDash();
+        }
+
+        // 대쉬 쿨타임 카운터
+        if (dashCooldownCounter > 0)
+        {
+            dashCooldownCounter -= Time.deltaTime;
+        }
+    }
+
+    private void GravitySetting()
+    {
         if (isUmbrellaOpen && rb.velocity.y <= 0)
         {
             rb.gravityScale = umbrellaFallMultiplier;
@@ -113,33 +137,96 @@ public class PlayerController : MonoBehaviour
         {
             rb.gravityScale = gravityScale;
         }
+    }
 
-        // 대쉬
-        if (Input.GetKeyDown(KeyCode.D) && dashCooldownCounter <= 0)
+    private void Jump()
+    {
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !isJumping)
         {
-            StartDash();
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            jumpBufferCounter = 0;
+            coyoteTimeCounter = 0;
+            isJumping = true; // 점프 중임을 표시
         }
 
-        // 대쉬 쿨타임 카운터
-        dashCooldownCounter -= Time.deltaTime;
-
-        // 우산 열기/닫기
-        if (Input.GetKeyDown(KeyCode.S))
+        // 바닥에 닿으면 점프 상태를 리셋
+        if (isGrounded && rb.velocity.y <= 0)
         {
-            isUmbrellaOpen = !isUmbrellaOpen;
-            umbrella.SetActive(isUmbrellaOpen);
+            isJumping = false;
         }
+    }
 
-        // 슈퍼 점프 (차징)
-        if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.A) && coyoteTimeCounter > 0)
+    private void JumpBuffering()
+    {
+        if (Input.GetButtonDown("Jump"))
         {
-            StartCoroutine(ChargeJumpCoroutine());
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+    }
+
+    private void CoyoteTime()
+    {
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+    }
+
+    private void GroundCheck()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck1.position, 0.1f, groundLayer)
+                           || Physics2D.OverlapCircle(groundCheck2.position, 0.1f, groundLayer);
+    }
+
+    private void CharacterFlip()
+    {
+        if (moveInput < 0)
+        {
+            isFacingRight = false;
+            spriteRenderer.flipX = false;
+        }
+        else if (moveInput > 0)
+        {
+            isFacingRight = true;
+            spriteRenderer.flipX = true;
+        }
+    }
+
+    void MoveInput()
+    {
+        moveInput = 0;
+
+        if (isChargingJump)
+        {
+            // 차징 중일 때는 점진적으로 멈춤
+            rb.velocity = new Vector2(Mathf.SmoothDamp(rb.velocity.x, 0, ref currentVelocityX, stopSmoothTime), rb.velocity.y);
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                moveInput = -1;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                moveInput = 1;
+            }
+            rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         }
     }
 
     private IEnumerator ChargeJumpCoroutine()
     {
         isChargingJump = true; // 차징 점프 시작
+        chargeIndicator_back.gameObject.SetActive(true);
 
         float chargeTime = 0f;
         float maxChargeTime = 1f; // 최대 차징 시간 (예시로 2초로 설정)
@@ -148,6 +235,10 @@ public class PlayerController : MonoBehaviour
         while (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.A) && chargeTime < maxChargeTime)
         {
             chargeTime += Time.deltaTime;
+
+            // UI의 fill amount 업데이트
+            chargeIndicator.fillAmount = chargeTime / maxChargeTime;
+
             yield return null;
         }
 
@@ -160,6 +251,10 @@ public class PlayerController : MonoBehaviour
         }
 
         isChargingJump = false; // 차징 점프 종료
+
+        // UI fill amount 초기화
+        chargeIndicator.fillAmount = 0f;
+        chargeIndicator_back.gameObject.SetActive(false);
     }
 
     private void StartDash()
@@ -168,7 +263,10 @@ public class PlayerController : MonoBehaviour
         dashTimeCounter = dashTime;
         dashCooldownCounter = dashCooldown;
 
-        float dashDirection = isFacingRight ? 1 : -1; // 캐릭터의 방향에 따라 대쉬 방향 설정
+        // 플레이어가 바라보는 방향에 따라 대쉬 방향 설정
+        float dashDirection = isFacingRight ? 1 : -1;
+
+        // 플레이어의 현재 속도 방향과 상관없이 대쉬 속도로 설정
         rb.velocity = new Vector2(dashDirection * dashSpeed, rb.velocity.y);
 
         StartCoroutine(DashCoroutine());
@@ -186,7 +284,7 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         // 모서리 충돌 및 대쉬 코너 조정 로직 추가
         if (isDashing)
