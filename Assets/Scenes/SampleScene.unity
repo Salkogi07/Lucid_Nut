@@ -346,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 419836935}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.356, z: 0}
+  m_LocalPosition: {x: 0.03, y: 0.56, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -431,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 455278473}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: -0.501, z: 0}
+  m_LocalPosition: {x: -0.14, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 635810197}
   - component: {fileID: 635810202}
   - component: {fileID: 635810199}
-  - component: {fileID: 635810201}
+  - component: {fileID: 635810203}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -632,7 +632,7 @@ Transform:
   m_GameObject: {fileID: 635810195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.45, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -670,7 +670,40 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &635810201
+--- !u!114 &635810202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635810195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63268c9f5b4c4bd47943480689836b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6
+  jumpForce: 12
+  coyoteTime: 0.2
+  jumpBufferTime: 0.2
+  groundCheck1: {fileID: 455278474}
+  groundCheck2: {fileID: 958058693}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  gravityScale: 3
+  lowJumpMultiplier: 2.5
+  fallMultiplier: 2.5
+  dashSpeed: 10
+  dashTime: 0.2
+  dashCooldown: 1
+  umbrellaFallMultiplier: 0.5
+  umbrella: {fileID: 419836935}
+  isChargingJump: 0
+  chargeIndicator: {fileID: 460215348}
+  chargeIndicator_back: {fileID: 1176839325}
+  stopSmoothTime: 0.2
+--- !u!70 &635810203
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -704,41 +737,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: 0.030540496, y: -0.13165355}
+  m_Size: {x: 0.68241376, y: 1.3896456}
   m_Direction: 0
---- !u!114 &635810202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635810195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63268c9f5b4c4bd47943480689836b20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 6
-  jumpForce: 12
-  coyoteTime: 0.2
-  jumpBufferTime: 0.2
-  groundCheck1: {fileID: 455278474}
-  groundCheck2: {fileID: 958058693}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  gravityScale: 3
-  lowJumpMultiplier: 2.5
-  fallMultiplier: 2.5
-  dashSpeed: 10
-  dashTime: 0.2
-  dashCooldown: 1
-  umbrellaFallMultiplier: 0.5
-  umbrella: {fileID: 419836935}
-  isChargingJump: 0
-  chargeIndicator: {fileID: 460215348}
-  chargeIndicator_back: {fileID: 1176839325}
 --- !u!1 &747271998
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +898,7 @@ Transform:
   m_GameObject: {fileID: 958058692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: -0.501, z: 0}
+  m_LocalPosition: {x: 0.16000001, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1906,7 +1907,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.135, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 635810197}
@@ -1954,7 +1955,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 34acf1311ebfd8241a16759269897ebe, type: 3}
+  m_Sprite: {fileID: 9074911089826948512, guid: f165db2daa64ac44f80ee637c24b4a15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

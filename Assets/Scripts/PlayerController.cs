@@ -284,7 +284,7 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         // 모서리 충돌 및 대쉬 코너 조정 로직 추가
         if (isDashing)
@@ -304,7 +304,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     void OnDrawGizmos()
     {
