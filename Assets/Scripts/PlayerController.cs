@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,7 +30,6 @@ public class PlayerController : MonoBehaviour
     private bool isDashing;                     // 대쉬 중인지 여부
     private bool isUmbrellaOpen;                // 우산이 열려 있는지 여부
     private float dashCooldownCounter;          // 대쉬 쿨다운 카운터
-    private float dashTimeCounter;              // 대쉬 시간 카운터
     private bool isFacingRight = false;          // 플레이어가 오른쪽을 보고 있는지 여부
     private int moveInput = 0;
 
@@ -39,6 +39,9 @@ public class PlayerController : MonoBehaviour
 
     public float stopSmoothTime = 0.2f;         // 멈출 때의 감속 시간
     private float currentVelocityX;             // 현재 속도 (감속용)
+
+    //private bool movecond = false;
+
 
     void Start()
     {
@@ -204,23 +207,37 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = 0;
 
-        if (isChargingJump)
-        {
+        //if (isChargingJump)
+        //{
             // 차징 중일 때는 점진적으로 멈춤
-            rb.velocity = new Vector2(Mathf.SmoothDamp(rb.velocity.x, 0, ref currentVelocityX, stopSmoothTime), rb.velocity.y);
-        }
-        else
+           // Debug.Log("차지중일때 멈춤");
+            //rb.velocity = new Vector2(Mathf.SmoothDamp(rb.velocity.x, 0, ref currentVelocityX, stopSmoothTime), rb.velocity.y);
+        //}
+
+
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.A) && coyoteTimeCounter > 0)
+            {
+                Debug.Log("ds");
+            }
+            else
             {
                 moveInput = -1;
             }
-            else if (Input.GetKey(KeyCode.RightArrow))
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.A) && coyoteTimeCounter > 0)
+            {
+                Debug.Log("ds");
+            }
+            else
             {
                 moveInput = 1;
             }
-            rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         }
+            rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
     }
 
     private IEnumerator ChargeJumpCoroutine()
@@ -260,7 +277,6 @@ public class PlayerController : MonoBehaviour
     private void StartDash()
     {
         isDashing = true;
-        dashTimeCounter = dashTime;
         dashCooldownCounter = dashCooldown;
 
         // 플레이어가 바라보는 방향에 따라 대쉬 방향 설정
