@@ -22,6 +22,9 @@ public class PlayerGroundState : PlayerState
     {
         base.Update();
 
+        if (!player.IsGorundDetected() == false)
+            stateMachine.ChangeState(player.airState);
+
         if (Input.GetKeyDown(KeyCode.Space) && player.IsGorundDetected())
             stateMachine.ChangeState(player.jumpState);
     }
