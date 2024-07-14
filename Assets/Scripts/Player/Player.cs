@@ -2,12 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     [Header("Move info")]
     public float moveSpeed = 8f;
     public float jumpForce;
+    public float gravityScale = 3.5f;
+    //public float lowJumpMultiplier = 2.5f;      // 낮은 점프 감속 멀티플라이어
+    //public float fallMultiplier = 2.5f;         // 낙하 감속 멀티플라이어
+
+    [Header("Umbrella info")]
+    public bool isUmbrellaOpen = false;
+    public float umbrellaFallMultiplier = 0.5f; // 우산 열림 중 중력 멀티플라이어
+    public GameObject umbrellaObj;                 // 우산 오브젝트
 
     [Header("Dash info")]
     [SerializeField] private float dashCooldown;
@@ -15,6 +24,11 @@ public class Player : MonoBehaviour
     public float dashSpeed;
     public float dashDuration;
     public float dashDir { get; private set; }
+
+    [Header("ChargeJump info")]
+    public bool isChargeJump;
+    public Image chargeIndicator;               // UI Image 참조 변수
+    public Image chargeIndicator_back;          // UI Image 참조 변수
 
     [Header("Collision info")]
     [SerializeField] private Transform groundCheck;
@@ -36,7 +50,8 @@ public class Player : MonoBehaviour
     public PlayerMoveState moveState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
     public PlayerAirState airState { get; private set; }
-    public playerDashState dashState { get; private set; }
+    public PlayerDashState dashState { get; private set; }
+    public PlayerChargeJump chargeJump { get; private set; }
     #endregion
 
     private void Awake()
@@ -47,14 +62,16 @@ public class Player : MonoBehaviour
         moveState = new PlayerMoveState(this, stateMachine, "Move");
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
         airState = new PlayerAirState(this, stateMachine, "Jump");
-        dashState = new playerDashState(this, stateMachine, "Dash");
+        dashState = new PlayerDashState(this, stateMachine, "Dash");
+        chargeJump = new PlayerChargeJump(this, stateMachine, "ChargeJump");
     }
 
     private void Start()
     {
-
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        rb.gravityScale = gravityScale;
 
         stateMachine.Initialize(idleState);
     }
@@ -63,24 +80,51 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.Update();
 
-        CheckDashInput();
+        CheckDash_Input();
+        CheckChargeJump_Input();
+        CheckUmbrella_Input();
         Debug.Log(stateMachine.currentState.ToString());
     }
 
-    private void CheckDashInput()
+    private void CheckUmbrella_Input()
     {
-        dashUsageTimer -= Time.deltaTime;
-        
-        if (Input.GetKeyDown(KeyCode.D) && dashUsageTimer < 0)
+        if (Input.GetKeyDown(KeyCode.S))
         {
+            isUmbrellaOpen = !isUmbrellaOpen;
+            umbrellaObj.SetActive(isUmbrellaOpen);
+        }
+    }
 
-            dashUsageTimer = dashCooldown;
-            dashDir = Input.GetAxisRaw("Horizontal");
+    private void CheckDash_Input()
+    {
+        if (!isChargeJump)
+        {
+            dashUsageTimer -= Time.deltaTime;
+        
+            if (Input.GetKeyDown(KeyCode.D) && dashUsageTimer < 0)
+            {
 
-            if (dashDir == 0)
-                dashDir = facingDir;
+                dashUsageTimer = dashCooldown;
+                dashDir = Input.GetAxisRaw("Horizontal");
 
-            stateMachine.ChangeState(dashState);
+                if (dashDir == 0)
+                    dashDir = facingDir;
+
+                stateMachine.ChangeState(dashState);
+            }
+        }
+    }
+
+    private void CheckChargeJump_Input()
+    {
+        if (isUmbrellaOpen && IsGroundDetected())
+        {
+            if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.A))
+            {
+                stateMachine.ChangeState(chargeJump);
+            }
+
+            chargeIndicator.fillAmount = 0f; // 처음에는 차징이 되지 않은 상태이므로 0으로 초기화
         }
     }
 
@@ -90,7 +134,7 @@ public class Player : MonoBehaviour
         FlipController(_xVelocity);
     }
 
-    public bool IsGorundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundChekDistance, whatIsGround);
+    public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundChekDistance, whatIsGround);
 
     private void OnDrawGizmos()
     {
@@ -110,5 +154,10 @@ public class Player : MonoBehaviour
             Flip();
         else if (_x < 0 && facingRight)
             Flip();
+    }
+
+    public void StartPlayerCoroutine(IEnumerator coroutine)
+    {
+        StartCoroutine(coroutine);
     }
 }

@@ -444,9 +444,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   jumpForce: 12
+  gravityScale: 3.5
+  isUmbrellaOpen: 0
+  umbrellaFallMultiplier: 0.5
+  umbrellaObj: {fileID: 528901045}
   dashCooldown: 1
   dashSpeed: 12
   dashDuration: 0.2
+  isChargingJump: 0
+  chargeIndicator: {fileID: 1370521976}
+  chargeIndicator_back: {fileID: 562453796}
   groundCheck: {fileID: 1554235345}
   groundChekDistance: 0.15
   whatIsGround:

@@ -11,6 +11,7 @@ public class PlayerGroundState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        rb.gravityScale = player.gravityScale;
     }
 
     public override void Exit()
@@ -22,10 +23,10 @@ public class PlayerGroundState : PlayerState
     {
         base.Update();
 
-        if (!player.IsGorundDetected())
+        if (!player.IsGroundDetected())
             stateMachine.ChangeState(player.airState);
 
-        if (Input.GetKeyDown(KeyCode.Space) && player.IsGorundDetected())
+        if (Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())
             stateMachine.ChangeState(player.jumpState);
     }
 }
