@@ -64,7 +64,9 @@ public class Player : MonoBehaviour
         stateMachine.currentState.Update();
 
         CheckDashInput();
+        Debug.Log(stateMachine.currentState.ToString());
     }
+
     private void CheckDashInput()
     {
         dashUsageTimer -= Time.deltaTime;

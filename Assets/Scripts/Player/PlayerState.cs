@@ -23,7 +23,7 @@ public class PlayerState
 
     public virtual void Enter()
     {
-        player.anim.SetBool(animBoolName, true);
+        //player.anim.SetBool(animBoolName, true);
         rb = player.rb;
     }
 
@@ -32,12 +32,11 @@ public class PlayerState
         stateTimer -= Time.deltaTime;
 
         xInput = Input.GetAxisRaw("Horizontal");
-        player.anim.SetFloat("yVelocity", rb.velocity.y);
+        //player.anim.SetFloat("yVelocity", rb.velocity.y);
     }
 
     public virtual void Exit()
     {
-        player.anim.SetBool(animBoolName, false);
-
+        //player.anim.SetBool(animBoolName, false);
     }
 }
