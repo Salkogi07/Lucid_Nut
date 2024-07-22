@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerGroundState : PlayerState
 {
+    private float downArrowLastPressedTime = -1f;
+    private float aKeyLastPressedTime = -1f;
+
     public PlayerGroundState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
@@ -31,12 +34,27 @@ public class PlayerGroundState : PlayerState
 
         if (player.isUmbrellaOpen && player.IsGroundDetected())
         {
-            if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                stateMachine.ChangeState(player.chargeJump);
+                downArrowLastPressedTime = Time.time;
+                CheckSimultaneousInput();
+            }
+
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                aKeyLastPressedTime = Time.time;
+                CheckSimultaneousInput();
             }
 
             player.chargeIndicator.fillAmount = 0f;
+        }
+
+        void CheckSimultaneousInput()
+        {
+            if (Mathf.Abs(downArrowLastPressedTime - aKeyLastPressedTime) <= player.inputThreshold)
+            {
+                stateMachine.ChangeState(player.chargeJump);
+            }
         }
     }
 }

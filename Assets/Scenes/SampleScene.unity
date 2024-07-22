@@ -5276,6 +5276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   jumpForce: 12
+  inputThreshold: 0.2
   gravityScale: 3.5
   jumpGravityScale: 2
   fallMultiplier: 2.5
