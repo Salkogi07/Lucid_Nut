@@ -87,17 +87,22 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.Update();
 
-        CheckDash_Input();
-        CheckChargeJump_Input();
-        CheckUmbrella_Input();
-        UpdateCoyoteTime();
-        UpdateJumpBuffer();
+        
 
-        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !isJumping)
+        if (!(stateMachine.currentState is PlayerChargeJump))
         {
-            jumpBufferCounter = 0;
-            coyoteTimeCounter = 0;
-            stateMachine.ChangeState(jumpState);
+            CheckDash_Input();
+            CheckChargeJump_Input();
+            CheckUmbrella_Input();
+            UpdateCoyoteTime();
+            UpdateJumpBuffer();
+
+            if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !isJumping)
+            {
+                jumpBufferCounter = 0;
+                coyoteTimeCounter = 0;
+                stateMachine.ChangeState(jumpState);
+            }
         }
 
         Debug.Log(stateMachine.currentState.ToString());
