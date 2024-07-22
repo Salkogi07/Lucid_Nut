@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
         UpdateCoyoteTime();
         UpdateJumpBuffer();
 
-        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !isJumping)
         {
             jumpBufferCounter = 0;
             coyoteTimeCounter = 0;
