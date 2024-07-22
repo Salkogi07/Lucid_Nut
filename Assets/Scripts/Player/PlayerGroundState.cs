@@ -28,5 +28,15 @@ public class PlayerGroundState : PlayerState
 
         if (Input.GetKeyDown(KeyCode.Space) && player.CanJump())
             stateMachine.ChangeState(player.jumpState);
+
+        if (player.isUmbrellaOpen && player.IsGroundDetected())
+        {
+            if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.A))
+            {
+                stateMachine.ChangeState(player.chargeJump);
+            }
+
+            player.chargeIndicator.fillAmount = 0f;
+        }
     }
 }

@@ -92,7 +92,6 @@ public class Player : MonoBehaviour
         if (!(stateMachine.currentState is PlayerChargeJump))
         {
             CheckDash_Input();
-            CheckChargeJump_Input();
             CheckUmbrella_Input();
             UpdateCoyoteTime();
             UpdateJumpBuffer();
@@ -149,19 +148,6 @@ public class Player : MonoBehaviour
 
                 stateMachine.ChangeState(dashState);
             }
-        }
-    }
-
-    private void CheckChargeJump_Input()
-    {
-        if (isUmbrellaOpen && IsGroundDetected())
-        {
-            if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.A))
-            {
-                stateMachine.ChangeState(chargeJump);
-            }
-
-            chargeIndicator.fillAmount = 0f;
         }
     }
 
