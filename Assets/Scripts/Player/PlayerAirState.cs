@@ -23,17 +23,34 @@ public class PlayerAirState : PlayerState
     {
         base.Update();
 
-        // 중력 설정
-        if (rb.velocity.y > 0)
-            rb.gravityScale = player.gravityScale; // 상승 중일 때 기본 중력 유지
-        else if (player.isUmbrellaOpen)
-            rb.gravityScale = player.umbrellaFallMultiplier; // 우산이 열려 있고, 하강 중일 때 우산 중력 적용
-        else
-            rb.gravityScale = player.gravityScale; // 기본 중력 적용
+        // 속도에 따른 중력 조절
+        if (rb.velocity.y > 0.1f)
+        {
+            rb.gravityScale = player.gravityScale;
+        }
+        else if (rb.velocity.y > 0 && rb.velocity.y <= 0.1f)
+        {
+            rb.gravityScale = player.jumpGravityScale;
+        }
+        else if (rb.velocity.y < 0)
+        {
+            if (player.isUmbrellaOpen)
+            {
+                rb.gravityScale = player.umbrellaFallMultiplier;
+            }
+            else
+            {
+                rb.gravityScale = player.fallMultiplier;
+            }
+        }
 
         player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
 
         if (player.IsGroundDetected())
+        {
+            player.isJumping = false;
             stateMachine.ChangeState(player.idleState);
+        }
     }
+
 }

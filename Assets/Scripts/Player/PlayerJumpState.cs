@@ -11,15 +11,18 @@ public class PlayerJumpState : PlayerState
     public override void Enter()
     {
         base.Enter();
-
         rb.velocity = new Vector2(rb.velocity.x, player.jumpForce);
+        rb.gravityScale = player.gravityScale;
+        player.ResetJumpBuffer();
+        player.ResetCoyoteTime();
+        player.isJumping = true;
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.isJumping = false;
     }
-
 
     public override void Update()
     {
@@ -29,6 +32,5 @@ public class PlayerJumpState : PlayerState
 
         if (rb.velocity.y < 0)
             stateMachine.ChangeState(player.airState);
-
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,13 +9,13 @@ public class Player : MonoBehaviour
     public float moveSpeed = 8f;
     public float jumpForce;
     public float gravityScale = 3.5f;
-    //public float lowJumpMultiplier = 2.5f;      // 낮은 점프 감속 멀티플라이어
-    //public float fallMultiplier = 2.5f;         // 낙하 감속 멀티플라이어
+    public float jumpGravityScale = 1.75f; // 점프 최고점에서의 중력 감소 값 수정
+    public float fallMultiplier = 2.5f; // 낙하 감속 멀티플라이어
 
     [Header("Umbrella info")]
     public bool isUmbrellaOpen = false;
-    public float umbrellaFallMultiplier = 0.5f; // 우산 열림 중 중력 멀티플라이어
-    public GameObject umbrellaObj;                 // 우산 오브젝트
+    public float umbrellaFallMultiplier = 0.5f;
+    public GameObject umbrellaObj;
 
     [Header("Dash info")]
     [SerializeField] private float dashCooldown;
@@ -27,8 +26,8 @@ public class Player : MonoBehaviour
 
     [Header("ChargeJump info")]
     public bool isChargeJump;
-    public Image chargeIndicator;               // UI Image 참조 변수
-    public Image chargeIndicator_back;          // UI Image 참조 변수
+    public Image chargeIndicator;
+    public Image chargeIndicator_back;
 
     [Header("Collision info")]
     [SerializeField] private Transform groundCheck;
@@ -38,7 +37,13 @@ public class Player : MonoBehaviour
     public int facingDir { get; private set; } = 1;
     private bool facingRight = true;
 
-    #region Componets
+    [Header("Jump Timing Info")]
+    public float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+    public float jumpBufferTime = 0.2f;
+    private float jumpBufferCounter;
+
+    #region Components
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
     #endregion
@@ -53,6 +58,8 @@ public class Player : MonoBehaviour
     public PlayerDashState dashState { get; private set; }
     public PlayerChargeJump chargeJump { get; private set; }
     #endregion
+
+    public bool isJumping = false;
 
     private void Awake()
     {
@@ -83,12 +90,38 @@ public class Player : MonoBehaviour
         CheckDash_Input();
         CheckChargeJump_Input();
         CheckUmbrella_Input();
+        UpdateCoyoteTime();
+        UpdateJumpBuffer();
+
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
+        {
+            jumpBufferCounter = 0;
+            coyoteTimeCounter = 0;
+            stateMachine.ChangeState(jumpState);
+        }
+
         Debug.Log(stateMachine.currentState.ToString());
+    }
+
+    private void UpdateCoyoteTime()
+    {
+        if (IsGroundDetected())
+            coyoteTimeCounter = coyoteTime;
+        else
+            coyoteTimeCounter -= Time.deltaTime;
+    }
+
+    private void UpdateJumpBuffer()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            jumpBufferCounter = jumpBufferTime;
+        else
+            jumpBufferCounter -= Time.deltaTime;
     }
 
     private void CheckUmbrella_Input()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && !isChargeJump)
         {
             isUmbrellaOpen = !isUmbrellaOpen;
             umbrellaObj.SetActive(isUmbrellaOpen);
@@ -100,10 +133,9 @@ public class Player : MonoBehaviour
         if (!isChargeJump)
         {
             dashUsageTimer -= Time.deltaTime;
-        
+
             if (Input.GetKeyDown(KeyCode.D) && dashUsageTimer < 0)
             {
-
                 dashUsageTimer = dashCooldown;
                 dashDir = Input.GetAxisRaw("Horizontal");
 
@@ -124,7 +156,7 @@ public class Player : MonoBehaviour
                 stateMachine.ChangeState(chargeJump);
             }
 
-            chargeIndicator.fillAmount = 0f; // 처음에는 차징이 되지 않은 상태이므로 0으로 초기화
+            chargeIndicator.fillAmount = 0f;
         }
     }
 
@@ -159,5 +191,20 @@ public class Player : MonoBehaviour
     public void StartPlayerCoroutine(IEnumerator coroutine)
     {
         StartCoroutine(coroutine);
+    }
+
+    public bool CanJump()
+    {
+        return coyoteTimeCounter > 0 || IsGroundDetected();
+    }
+
+    public void ResetJumpBuffer()
+    {
+        jumpBufferCounter = 0;
+    }
+
+    public void ResetCoyoteTime()
+    {
+        coyoteTimeCounter = 0;
     }
 }
