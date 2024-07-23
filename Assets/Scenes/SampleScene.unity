@@ -6864,9 +6864,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rainPrefab: {fileID: 7084208573543963846, guid: 48be24541ab1d1440b960afc94742e1e, type: 3}
-  cooldownTime: 5
-  rainSpeed: 10
-  numberOfRains: 10
+  cooldownTime: 10
+  rainSpeed: 20
+  numberOfRains: 3
+  horizontalOffset: 1
+  delayBeforeFire: 1.5
+  fireInterval: 1
 --- !u!1 &2068545036
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,14 +1,20 @@
 using UnityEngine;
+using System.Collections;
 
 public class RainEnemy : MonoBehaviour
 {
     public GameObject rainPrefab; // 빗물 오브젝트의 프리팹
-    public float cooldownTime = 5f; // 쿨타임 (5초)
-    public float rainSpeed = 10f; // 빗물의 속도
-    public int numberOfRains = 10; // 발사할 빗물의 수
+    public float cooldownTime = 10f; // 쿨타임 (10초)
+    public float rainSpeed = 20f; // 빗물의 속도
+    public int numberOfRains = 3; // 발사할 빗물의 수
+    public float horizontalOffset = 1f; // 가로로 배치할 간격
+    public float delayBeforeFire = 1.5f; // 발사 전 대기 시간 (2초)
+    public float fireInterval = 1f; // 발사 간격 (1.5초)
 
     private float lastShootTime = 0f; // 마지막 발사 시간
     private Transform playerTransform; // 플레이어의 Transform
+
+    private GameObject[] rainObjects; // 소환된 빗물 오브젝트들
 
     void Start()
     {
@@ -36,18 +42,42 @@ public class RainEnemy : MonoBehaviour
 
     void ShootRain()
     {
-        if (rainPrefab != null)
+        if (rainPrefab != null && playerTransform != null)
         {
             Vector3 shooterPosition = transform.position;
 
+            // 빗물 오브젝트를 한 번에 소환
+            rainObjects = new GameObject[numberOfRains];
             for (int i = 0; i < numberOfRains; i++)
             {
-                // 빗물 오브젝트 생성
-                GameObject rain = Instantiate(rainPrefab, shooterPosition, Quaternion.identity);
+                // 겹치지 않게 가로로 오프셋을 적용하여 빗물 오브젝트 위치 설정
+                Vector3 spawnPosition = shooterPosition + new Vector3(horizontalOffset * (i - (numberOfRains - 1) / 2f), 2, 0);
 
+                // 빗물 오브젝트 생성
+                rainObjects[i] = Instantiate(rainPrefab, spawnPosition, Quaternion.identity);
+            }
+
+            // 발사 전 대기 시간 후 발사 시작
+            StartCoroutine(FireRainsAfterDelay());
+        }
+    }
+
+    IEnumerator FireRainsAfterDelay()
+    {
+        // 발사 전 대기 시간
+        yield return new WaitForSeconds(delayBeforeFire);
+
+        foreach (GameObject rain in rainObjects)
+        {
+            if (rain != null)
+            {
                 // 빗물 오브젝트의 방향을 플레이어 방향으로 설정
-                Vector3 direction = (playerTransform.position - shooterPosition).normalized;
+                Vector3 spawnPosition = rain.transform.position;
+                Vector3 direction = (playerTransform.position - spawnPosition).normalized;
                 rain.GetComponent<Rigidbody2D>().velocity = direction * rainSpeed;
+
+                // 1.5초 후에 다음 빗물 발사
+                yield return new WaitForSeconds(fireInterval);
             }
         }
     }

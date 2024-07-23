@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RE : MonoBehaviour
+public class REdead : MonoBehaviour
 {
     public float lifetime = 5f; // 오브젝트의 생존 시간
 
