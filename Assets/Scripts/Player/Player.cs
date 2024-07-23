@@ -107,6 +107,7 @@ public class Player : MonoBehaviour
         Debug.Log(stateMachine.currentState.ToString());
     }
 
+
     private void UpdateCoyoteTime()
     {
         if (IsGroundDetected())
@@ -117,7 +118,7 @@ public class Player : MonoBehaviour
 
     private void UpdateJumpBuffer()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isChargeJump)
+        if (Input.GetKeyDown(KeyCode.Space) && !isChargeJump && !Input.GetKey(KeyCode.UpArrow))
             jumpBufferCounter = jumpBufferTime;
         else
             jumpBufferCounter -= Time.deltaTime;

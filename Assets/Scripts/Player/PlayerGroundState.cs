@@ -29,30 +29,25 @@ public class PlayerGroundState : PlayerState
             return;
         }
 
-        // Prevent normal jump if charge jump is active
-        if (player.isChargeJump)
+        if (Input.GetKey(KeyCode.UpArrow) && !player.isChargeJump)
         {
-            return;
-        }
-
-        if (player.isUmbrellaOpen && player.IsGroundDetected())
-        {
-            if (Input.GetKey(KeyCode.UpArrow))
+            player.isChargeJump_inputKey = true;
+            if (player.isUmbrellaOpen && player.IsGroundDetected())
             {
-                player.isChargeJump_inputKey = true;
-
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    //stateMachine.ChangeState(player.chargeJump);
+                    stateMachine.ChangeState(player.chargeJump);
                     return;
                 }
             }
             player.chargeIndicator.fillAmount = 0f;
         }
-
-        if (!player.isChargeJump && Input.GetKeyDown(KeyCode.Space) && player.CanJump())
+        else
         {
-            stateMachine.ChangeState(player.jumpState);
+            if (!player.isChargeJump && !Input.GetKey(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.Space) && player.CanJump())
+            {
+                stateMachine.ChangeState(player.jumpState);
+            }
         }
     }
 }
