@@ -104,7 +104,6 @@ public class Player : MonoBehaviour
             }
         }
 
-        Debug.Log(stateMachine.currentState.ToString());
     }
 
 
