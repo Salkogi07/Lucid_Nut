@@ -45,7 +45,7 @@ public class PlayerState
         {
             xInput = 0;
         }
-        //player.anim.SetFloat("yVelocity", rb.velocity.y);
+        player.anim.SetFloat("yVelocity", rb.velocity.y);
     }
 
     public virtual void Exit()
