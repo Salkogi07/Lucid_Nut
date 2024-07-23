@@ -22,7 +22,7 @@ public class PlayerChargeJump : PlayerState
     public override void Update()
     {
         // 점프 입력 처리를 막기 위해 base.Update()를 호출하지 않습니다.
-        //base.Update();
+        base.Update();
     }
 
     private IEnumerator ChargeJumpCoroutine()

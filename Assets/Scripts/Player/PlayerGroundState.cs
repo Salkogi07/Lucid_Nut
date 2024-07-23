@@ -29,7 +29,7 @@ public class PlayerGroundState : PlayerState
         if (!player.IsGroundDetected())
             stateMachine.ChangeState(player.airState);
 
-        if (Input.GetKeyDown(KeyCode.Space) && player.CanJump())
+        if (!player.isChargeJump && Input.GetKeyDown(KeyCode.Space) && player.CanJump())
             stateMachine.ChangeState(player.jumpState);
 
         if (player.isUmbrellaOpen && player.IsGroundDetected())
