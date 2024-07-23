@@ -31,9 +31,21 @@ public class PlayerState
     {
         stateTimer -= Time.deltaTime;
 
-        xInput = Input.GetAxisRaw("Horizontal");
+        //xInput = Input.GetAxisRaw("Horizontal");
 
-        //player.anim.SetFloat("yVelocity", rb.velocity.y);
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            xInput = -1;
+        }
+        else if(Input.GetKey(KeyCode.RightArrow))
+        {
+            xInput = 1;
+        }
+        else
+        {
+            xInput = 0;
+        }
+            //player.anim.SetFloat("yVelocity", rb.velocity.y);
     }
 
     public virtual void Exit()

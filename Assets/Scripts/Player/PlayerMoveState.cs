@@ -22,6 +22,9 @@ public class PlayerMoveState : PlayerGroundState
     {
         base.Update();
 
+        if (player.isChargeJump)
+            return;
+
         player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
 
         if (xInput == 0)
