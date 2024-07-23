@@ -12,6 +12,9 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
+        // 대쉬 시작 전에 수평 속도를 0으로 설정
+        player.SetVelocity(0, rb.velocity.y);
+
         stateTimer = player.dashDuration;
     }
 
