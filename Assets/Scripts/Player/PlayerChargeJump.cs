@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerChargeJump : PlayerState
+public class PlayerChargeJump : PlayerGroundState
 {
     public PlayerChargeJump(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
@@ -47,7 +47,7 @@ public class PlayerChargeJump : PlayerState
                 yield return null;
             }
 
-            while (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.A) && chargeTime < maxChargeTime)
+            while (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.Space) && chargeTime < maxChargeTime)
             {
                 // 플레이어가 지면에 있는지 확인
                 if (!player.IsGroundDetected())
@@ -68,6 +68,7 @@ public class PlayerChargeJump : PlayerState
                 player.rb.gravityScale = player.gravityScale;
             }
 
+            player.isChargeJump_inputKey = false;
             player.isChargeJump = false;
             player.chargeIndicator.fillAmount = 0f;
             player.chargeIndicator_back.gameObject.SetActive(false);

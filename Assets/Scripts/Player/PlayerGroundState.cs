@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlayerGroundState : PlayerState
 {
-    private float downArrowLastPressedTime = -1f;
-    private float aKeyLastPressedTime = -1f;
-
     public PlayerGroundState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
@@ -27,34 +24,35 @@ public class PlayerGroundState : PlayerState
         base.Update();
 
         if (!player.IsGroundDetected())
+        {
             stateMachine.ChangeState(player.airState);
+            return;
+        }
 
-        if (!player.isChargeJump && Input.GetKeyDown(KeyCode.Space) && player.CanJump())
-            stateMachine.ChangeState(player.jumpState);
+        // Prevent normal jump if charge jump is active
+        if (player.isChargeJump)
+        {
+            return;
+        }
 
         if (player.isUmbrellaOpen && player.IsGroundDetected())
         {
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
-                downArrowLastPressedTime = Time.time;
-                CheckSimultaneousInput();
-            }
+                player.isChargeJump_inputKey = true;
 
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                aKeyLastPressedTime = Time.time;
-                CheckSimultaneousInput();
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    //stateMachine.ChangeState(player.chargeJump);
+                    return;
+                }
             }
-
             player.chargeIndicator.fillAmount = 0f;
         }
 
-        void CheckSimultaneousInput()
+        if (!player.isChargeJump && Input.GetKeyDown(KeyCode.Space) && player.CanJump())
         {
-            if (Mathf.Abs(downArrowLastPressedTime - aKeyLastPressedTime) <= player.inputThreshold)
-            {
-                stateMachine.ChangeState(player.chargeJump);
-            }
+            stateMachine.ChangeState(player.jumpState);
         }
     }
 }

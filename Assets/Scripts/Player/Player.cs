@@ -8,11 +8,10 @@ public class Player : MonoBehaviour
     [Header("Move info")]
     public float moveSpeed = 8f;
     public float jumpForce;
-    public float inputThreshold = 0.1f; // 두 키 입력 사이의 최대 허용 시간 (초)
+    public float inputThreshold = 0.1f;
     public float gravityScale = 3.5f;
-    public float jumpGravityScale = 1.75f; // 점프 최고점에서의 중력 감소 값 수정
-    public float fallMultiplier = 2.5f; // 낙하 감속 멀티플라이어
-
+    public float jumpGravityScale = 1.75f;
+    public float fallMultiplier = 2.5f;
 
     [Header("Umbrella info")]
     public bool isUmbrellaOpen = false;
@@ -27,6 +26,7 @@ public class Player : MonoBehaviour
     public float dashDir { get; private set; }
 
     [Header("ChargeJump info")]
+    public bool isChargeJump_inputKey = false;
     public bool isChargeJump;
     public Image chargeIndicator;
     public Image chargeIndicator_back;
@@ -117,7 +117,7 @@ public class Player : MonoBehaviour
 
     private void UpdateJumpBuffer()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isChargeJump)
             jumpBufferCounter = jumpBufferTime;
         else
             jumpBufferCounter -= Time.deltaTime;
