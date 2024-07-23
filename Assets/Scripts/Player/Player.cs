@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public float jumpGravityScale = 1.75f; // 점프 최고점에서의 중력 감소 값 수정
     public float fallMultiplier = 2.5f; // 낙하 감속 멀티플라이어
 
+
     [Header("Umbrella info")]
     public bool isUmbrellaOpen = false;
     public float umbrellaFallMultiplier = 0.5f;
@@ -87,8 +88,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         stateMachine.currentState.Update();
-
-        
 
         if (!(stateMachine.currentState is PlayerChargeJump))
         {
