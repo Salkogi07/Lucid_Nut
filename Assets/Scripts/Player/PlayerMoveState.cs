@@ -22,7 +22,7 @@ public class PlayerMoveState : PlayerGroundState
     {
         base.Update();
 
-        if (player.isChargeJump)
+        if (player.isChargeJump || player.isDashing)
             return;
 
         player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);

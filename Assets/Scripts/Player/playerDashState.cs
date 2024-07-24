@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerDashState : PlayerState
 {
@@ -29,9 +30,29 @@ public class PlayerDashState : PlayerState
     {
         base.Update();
 
-        player.SetVelocity(player.dashSpeed * player.dashDir, 0);
+        player.StartPlayerCoroutine(DashStart());
+
 
         if (stateTimer < 0)
             stateMachine.ChangeState(player.idleState);
+    }
+
+    private IEnumerator DashStart()
+    {
+        if(!player.isDashing)
+        {
+            player.isDashing = true;
+            float originalGravity = rb.gravityScale;
+            rb.gravityScale = 0f;
+            player.SetVelocity(player.dashSpeed * player.dashDir, 0);
+
+            while (rb.velocity != Vector2.zero)
+            {
+                yield return null; // wait for the next frame
+            }
+
+            rb.gravityScale = originalGravity;
+            player.isDashing = false;
+        }
     }
 }

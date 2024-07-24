@@ -20,7 +20,8 @@ public class Player : MonoBehaviour
 
     [Header("Dash info")]
     [SerializeField] private float dashCooldown;
-    private float dashUsageTimer;
+    public bool isDashing = true;
+    public float dashUsageTimer;
     public float dashSpeed;
     public float dashDuration;
     public float dashDir { get; private set; }
