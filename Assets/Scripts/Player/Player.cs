@@ -19,12 +19,12 @@ public class Player : MonoBehaviour
     public GameObject umbrellaObj;
 
     [Header("Dash info")]
-    [SerializeField] private float dashCooldown;
+    [SerializeField] public float dashCooldown;
     public bool isDashing = true;
     public float dashUsageTimer;
     public float dashSpeed;
     public float dashDuration;
-    public float dashDir { get; private set; }
+    public float dashDir;
 
     [Header("ChargeJump info")]
     public bool isChargeJump_inputKey = false;
@@ -97,16 +97,14 @@ public class Player : MonoBehaviour
             UpdateCoyoteTime();
             UpdateJumpBuffer();
 
-            if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !isJumping)
+            if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !isJumping && !isChargeJump)
             {
                 jumpBufferCounter = 0;
                 coyoteTimeCounter = 0;
                 stateMachine.ChangeState(jumpState);
             }
         }
-
     }
-
 
     private void UpdateCoyoteTime()
     {
