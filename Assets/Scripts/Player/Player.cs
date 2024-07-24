@@ -60,6 +60,8 @@ public class Player : MonoBehaviour
     public PlayerAirState airState { get; private set; }
     public PlayerDashState dashState { get; private set; }
     public PlayerChargeJump chargeJump { get; private set; }
+
+    public PlayerPrimaryAttack primaryAttack { get; private set; }
     #endregion
 
     public bool isJumping = false;
@@ -74,6 +76,8 @@ public class Player : MonoBehaviour
         airState = new PlayerAirState(this, stateMachine, "Jump");
         dashState = new PlayerDashState(this, stateMachine, "Dash");
         chargeJump = new PlayerChargeJump(this, stateMachine, "ChargeJump");
+
+        primaryAttack = new PlayerPrimaryAttack(this, stateMachine, "Attack");
     }
 
     private void Start()
@@ -100,6 +104,8 @@ public class Player : MonoBehaviour
 
         Debug.Log(stateMachine.currentState);
     }
+
+    public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
     private void UpdateCoyoteTime()
     {
