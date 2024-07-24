@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class RainEnemy : MonoBehaviour
 {
@@ -51,7 +52,7 @@ public class RainEnemy : MonoBehaviour
             for (int i = 0; i < numberOfRains; i++)
             {
                 // 겹치지 않게 가로로 오프셋을 적용하여 빗물 오브젝트 위치 설정
-                Vector3 spawnPosition = shooterPosition + new Vector3(horizontalOffset * (i - (numberOfRains - 1) / 2f), 2, 0);
+                Vector3 spawnPosition = shooterPosition + new Vector3(horizontalOffset * (i - (numberOfRains - 1) / 2f), 1+(i*0.5f), 0);
 
                 // 빗물 오브젝트 생성
                 rainObjects[i] = Instantiate(rainPrefab, spawnPosition, Quaternion.identity);

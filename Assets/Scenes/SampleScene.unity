@@ -5091,6 +5091,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 402337914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &232652823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232652825}
+  - component: {fileID: 232652824}
+  - component: {fileID: 232652826}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &232652824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232652823}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16.821102, y: 2.9568443, z: 1}
+  m_Center: {x: 0.5758629, y: -4.314985, z: 0}
+--- !u!4 &232652825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232652823}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.602745, y: -2.315372, z: 0.04504037}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &232652826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232652823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41edcb224109f9c42a52a2e11d09753d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockPrefab: {fileID: 5049542284021208551, guid: 8a81894a17c727b4f8b6fea7556b0f9d, type: 3}
+  numberOfRocksPerInterval: 10
+  spawnInterval: 10
 --- !u!1 &279531756
 GameObject:
   m_ObjectHideFlags: 0
@@ -6339,8 +6408,8 @@ Transform:
   m_GameObject: {fileID: 1353842667}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0433, y: -4.03, z: 0}
-  m_LocalScale: {x: 17.518845, y: 1, z: 1}
+  m_LocalPosition: {x: -0.11, y: -5.45, z: 0}
+  m_LocalScale: {x: 16.9932, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6866,31 +6935,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 1962447920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51509cb613f944a429bdf015007ba66c, type: 3}
+  m_Script: {fileID: 11500000, guid: c87cae77f1486a249977770c144560c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rainPrefab: {fileID: 7084208573543963846, guid: 48be24541ab1d1440b960afc94742e1e, type: 3}
-  cooldownTime: 10
-  rainSpeed: 20
-  numberOfRains: 3
-  horizontalOffset: 1
-  delayBeforeFire: 1.5
-  fireInterval: 1
---- !u!114 &1962447926
-MonoBehaviour:
+  moveSpeed: 5
+  skillDuration: 9
+  cooldownTime: 15
+  spreadDelay: 5
+  spreadForce: 10
+  rbActivationDelay: 0.2
+  extraForce: 5
+  minRotationSpeed: 50
+  maxRotationSpeed: 100
+--- !u!50 &1962447926
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962447920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1376ed2046574be45a7aa34c4c2f387d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  dashSpeed: 20
-  cooldownTime: 5
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2068545036
 GameObject:
   m_ObjectHideFlags: 0
@@ -7093,3 +7176,4 @@ SceneRoots:
   - {fileID: 279531759}
   - {fileID: 149085325}
   - {fileID: 1962447923}
+  - {fileID: 232652825}
