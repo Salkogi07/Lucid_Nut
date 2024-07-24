@@ -29,24 +29,33 @@ public class PlayerGroundState : PlayerState
             return;
         }
 
-        if (Input.GetKey(KeyCode.UpArrow) && !player.isChargeJump)
+        HandleJumpInput();
+    }
+
+    private void HandleJumpInput()
+    {
+        // 위 화살표 키 입력 처리
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             player.isChargeJump_inputKey = true;
-            if (player.isUmbrellaOpen && player.IsGroundDetected())
-            {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    stateMachine.ChangeState(player.chargeJump);
-                    return;
-                }
-            }
             player.chargeIndicator.fillAmount = 0f;
-        }
-        else
-        {
-            if (!player.isChargeJump && !Input.GetKey(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.Space) && player.CanJump())
+
+            if (player.isUmbrellaOpen && Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())
             {
+                stateMachine.ChangeState(player.chargeJump);
+                return;
+            }
+        }
+
+        // 점프 키 입력 처리
+        if (Input.GetKeyDown(KeyCode.Space) && player.CanJump())
+        {
+            if (player.jumpBufferCounter > 0 || player.coyoteTimeCounter > 0)
+            {
+                player.jumpBufferCounter = 0;
+                player.coyoteTimeCounter = 0;
                 stateMachine.ChangeState(player.jumpState);
+                return;
             }
         }
     }

@@ -42,9 +42,9 @@ public class Player : MonoBehaviour
 
     [Header("Jump Timing Info")]
     public float coyoteTime = 0.2f;
-    private float coyoteTimeCounter;
+    public float coyoteTimeCounter;
     public float jumpBufferTime = 0.2f;
-    private float jumpBufferCounter;
+    public float jumpBufferCounter;
 
     #region Components
     public Animator anim { get; private set; }
@@ -96,14 +96,9 @@ public class Player : MonoBehaviour
             CheckUmbrella_Input();
             UpdateCoyoteTime();
             UpdateJumpBuffer();
-
-            if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !isJumping && !isChargeJump)
-            {
-                jumpBufferCounter = 0;
-                coyoteTimeCounter = 0;
-                stateMachine.ChangeState(jumpState);
-            }
         }
+
+        Debug.Log(stateMachine.currentState);
     }
 
     private void UpdateCoyoteTime()

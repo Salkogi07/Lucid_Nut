@@ -5,6 +5,8 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerDashState : PlayerState
 {
+    private float originalGravity;
+
     public PlayerDashState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
@@ -13,8 +15,10 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
-        // 대쉬 시작 전에 수평 속도를 0으로 설정
         player.SetVelocity(0, rb.velocity.y);
+
+        originalGravity = rb.gravityScale; // 원래 중력 값 저장
+        rb.gravityScale = 0f; // 대쉬 중 중력 설정
 
         stateTimer = player.dashDuration;
     }
@@ -23,6 +27,7 @@ public class PlayerDashState : PlayerState
     {
         base.Exit();
 
+        rb.gravityScale = originalGravity; // 원래 중력 값으로 복원
         player.SetVelocity(0, rb.velocity.y);
     }
 
@@ -32,18 +37,15 @@ public class PlayerDashState : PlayerState
 
         player.StartPlayerCoroutine(DashStart());
 
-
         if (stateTimer < 0)
             stateMachine.ChangeState(player.idleState);
     }
 
     private IEnumerator DashStart()
     {
-        if(!player.isDashing)
+        if (!player.isDashing)
         {
             player.isDashing = true;
-            float originalGravity = rb.gravityScale;
-            rb.gravityScale = 0f;
             player.SetVelocity(player.dashSpeed * player.dashDir, 0);
 
             while (rb.velocity != Vector2.zero)
@@ -51,7 +53,6 @@ public class PlayerDashState : PlayerState
                 yield return null; // wait for the next frame
             }
 
-            rb.gravityScale = originalGravity;
             player.isDashing = false;
         }
     }
