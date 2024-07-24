@@ -24,6 +24,9 @@ public class PlayerGroundState : PlayerState
     {
         base.Update();
 
+        if (Input.GetKey(KeyCode.A))
+            stateMachine.ChangeState(player.primaryAttack);
+
         if (!player.IsGroundDetected())
         {
             player.coyoteTimeCounter -= Time.deltaTime; // 공중에 있을 때 코요테 타임 감소
