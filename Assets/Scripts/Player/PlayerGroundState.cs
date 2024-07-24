@@ -12,6 +12,7 @@ public class PlayerGroundState : PlayerState
     {
         base.Enter();
         rb.gravityScale = player.gravityScale;
+        player.coyoteTimeCounter = player.coyoteTime; // 코요테 타임 초기화
     }
 
     public override void Exit()
@@ -25,8 +26,15 @@ public class PlayerGroundState : PlayerState
 
         if (!player.IsGroundDetected())
         {
-            stateMachine.ChangeState(player.airState);
-            return;
+            player.coyoteTimeCounter -= Time.deltaTime; // 공중에 있을 때 코요테 타임 감소
+            if (player.coyoteTimeCounter <= 0)
+            {
+                stateMachine.ChangeState(player.airState);
+            }
+        }
+        else
+        {
+            player.coyoteTimeCounter = player.coyoteTime; // 땅에 있을 때 코요테 타임 초기화
         }
 
         HandleJumpInput();
