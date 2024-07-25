@@ -35,7 +35,7 @@ public class PlayerDashState : PlayerState
     {
         base.Update();
 
-        player.StartPlayerCoroutine(DashStart());
+        player.StartCoroutine(DashStart());
 
         if (stateTimer < 0)
             stateMachine.ChangeState(player.idleState);
