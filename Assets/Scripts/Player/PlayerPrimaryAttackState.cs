@@ -23,14 +23,10 @@ public class PlayerPrimaryAttackState : PlayerState
         player.anim.SetInteger("ComboCounter", comboCounter);
         //player.anim.speed = 1.2f; 공속 설정
 
-        #region Choose attack direction
-
         float attackDir = player.facingDir;
 
         if (xInput != 0)
             attackDir = xInput;
-
-        #endregion
 
         player.SetVelocity(player.attackMovement[comboCounter].x * attackDir, player.attackMovement[comboCounter].y);
 

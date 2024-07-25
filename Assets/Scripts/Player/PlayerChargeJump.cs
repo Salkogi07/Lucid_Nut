@@ -54,7 +54,6 @@ public class PlayerChargeJump : PlayerGroundState
                 {
                     break; // 플레이어가 지면에 없으면 루프 종료
                 }
-
                 chargeTime += Time.deltaTime;
                 player.chargeIndicator.fillAmount = chargeTime / maxChargeTime;
                 yield return null;

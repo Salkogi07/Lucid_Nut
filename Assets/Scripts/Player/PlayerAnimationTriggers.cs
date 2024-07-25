@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimationTrigger : MonoBehaviour
+public class PlayerAnimationTriggers : MonoBehaviour
 {
-    private Player player => GetComponentInChildren<Player>();
+    private Player player => GetComponentInParent<Player>();
 
     private void AnimationTrigger()
     {

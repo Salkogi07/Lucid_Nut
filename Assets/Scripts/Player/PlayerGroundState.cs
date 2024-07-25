@@ -24,8 +24,8 @@ public class PlayerGroundState : PlayerState
     {
         base.Update();
 
-        if (Input.GetKey(KeyCode.A))
-            stateMachine.ChangeState(player.primaryAttack);
+        //if (Input.GetKey(KeyCode.A))
+        //    stateMachine.ChangeState(player.primaryAttack);
 
         if (!player.IsGroundDetected())
         {
@@ -56,6 +56,10 @@ public class PlayerGroundState : PlayerState
                 stateMachine.ChangeState(player.chargeJump);
                 return;
             }
+        }
+        else
+        {
+            player.isChargeJump_inputKey= false;
         }
 
         // 점프 키 입력 처리
