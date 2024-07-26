@@ -5173,6 +5173,7 @@ MonoBehaviour:
   rockPrefab: {fileID: 5049542284021208551, guid: 8a81894a17c727b4f8b6fea7556b0f9d, type: 3}
   numberOfRocksPerInterval: 10
   spawnInterval: 10
+  suckRockObject: {fileID: 1962447920}
 --- !u!1 &279531756
 GameObject:
   m_ObjectHideFlags: 0
@@ -7024,8 +7025,13 @@ GameObject:
   - component: {fileID: 1962447923}
   - component: {fileID: 1962447922}
   - component: {fileID: 1962447924}
-  - component: {fileID: 1962447925}
   - component: {fileID: 1962447926}
+  - component: {fileID: 1962447927}
+  - component: {fileID: 1962447929}
+  - component: {fileID: 1962447928}
+  - component: {fileID: 1962447932}
+  - component: {fileID: 1962447931}
+  - component: {fileID: 1962447930}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -7138,27 +7144,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.5
---- !u!114 &1962447925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962447920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c87cae77f1486a249977770c144560c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  skillDuration: 9
-  cooldownTime: 15
-  spreadDelay: 5
-  spreadForce: 10
-  rbActivationDelay: 0.2
-  extraForce: 5
-  minRotationSpeed: 50
-  maxRotationSpeed: 100
 --- !u!50 &1962447926
 Rigidbody2D:
   serializedVersion: 4
@@ -7186,6 +7171,121 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1962447927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962447920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdab56fcb928204db6ad6619c33225f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills:
+  - skillName: dash
+    cooldown: 5
+  - skillName: rainAttack
+    cooldown: 10
+  - skillName: suck
+    cooldown: 10
+  - skillName: finally
+    cooldown: 20
+  dashScript: {fileID: 1962447928}
+  rainAttack: {fileID: 1962447932}
+  suck: {fileID: 1962447931}
+  rock: {fileID: 1962447930}
+  SS: 0
+  DS: 0
+  RS: 0
+  SR: 0
+--- !u!114 &1962447928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962447920}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289c508ed3185724a9be749827b8fa95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 20
+  cooldownTime: 5
+  DS: 0
+  isDashing: 0
+  isPreparingToDash: 0
+--- !u!114 &1962447929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962447920}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1376ed2046574be45a7aa34c4c2f387d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  dashScript: {fileID: 1962447928}
+--- !u!114 &1962447930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962447920}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87cae77f1486a249977770c144560c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  skillDuration: 5
+  spreadDelay: 5
+  spreadForce: 12
+  rbActivationDelay: 0.2
+  extraForce: 1
+  minRotationSpeed: 50
+  maxRotationSpeed: 200
+  SR: 0
+--- !u!114 &1962447931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962447920}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38c6dc25c2bc054faa2787b167fca3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.5
+  skillDuration: 5
+  SS: 0
+--- !u!114 &1962447932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962447920}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51509cb613f944a429bdf015007ba66c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rainPrefab: {fileID: 7084208573543963846, guid: 48be24541ab1d1440b960afc94742e1e, type: 3}
+  rainSpeed: 20
+  numberOfRains: 3
+  horizontalOffset: 1
+  delayBeforeFire: 1.5
+  fireInterval: 1
+  RS: 0
 --- !u!1 &2068545036
 GameObject:
   m_ObjectHideFlags: 0

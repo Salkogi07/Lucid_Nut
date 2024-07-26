@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class suck_rock : MonoBehaviour
 {
-    public float moveSpeed = 0.5f;      // 돌 이동 속도
+    public float moveSpeed = 5f;      // 돌 이동 속도
     public float skillDuration = 5f;   // 스킬의 지속 시간
-    public float cooldownTime = 10f;   // 쿨타임 시간
     public float spreadDelay = 5f;     // 돌을 랜덤하게 뿌리기 전 대기 시간
-    public float spreadForce = 5f;     // 돌을 뿌릴 때 힘의 강도
+    public float spreadForce = 10f;     // 돌을 뿌릴 때 힘의 강도
     public float rbActivationDelay = 0.2f; // Rigidbody2D를 활성화할 지연 시간
     public float extraForce = 1f;      // 발사 후 추가적으로 돌에 가해질 힘
     public float minRotationSpeed = 50f; // 돌의 최소 회전 속도
     public float maxRotationSpeed = 200f; // 돌의 최대 회전 속도
 
+    public bool SR = false;            // 스킬 실행을 위한 불 값
     private bool isUsingSkill = false;  // 스킬 사용 중인지 여부
     private float skillEndTime = 0f;    // 스킬이 끝나는 시간
-    private float nextSkillTime = 0f;   // 다음 스킬 사용 가능 시간
     private List<GameObject> attractedRocks = new List<GameObject>(); // 끌어당긴 돌들을 저장할 리스트
 
     void Start()
@@ -31,10 +30,12 @@ public class suck_rock : MonoBehaviour
 
     void Update()
     {
-        // 현재 시간이 다음 스킬 사용 가능 시간보다 크고, 스킬이 사용 중이지 않을 때
-        if (Time.time >= nextSkillTime && !isUsingSkill)
+        // SR이 true이고 스킬이 사용 중이지 않을 때
+        if (SR && !isUsingSkill)
         {
             StartSkill();
+            Debug.Log(SR);
+            SR = false; // 스킬이 시작되면 SR 값을 false로 변경
         }
 
         // 스킬이 사용 중일 때
@@ -57,7 +58,6 @@ public class suck_rock : MonoBehaviour
     {
         isUsingSkill = true;
         skillEndTime = Time.time + skillDuration;
-        nextSkillTime = Time.time + cooldownTime;
 
         // "rock" 태그를 가진 모든 오브젝트를 찾습니다.
         GameObject[] rocks = GameObject.FindGameObjectsWithTag("rock");

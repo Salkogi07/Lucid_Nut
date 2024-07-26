@@ -6,12 +6,12 @@ public class suck_ob : MonoBehaviour
 {
     public float moveSpeed = 0.5f;  // 플레이어가 이동하는 속도
     public float skillDuration = 5f;  // 스킬의 지속 시간
-    public float cooldownTime = 10f;  // 쿨타임 시간
 
     private bool isUsingSkill = false;  // 스킬 사용 중인지 여부
     private float skillEndTime = 0f;  // 스킬이 끝나는 시간
-    private float nextSkillTime = 0f;  // 다음 스킬 사용 가능 시간
     private GameObject player;  // "Player" 태그를 가진 오브젝트
+
+    public bool SS = false;  // 스킬 활성화 상태를 관리하는 변수
 
     void Start()
     {
@@ -20,8 +20,8 @@ public class suck_ob : MonoBehaviour
 
     void Update()
     {
-        // 현재 시간이 다음 스킬 사용 가능 시간보다 크고, 스킬이 사용 중이지 않을 때
-        if (Time.time >= nextSkillTime && !isUsingSkill)
+        // SS가 true이고, 스킬이 사용 중이지 않을 때
+        if (SS && !isUsingSkill)
         {
             StartSkill();
         }
@@ -44,7 +44,7 @@ public class suck_ob : MonoBehaviour
     {
         isUsingSkill = true;
         skillEndTime = Time.time + skillDuration;
-        nextSkillTime = Time.time + cooldownTime;
+        SS = false;  // 스킬 시작 후 SS를 false로 설정
     }
 
     void MovePlayerTowardsObject()
