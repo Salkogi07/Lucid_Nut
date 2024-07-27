@@ -29,13 +29,13 @@ public class BossScript : MonoBehaviour
     private void ChooseSkill()
     {
         // Generate a random integer between 0 and 3
-        int randomInt = UnityEngine.Random.Range(2, 4);
+        int randomInt = UnityEngine.Random.Range(0, 4);
         if (randomInt == randN)
         {
             while (randN == randomInt)
             {
                 Debug.Log("¹Ù²ñ" + randN + randomInt);
-                randomInt = UnityEngine.Random.Range(2, 4);
+                randomInt = UnityEngine.Random.Range(0, 4);
             }
         }
         else
