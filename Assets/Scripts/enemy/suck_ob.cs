@@ -23,6 +23,7 @@ public class suck_ob : MonoBehaviour
         // SS가 true이고, 스킬이 사용 중이지 않을 때
         if (SS && !isUsingSkill)
         {
+            Debug.Log("빨아 들이기");
             StartSkill();
         }
 

@@ -7,23 +7,34 @@ public class RandomRockSpawner : MonoBehaviour
     public int numberOfRocksPerInterval = 10; // 10초마다 생성할 돌의 개수
     public float spawnInterval = 10f; // 생성 간격(초)
     public GameObject suckRockObject; // suck_rock 스크립트가 붙어있는 오브젝트를 할당합니다.
-
+    public GameObject colliderObject; // 콜라이더를 사용할 오브젝트를 할당합니다.
+    public bool SRR;
     private BoxCollider boxCollider;
     private suck_rock suckRockScript;
 
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider>();
+        SRR = false;
+        if (colliderObject != null)
+        {
+            boxCollider = colliderObject.GetComponent<BoxCollider>();
+        }
         if (suckRockObject != null)
         {
             suckRockScript = suckRockObject.GetComponent<suck_rock>();
         }
-        StartCoroutine(SpawnRocksRoutine());
     }
-
-    IEnumerator SpawnRocksRoutine()
+    public void Update()
     {
-        while (true)
+        if (SRR)
+        {
+            SpawnRocksRoutine();
+            SRR = false;
+        }
+    }
+    public void SpawnRocksRoutine()
+    {
+        while (SRR)
         {
             for (int i = 0; i < numberOfRocksPerInterval; i++)
             {
@@ -37,13 +48,19 @@ public class RandomRockSpawner : MonoBehaviour
                 suckRockScript.SR = true;
             }
 
-            yield return new WaitForSeconds(spawnInterval);
+            break;
         }
     }
 
     Vector3 GetRandomPositionInBox()
     {
-        Vector3 center = transform.position + boxCollider.center;
+        if (boxCollider == null)
+        {
+            Debug.LogError("BoxCollider is not assigned. Please assign a BoxCollider to the colliderObject.");
+            return Vector3.zero;
+        }
+
+        Vector3 center = colliderObject.transform.position + boxCollider.center;
         Vector3 size = boxCollider.size;
 
         float randomX = Random.Range(center.x - size.x / 2, center.x + size.x / 2);

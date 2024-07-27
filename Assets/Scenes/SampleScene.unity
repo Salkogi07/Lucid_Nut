@@ -5114,9 +5114,8 @@ GameObject:
   m_Component:
   - component: {fileID: 232652825}
   - component: {fileID: 232652824}
-  - component: {fileID: 232652826}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: rock_spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5158,22 +5157,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &232652826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232652823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41edcb224109f9c42a52a2e11d09753d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rockPrefab: {fileID: 5049542284021208551, guid: 8a81894a17c727b4f8b6fea7556b0f9d, type: 3}
-  numberOfRocksPerInterval: 10
-  spawnInterval: 10
-  suckRockObject: {fileID: 1962447920}
 --- !u!1 &279531756
 GameObject:
   m_ObjectHideFlags: 0
@@ -7026,12 +7009,13 @@ GameObject:
   - component: {fileID: 1962447922}
   - component: {fileID: 1962447924}
   - component: {fileID: 1962447926}
-  - component: {fileID: 1962447927}
   - component: {fileID: 1962447929}
+  - component: {fileID: 1962447934}
   - component: {fileID: 1962447928}
   - component: {fileID: 1962447932}
   - component: {fileID: 1962447931}
   - component: {fileID: 1962447930}
+  - component: {fileID: 1962447933}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -7171,18 +7155,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1962447927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962447920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfdab56fcb928204db6ad6619c33225f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1962447928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7190,7 +7162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962447920}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 289c508ed3185724a9be749827b8fa95, type: 3}
   m_Name: 
@@ -7207,7 +7179,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962447920}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1376ed2046574be45a7aa34c4c2f387d, type: 3}
   m_Name: 
@@ -7221,12 +7193,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962447920}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c87cae77f1486a249977770c144560c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 20
   skillDuration: 5
   spreadDelay: 5
   spreadForce: 12
@@ -7242,7 +7214,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962447920}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e38c6dc25c2bc054faa2787b167fca3d, type: 3}
   m_Name: 
@@ -7257,7 +7229,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962447920}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51509cb613f944a429bdf015007ba66c, type: 3}
   m_Name: 
@@ -7269,6 +7241,39 @@ MonoBehaviour:
   delayBeforeFire: 1.5
   fireInterval: 1
   RS: 0
+--- !u!114 &1962447933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962447920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdab56fcb928204db6ad6619c33225f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashScript: {fileID: 1962447928}
+  rainAttack: {fileID: 1962447932}
+  suckScript: {fileID: 1962447931}
+  RainSC: {fileID: 1962447934}
+--- !u!114 &1962447934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962447920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41edcb224109f9c42a52a2e11d09753d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockPrefab: {fileID: 5049542284021208551, guid: 8a81894a17c727b4f8b6fea7556b0f9d, type: 3}
+  numberOfRocksPerInterval: 10
+  suckRockObject: {fileID: 1962447920}
+  colliderObject: {fileID: 232652823}
+  SRR: 0
 --- !u!1 &2068545036
 GameObject:
   m_ObjectHideFlags: 0

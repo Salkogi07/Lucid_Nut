@@ -29,6 +29,7 @@ public class RainEnemy : MonoBehaviour
         // 플레이어가 존재하고 RS가 true일 때 발사
         if (playerTransform != null && RS)
         {
+            Debug.Log("비 발사");
             ShootRain();
             RS = false; // 발사 후 RS를 false로 설정
         }

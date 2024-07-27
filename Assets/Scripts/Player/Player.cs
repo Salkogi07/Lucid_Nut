@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
             UpdateJumpBuffer();
         }
 
-        Debug.Log(stateMachine.currentState);
+        //Debug.Log(stateMachine.currentState);
     }
 
     public IEnumerator BusyFor(float _seconds)

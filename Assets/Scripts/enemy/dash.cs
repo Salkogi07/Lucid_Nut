@@ -19,6 +19,7 @@ public class dash : MonoBehaviour
     {
         if (DS && !isCooldown && !isDashing) // DS가 true일 때만 대쉬를 시도
         {
+            Debug.Log("대쉬");
             StartCoroutine(PrepareAndDash(targetPosition));
             DS = false; // 대쉬를 시작한 후 DS를 false로 설정
         }

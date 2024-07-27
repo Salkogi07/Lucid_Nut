@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class suck_rock : MonoBehaviour
 {
-    public float moveSpeed = 5f;      // 돌 이동 속도
+    public float moveSpeed = 20f;      // 돌 이동 속도
     public float skillDuration = 5f;   // 스킬의 지속 시간
     public float spreadDelay = 5f;     // 돌을 랜덤하게 뿌리기 전 대기 시간
-    public float spreadForce = 10f;     // 돌을 뿌릴 때 힘의 강도
+    public float spreadForce = 10f;    // 돌을 뿌릴 때 힘의 강도
     public float rbActivationDelay = 0.2f; // Rigidbody2D를 활성화할 지연 시간
     public float extraForce = 1f;      // 발사 후 추가적으로 돌에 가해질 힘
     public float minRotationSpeed = 50f; // 돌의 최소 회전 속도
@@ -33,8 +33,8 @@ public class suck_rock : MonoBehaviour
         // SR이 true이고 스킬이 사용 중이지 않을 때
         if (SR && !isUsingSkill)
         {
+            Debug.Log("돌던지기");
             StartSkill();
-            Debug.Log(SR);
             SR = false; // 스킬이 시작되면 SR 값을 false로 변경
         }
 
@@ -59,23 +59,27 @@ public class suck_rock : MonoBehaviour
         isUsingSkill = true;
         skillEndTime = Time.time + skillDuration;
 
+        attractedRocks.Clear(); // 리스트를 초기화합니다.
         // "rock" 태그를 가진 모든 오브젝트를 찾습니다.
         GameObject[] rocks = GameObject.FindGameObjectsWithTag("rock");
-        attractedRocks.Clear(); // 리스트를 초기화합니다.
 
         foreach (GameObject rock in rocks)
         {
-            attractedRocks.Add(rock);
-            // 돌의 Rigidbody2D를 비활성화합니다.
-            Rigidbody2D rb = rock.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            // 중복 추가를 방지
+            if (!attractedRocks.Contains(rock))
             {
-                rb.isKinematic = true;  // 물리적 상호작용을 비활성화합니다.
-                rb.angularVelocity = 0f; // 회전을 멈춥니다.
-            }
+                attractedRocks.Add(rock);
+                // 돌의 Rigidbody2D를 비활성화합니다.
+                Rigidbody2D rb = rock.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.isKinematic = true;  // 물리적 상호작용을 비활성화합니다.
+                    rb.angularVelocity = 0f; // 회전을 멈춥니다.
+                }
 
-            // 돌마다 독립적인 회전 속도를 설정합니다.
-            rock.AddComponent<RotateRandomly>();
+                // 돌마다 독립적인 회전 속도를 설정합니다.
+                rock.AddComponent<RotateRandomly>();
+            }
         }
     }
 
