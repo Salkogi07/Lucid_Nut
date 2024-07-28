@@ -68,7 +68,7 @@ public class PlayerGroundState : PlayerState
             if (player.jumpBufferCounter > 0 || player.coyoteTimeCounter > 0)
             {
                 player.jumpBufferCounter = 0;
-                player.coyoteTimeCounter = 0;
+                //player.coyoteTimeCounter = 0;
                 stateMachine.ChangeState(player.jumpState);
                 return;
             }
