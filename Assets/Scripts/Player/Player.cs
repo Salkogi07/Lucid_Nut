@@ -120,9 +120,9 @@ public class Player : MonoBehaviour
 
     public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
-    private void UpdateCoyoteTime()
+    public void UpdateCoyoteTime()
     {
-        if (IsGroundDetected())
+        if (IsGroundDetected() && !isDashing)
             coyoteTimeCounter = coyoteTime;
         else
             coyoteTimeCounter -= Time.deltaTime;

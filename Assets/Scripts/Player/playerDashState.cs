@@ -17,8 +17,8 @@ public class PlayerDashState : PlayerState
 
         player.SetVelocity(0, rb.velocity.y);
 
-        originalGravity = rb.gravityScale; // 원래 중력 값 저장
-        rb.gravityScale = 0f; // 대쉬 중 중력 설정
+        originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
 
         stateTimer = player.dashDuration;
     }
@@ -27,7 +27,7 @@ public class PlayerDashState : PlayerState
     {
         base.Exit();
 
-        rb.gravityScale = originalGravity; // 원래 중력 값으로 복원
+        rb.gravityScale = originalGravity;
         player.SetVelocity(0, rb.velocity.y);
     }
 
@@ -38,7 +38,16 @@ public class PlayerDashState : PlayerState
         player.StartCoroutine(DashStart());
 
         if (stateTimer < 0)
-            stateMachine.ChangeState(player.idleState);
+        {
+            if (player.IsGroundDetected())
+            {
+                stateMachine.ChangeState(player.idleState);
+            }
+            else
+            {
+                stateMachine.ChangeState(player.airState);
+            }
+        }
     }
 
     private IEnumerator DashStart()
@@ -50,10 +59,11 @@ public class PlayerDashState : PlayerState
 
             while (rb.velocity != Vector2.zero)
             {
-                yield return null; // wait for the next frame
+                yield return null;
             }
 
             player.isDashing = false;
         }
     }
+
 }
