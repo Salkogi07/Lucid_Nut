@@ -16,6 +16,7 @@ public class BossScript : MonoBehaviour
     public RainEnemy rainAttack;
     public suck_ob suckScript;
     public RandomRockSpawner RainSC;
+    public SmallEnemy SmallST;
 
     private int randN;
 
@@ -55,14 +56,15 @@ public class BossScript : MonoBehaviour
         if (dashScript != null) dashScript.DS = false;
         if (rainAttack != null) rainAttack.RS = false;
         if (RainSC != null) RainSC.SRR = false;
+        if (SmallST != null) SmallST.ST = false;
 
         // 선택된 스킬을 활성화합니다.
         switch (skillIndex)
         {
             case 0:
-                if (suckScript != null)
+                if (SmallST != null)
                 {
-                    suckScript.SS = true;
+                    SmallST.ST = true;
                 }
                 else
                 {
@@ -92,6 +94,7 @@ public class BossScript : MonoBehaviour
             case 3:
                 if (RainSC != null)
                 {
+                    suckScript.SS = true;
                     RainSC.SRR = true;
                 }
                 else if (RainSC == null)
