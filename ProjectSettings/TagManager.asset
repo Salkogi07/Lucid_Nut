@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - rock
+  - tornado
+  - wall
   layers:
   - Default
   - TransparentFX

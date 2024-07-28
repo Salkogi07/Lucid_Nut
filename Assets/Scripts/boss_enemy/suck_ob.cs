@@ -5,13 +5,14 @@ using UnityEngine;
 public class suck_ob : MonoBehaviour
 {
     public float moveSpeed = 0.5f;  // 플레이어가 이동하는 속도
-    public float skillDuration = 5f;  // 스킬의 지속 시간
+    public float skillDuration = 4f;  // 스킬의 지속 시간
 
     private bool isUsingSkill = false;  // 스킬 사용 중인지 여부
     private float skillEndTime = 0f;  // 스킬이 끝나는 시간
     private GameObject player;  // "Player" 태그를 가진 오브젝트
 
     public bool SS = false;  // 스킬 활성화 상태를 관리하는 변수
+    private bool playerInCollider = false;  // 플레이어가 콜라이더 안에 있는지 여부
 
     void Start()
     {
@@ -20,8 +21,8 @@ public class suck_ob : MonoBehaviour
 
     void Update()
     {
-        // SS가 true이고, 스킬이 사용 중이지 않을 때
-        if (SS && !isUsingSkill)
+        // 플레이어가 콜라이더 안에 있고, SS가 true이고, 스킬이 사용 중이지 않을 때
+        if (playerInCollider && SS && !isUsingSkill)
         {
             Debug.Log("빨아 들이기");
             StartSkill();
@@ -64,5 +65,24 @@ public class suck_ob : MonoBehaviour
         isUsingSkill = false;
         // 스킬 종료 후, 플레이어의 이동을 멈춥니다.
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // 플레이어가 콜라이더에 들어오면 플레이어가 콜라이더 안에 있음을 표시합니다.
+            playerInCollider = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // 플레이어가 콜라이더에서 나가면 플레이어가 콜라이더 안에 있지 않음을 표시합니다.
+            playerInCollider = false;
+            EndSkill();  // 스킬을 비활성화합니다.
+        }
     }
 }
