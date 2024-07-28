@@ -35,5 +35,8 @@ public class PlayerJumpState : PlayerState
 
         if (rb.velocity.y < 0)
             stateMachine.ChangeState(player.airState);
+
+        if (player.IsGroundDetected())
+            stateMachine.ChangeState(player.idleState);
     }
 }
