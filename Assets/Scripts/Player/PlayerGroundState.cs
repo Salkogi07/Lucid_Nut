@@ -29,7 +29,7 @@ public class PlayerGroundState : PlayerState
 
         if (!player.IsGroundDetected())
         {
-            player.coyoteTimeCounter -= Time.deltaTime; // 공중에 있을 때 코요테 타임 감소
+            player.coyoteTimeCounter -= Time.deltaTime;
             if (player.coyoteTimeCounter <= 0)
             {
                 stateMachine.ChangeState(player.airState);
@@ -37,7 +37,7 @@ public class PlayerGroundState : PlayerState
         }
         else
         {
-            player.coyoteTimeCounter = player.coyoteTime; // 땅에 있을 때 코요테 타임 초기화
+            player.coyoteTimeCounter = player.coyoteTime;
         }
 
         HandleJumpInput();
