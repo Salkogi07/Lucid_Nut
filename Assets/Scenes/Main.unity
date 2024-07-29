@@ -5355,9 +5355,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackMovement:
-  - {x: 3, y: 1.5}
-  - {x: 1, y: 2.5}
-  - {x: 4, y: 1.5}
+  - {x: 3, y: 0}
+  - {x: 1, y: 0}
+  - {x: 4, y: 0}
   moveSpeed: 8
   jumpForce: 14
   inputThreshold: 0.2
@@ -8261,7 +8261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1962447923
 Transform:
   m_ObjectHideFlags: 0
