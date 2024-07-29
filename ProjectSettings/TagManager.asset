@@ -8,6 +8,9 @@ TagManager:
   - rock
   - tornado
   - wall
+  - cloud_move_point
+  - Dark_Cloud_Attack_point
+  - abc
   layers:
   - Default
   - TransparentFX

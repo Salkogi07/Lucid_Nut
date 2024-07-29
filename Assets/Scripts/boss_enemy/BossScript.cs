@@ -11,45 +11,56 @@ public class Skill
 
 public class BossScript : MonoBehaviour
 {
-
+    //Page_Two
     public dash dashScript;
     public RainEnemy rainAttack;
     public suck_ob suckScript;
     public RandomRockSpawner RainSC;
     public SmallEnemy SmallST;
 
-    private int randN;
+    //Page_Two
+    public Lightning_fire lightningfire;
+
+    public int BossHp = 10000;
+
+    private int randN = -1;
+    private int randomInt = -1;
 
     private void Start()
     {
-        randN = 5;
         // Call the ChooseSkill method every 30 seconds
         InvokeRepeating("ChooseSkill", 0f, 10f);
     }
 
     private void ChooseSkill()
     {
-        // Generate a random integer between 0 and 3
-        int randomInt = UnityEngine.Random.Range(0, 4);
-        if (randomInt == randN)
+        if (BossHp <= 2000)
         {
-            while (randN == randomInt)
+            do
             {
-                Debug.Log("바뀜" + randN + randomInt);
-                randomInt = UnityEngine.Random.Range(0, 4);
-            }
+                randomInt = UnityEngine.Random.Range(0, 3);
+            } while (randN == randomInt);
+
+            randN = randomInt;
+
+            // Use the random integer to decide which skill to use
+            page_Two(randomInt);
         }
         else
         {
-            Debug.Log(randomInt);
-            randN = randomInt;
-        }
+            do
+            {
+                randomInt = UnityEngine.Random.Range(0, 4);
+            } while (randN == randomInt);
 
-        // Use the random integer to decide which skill to use
-        UseSkill(randomInt);    
+            randN = randomInt;
+
+            // Use the random integer to decide which skill to use
+            page_One(randomInt);
+        }
     }
 
-    private void UseSkill(int skillIndex)
+    private void page_One(int skillIndex)
     {
         // 스킬을 초기화합니다.
         if (suckScript != null) suckScript.SS = false;
@@ -66,29 +77,17 @@ public class BossScript : MonoBehaviour
                 {
                     SmallST.ST = true;
                 }
-                else
-                {
-                    Debug.LogWarning("suckScript is not assigned.");
-                }
                 break;
             case 1:
                 if (dashScript != null)
                 {
                     dashScript.DS = true;
                 }
-                else
-                {
-                    Debug.LogWarning("dashScript is not assigned.");
-                }
                 break;
             case 2:
                 if (rainAttack != null)
                 {
                     rainAttack.RS = true;
-                }
-                else
-                {
-                    Debug.LogWarning("rainAttack is not assigned.");
                 }
                 break;
             case 3:
@@ -97,9 +96,44 @@ public class BossScript : MonoBehaviour
                     suckScript.SS = true;
                     RainSC.SRR = true;
                 }
-                else if (RainSC == null)
+                break;
+            default:
+                Debug.LogWarning("Invalid skillIndex: " + skillIndex);
+                break;
+        }
+    }
+
+    private void page_Two(int skillIndex)
+    {
+        // 스킬을 초기화합니다.
+        if (lightningfire != null) lightningfire.LS = false;
+
+        // 선택된 스킬을 활성화합니다.
+        switch (skillIndex)
+        {
+            case 0:
+                if (lightningfire != null)
                 {
-                    Debug.LogWarning("RainSC is not assigned.");
+                    lightningfire.LS = true;
+                }
+                break;
+            case 1:
+                if (dashScript != null)
+                {
+                    dashScript.DS = true;
+                }
+                break;
+            case 2:
+                if (rainAttack != null)
+                {
+                    rainAttack.RS = true;
+                }
+                break;
+            case 3:
+                if (RainSC != null)
+                {
+                    suckScript.SS = true;
+                    RainSC.SRR = true;
                 }
                 break;
             default:
