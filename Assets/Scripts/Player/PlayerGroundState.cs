@@ -59,7 +59,7 @@ public class PlayerGroundState : PlayerState
         }
         else
         {
-            player.isChargeJump_inputKey= false;
+            player.isChargeJump_inputKey = false;
         }
 
         // 점프 키 입력 처리
@@ -68,7 +68,7 @@ public class PlayerGroundState : PlayerState
             if (player.jumpBufferCounter > 0 || player.coyoteTimeCounter > 0)
             {
                 player.jumpBufferCounter = 0;
-                //player.coyoteTimeCounter = 0;
+                player.coyoteTimeCounter = 0;
                 stateMachine.ChangeState(player.jumpState);
                 return;
             }
