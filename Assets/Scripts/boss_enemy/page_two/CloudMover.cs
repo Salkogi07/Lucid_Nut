@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CloudMover : MonoBehaviour
 {
@@ -9,12 +10,15 @@ public class CloudMover : MonoBehaviour
     public float initialDelay = 3.0f; // 초기 공격 포인트 설정 전 대기 시간
     public float waitTimeAtAttackPoint = 6.0f; // 공격 포인트 도착 후 대기 시간
     public float temporaryObjectDuration = 1.0f; // 임시 오브젝트를 유지할 시간
+    public float objectLifetime = 20.0f; // 오브젝트의 생명 시간
 
     private Transform pointA;
     private Transform pointB;
     private Transform targetPoint;
     private Vector3 attackPoint;
     private GameObject currentAttackPointObject; // 현재 공격 포인트 오브젝트
+
+    private List<GameObject> instantiatedPrefabs = new List<GameObject>(); // 인스턴스화된 프리팹을 추적하는 리스트
 
     void Start()
     {
@@ -37,6 +41,9 @@ public class CloudMover : MonoBehaviour
 
         // 3초 후에 초기 공격 포인트 설정
         Invoke("InitializeAttackPoint", initialDelay);
+
+        // 20초 후에 이 오브젝트를 파괴
+        Invoke("DestroyAll", objectLifetime);
     }
 
     void Update()
@@ -92,9 +99,11 @@ public class CloudMover : MonoBehaviour
         if (temporaryObjectPrefab != null)
         {
             GameObject temporaryObject = Instantiate(temporaryObjectPrefab, position, Quaternion.identity);
+            instantiatedPrefabs.Add(temporaryObject); // 리스트에 추가
             // 지정된 시간 동안 유지
             yield return new WaitForSeconds(temporaryObjectDuration);
             Destroy(temporaryObject);
+            instantiatedPrefabs.Remove(temporaryObject); // 리스트에서 제거
         }
     }
 
@@ -114,6 +123,22 @@ public class CloudMover : MonoBehaviour
         if (attackPointPrefab != null)
         {
             currentAttackPointObject = Instantiate(attackPointPrefab, attackPoint, Quaternion.identity);
+            instantiatedPrefabs.Add(currentAttackPointObject); // 리스트에 추가
         }
+    }
+
+    void DestroyAll()
+    {
+        // 인스턴스화된 모든 프리팹을 파괴
+        foreach (GameObject prefab in instantiatedPrefabs)
+        {
+            if (prefab != null)
+            {
+                Destroy(prefab);
+            }
+        }
+
+        // 이 오브젝트를 파괴
+        Destroy(gameObject);
     }
 }

@@ -20,6 +20,7 @@ public class BossScript : MonoBehaviour
 
     //Page_Two
     public Lightning_fire lightningfire;
+    public dark_clouds dark_cloud_spawn;
 
     public int BossHp = 10000;
 
@@ -29,7 +30,7 @@ public class BossScript : MonoBehaviour
     private void Start()
     {
         // Call the ChooseSkill method every 30 seconds
-        InvokeRepeating("ChooseSkill", 0f, 10f);
+        InvokeRepeating("ChooseSkill", 0f, 15f);
     }
 
     private void ChooseSkill()
@@ -93,7 +94,7 @@ public class BossScript : MonoBehaviour
             case 3:
                 if (RainSC != null)
                 {
-                    suckScript.SS = true;
+                    //suckScript.SS = true;
                     RainSC.SRR = true;
                 }
                 break;
@@ -107,6 +108,7 @@ public class BossScript : MonoBehaviour
     {
         // 스킬을 초기화합니다.
         if (lightningfire != null) lightningfire.LS = false;
+        if (dark_cloud_spawn != null) dark_cloud_spawn.DCS = false;
 
         // 선택된 스킬을 활성화합니다.
         switch (skillIndex)
@@ -118,22 +120,15 @@ public class BossScript : MonoBehaviour
                 }
                 break;
             case 1:
-                if (dashScript != null)
+                if (dark_cloud_spawn != null)
                 {
-                    dashScript.DS = true;
+                    dark_cloud_spawn.DCS = true;
                 }
                 break;
             case 2:
                 if (rainAttack != null)
                 {
-                    rainAttack.RS = true;
-                }
-                break;
-            case 3:
-                if (RainSC != null)
-                {
-                    suckScript.SS = true;
-                    RainSC.SRR = true;
+                    dashScript.DS = true;
                 }
                 break;
             default:
