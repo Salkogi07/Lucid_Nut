@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3733843024208680152}
   - component: {fileID: 3068482358722381150}
   - component: {fileID: 2767569846594065309}
-  - component: {fileID: -2653252314249715275}
+  - component: {fileID: -3744059397335443221}
   m_Layer: 0
   m_Name: Enemy_Boss
   m_TagString: Untagged
@@ -69,8 +69,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 1.5
+  m_Offset: {x: 0.03, y: 0.73}
+  m_Radius: 0.46000895
 --- !u!50 &2767569846594065309
 Rigidbody2D:
   serializedVersion: 4
@@ -98,7 +98,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-2653252314249715275
+--- !u!114 &-3744059397335443221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

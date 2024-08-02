@@ -4,6 +4,13 @@ public class moveT : MonoBehaviour
 {
     public float speed = 5f; // 이동 속도
     private bool movingLeft = true; // 초기 방향은 왼쪽으로 설정
+    public float lifetime = 12f; // 오브젝트의 생명 시간
+
+    void Start()
+    {
+        // 오브젝트를 12초 후에 파괴
+        Destroy(gameObject, lifetime);
+    }
 
     void Update()
     {
@@ -18,13 +25,11 @@ public class moveT : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // 충돌한 오브젝트의 태그가 "wall"인지 확인
-        if (collision.gameObject.CompareTag("wall"))
+        if (other.CompareTag("wall"))
         {
             Debug.Log("방향전환"); // 충돌 감지 확인용 로그
-            // 방향 전환
             movingLeft = !movingLeft;
         }
     }

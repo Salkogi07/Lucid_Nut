@@ -5,6 +5,8 @@ public class FinalBossScript : MonoBehaviour
 {
     //Page_Two
     public darkness_unfolds darkness_U;
+    public SpawnT spTornado;
+    public RandomObjectSpawner randScratch;
 
     //Page_Two
 
@@ -52,6 +54,8 @@ public class FinalBossScript : MonoBehaviour
     {
         // 스킬을 초기화합니다.
         if (darkness_U != null) darkness_U.Darkness_Unfolds = false;
+        if (spTornado != null) spTornado.spawnT = false;
+        if (randScratch != null) randScratch.RandScratch = false;
 
         // 선택된 스킬을 활성화합니다.
         switch (skillIndex)
@@ -60,6 +64,18 @@ public class FinalBossScript : MonoBehaviour
                 if (darkness_U != null)
                 {
                     darkness_U.Darkness_Unfolds = true;
+                }
+                break;
+            case 1:
+                if (spTornado != null)
+                {
+                    spTornado.spawnT = true;
+                }
+                break;
+            case 2:
+                if (randScratch != null)
+                {
+                    randScratch.RandScratch = true;
                 }
                 break;
             default:
