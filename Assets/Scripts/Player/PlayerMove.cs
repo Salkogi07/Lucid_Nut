@@ -10,9 +10,11 @@ public class PlayerMove : MonoBehaviour
     public float coyoteTime = 0.2f;             // 코요테 타임 (공중에 떨어지기 전에 점프 가능한 시간)
     public float jumpBufferTime = 0.2f;         // 점프 버퍼링 시간 (버튼 입력을 받아들이는 시간)
     public float groundChekDistance;
+    public bool isPlatform = false;
     public Transform groundCheck1;              // 바닥 체크 위치 1
     public Transform groundCheck2;              // 바닥 체크 위치 2
     public LayerMask groundLayer;               // 바닥 레이어 마스크
+    public LayerMask platformLayer;             // 플랫폼 레이어 마스크
 
     public Rigidbody2D rb { get; private set; }
     private PlayerAnimator animator;
@@ -22,7 +24,7 @@ public class PlayerMove : MonoBehaviour
     private float coyoteTimeCounter;            // 코요테 타임 카운터
     private float jumpBufferCounter;            // 점프 버퍼링 카운터
     private bool isJumping;                     // 점프 중인지 여부
-    private bool isFacingRight = false;          // 플레이어가 오른쪽을 보고 있는지 여부
+    private bool isFacingRight = false;         // 플레이어가 오른쪽을 보고 있는지 여부
     private int moveInput = 0;
 
     void Start()
@@ -118,8 +120,15 @@ public class PlayerMove : MonoBehaviour
 
     private void GroundCheck()
     {
-        isGrounded = Physics2D.Raycast(groundCheck1.position, Vector2.down, groundChekDistance, groundLayer)
-                           || Physics2D.Raycast(groundCheck2.position, Vector2.down, groundChekDistance, groundLayer);
+        if (!isPlatform)
+        {
+            isGrounded = Physics2D.Raycast(groundCheck1.position, Vector2.down, groundChekDistance, groundLayer)
+                               || Physics2D.Raycast(groundCheck2.position, Vector2.down, groundChekDistance, groundLayer);
+        }
+        else
+        {
+            isGrounded = false;
+        }
     }
 
     private void CharacterFlip()
