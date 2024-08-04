@@ -8774,7 +8774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashingPower: 24
   dashingTime: 0.2
-  dashingCooldown: 1
+  dashingCooldown: 0.8
 --- !u!114 &1565292977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8812,7 +8812,7 @@ MonoBehaviour:
     m_Bits: 8
   isPlatform: 0
   isJumping: 0
-  facingRight: 0
+  isFacingRight: 0
   isDashing: 0
   canDash: 1
 --- !u!114 &1565292979
@@ -8928,7 +8928,7 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
