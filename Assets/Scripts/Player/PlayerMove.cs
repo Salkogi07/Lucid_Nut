@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     public float jumpForce = 10f;               // 점프 힘
     public float coyoteTime = 0.2f;             // 코요테 타임 (공중에 떨어지기 전에 점프 가능한 시간)
     public float jumpBufferTime = 0.2f;         // 점프 버퍼링 시간 (버튼 입력을 받아들이는 시간)
+    public float groundChekDistance;
     public Transform groundCheck1;              // 바닥 체크 위치 1
     public Transform groundCheck2;              // 바닥 체크 위치 2
     public LayerMask groundLayer;               // 바닥 레이어 마스크
@@ -117,8 +118,8 @@ public class PlayerMove : MonoBehaviour
 
     private void GroundCheck()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck1.position, 0.1f, groundLayer)
-                           || Physics2D.OverlapCircle(groundCheck2.position, 0.1f, groundLayer);
+        isGrounded = Physics2D.Raycast(groundCheck1.position, Vector2.down, groundChekDistance, groundLayer)
+                           || Physics2D.Raycast(groundCheck2.position, Vector2.down, groundChekDistance, groundLayer);
     }
 
     private void CharacterFlip()
@@ -167,7 +168,7 @@ public class PlayerMove : MonoBehaviour
 
         // 바닥 체크 범위 표시
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheck1.position, 0.1f);
-        Gizmos.DrawWireSphere(groundCheck2.position, 0.1f);
+        Gizmos.DrawLine(groundCheck1.position, new Vector3(groundCheck1.position.x, groundCheck1.position.y - groundChekDistance));
+        Gizmos.DrawLine(groundCheck2.position, new Vector3(groundCheck2.position.x, groundCheck2.position.y - groundChekDistance));
     }
 }
