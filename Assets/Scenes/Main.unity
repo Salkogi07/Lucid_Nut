@@ -7836,9 +7836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpForce: 14
-  coyoteTime: 0.2
-  jumpBufferTime: 0.2
+  jumpForce: 8
+  jumpTime: 0.35
   groundCheck1: {fileID: 758381376}
   groundCheck2: {fileID: 1152479791}
   groundLayer:
