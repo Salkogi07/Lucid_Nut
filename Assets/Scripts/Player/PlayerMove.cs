@@ -1,60 +1,169 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float moveSpeed = 5f;                // 이동 속도
-    public float jumpForce = 10f;               // 점프 힘
-    public float coyoteTime = 0.2f;             // 코요테 타임 (공중에 떨어지기 전에 점프 가능한 시간)
-    public float jumpBufferTime = 0.2f;         // 점프 버퍼링 시간 (버튼 입력을 받아들이는 시간)
-    public float groundChekDistance;
-    public bool isPlatform = false;
-    public Transform groundCheck1;              // 바닥 체크 위치 1
-    public Transform groundCheck2;              // 바닥 체크 위치 2
-    public LayerMask groundLayer;               // 바닥 레이어 마스크
-    public LayerMask platformLayer;             // 플랫폼 레이어 마스크
+    [Header("Player Info")]
+    [SerializeField] public float moveSpeed = 5f;                // 이동 속도
+    [SerializeField] public float jumpForce = 10f;               // 점프 힘
 
+    [SerializeField] public float coyoteTime = 0.2f;
+    [SerializeField] public float jumpBufferTime = 0.2f;
+
+    [Header("Ground Check")]
+    [SerializeField] private bool isGrounded;                    // 바닥에 있는지 여부
+    [SerializeField] public float groundChekDistance;
+    [SerializeField] public Transform groundCheck1;              // 바닥 체크 위치 1
+    [SerializeField] public Transform groundCheck2;              // 바닥 체크 위치 2
+    [SerializeField] public LayerMask groundLayer;               // 바닥 레이어 마스크
+
+
+    [Header("Component")]
     public Rigidbody2D rb { get; private set; }
     private PlayerAnimator animator;
-    private SpriteRenderer spriteRenderer;
 
+<<<<<<< HEAD
     private bool isGrounded;                    // 바닥에 있는지 여부
     private float coyoteTimeCounter;            // 코요테 타임 카운터
     private float jumpBufferCounter;            // 점프 버퍼링 카운터
     private bool isJumping;                     // 점프 중인지 여부
     //private bool isFacingRight = false;         // 플레이어가 오른쪽을 보고 있는지 여부
+=======
+    [Header("IsAtcitoning")]
+    [SerializeField] public bool isPlatform = false;
+    [SerializeField] private bool isJumping;                     // 점프 중인지 여부
+    [SerializeField] private bool isFacingRight = false;         // 플레이어가 오른쪽을 보고 있는지 여부
+
+    private int facingDir;
+>>>>>>> 6b1f6440190eb5d3dc3f8bffe66c23a53b579b44
     private int moveInput = 0;
+
+    private float coyoteTimeCounter;
+    private float jumpBufferCounter;
+
+    public bool isDashing;
+    public bool canDash = true;
+
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<PlayerAnimator>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
+        Jump();
+
+        AnimationController();
+    }
+
+
+    private void FixedUpdate()
+    {
+        if (isDashing)
+        {
+            return;
+        }
+
         // 좌우 이동
         MoveInput();
 
         // 캐릭터 방향 설정
-        CharacterFlip();
+        Flip();
 
         // 바닥 체크
         GroundCheck();
+    }
+    
+    void MoveInput()
+    {
+        moveInput = 0;
 
-        // 코요테 타임
-        CoyoteTime();
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            moveInput = -1;
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            moveInput = 1;
+        }
+        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+    }
 
-        // 점프 버퍼링
-        JumpBuffering();
+    private void Flip()
+    {
+        if (isFacingRight && moveInput < 0f || !isFacingRight && moveInput > 0f)
+        {
+            Vector3 localScale = transform.localScale;
+            isFacingRight = !isFacingRight;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
 
-        // 점프
-        Jump();
 
-        AnimationController();
+    private void Jump()
+    {
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isJumping)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+            jumpBufferCounter = 0f;
+
+            StartCoroutine(JumpCooldown());
+        }
+
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+
+            coyoteTimeCounter = 0f;
+        }
+    }
+    private IEnumerator JumpCooldown()
+    {
+        isJumping = true;
+        yield return new WaitForSeconds(0.4f);
+        isJumping = false;
+    }
+    private void GroundCheck()
+    {
+        if (!isPlatform)
+        {
+            isGrounded = Physics2D.Raycast(groundCheck1.position, Vector2.down, groundChekDistance, groundLayer)
+                               || Physics2D.Raycast(groundCheck2.position, Vector2.down, groundChekDistance, groundLayer);
+        }
+        else
+        {
+            isGrounded = false;
+        }
     }
 
     private void AnimationController()
@@ -77,16 +186,8 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private void Jump()
-    {
-        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !isJumping)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            jumpBufferCounter = 0;
-            coyoteTimeCounter = 0;
-            isJumping = true; // 점프 중임을 표시
-        }
 
+<<<<<<< HEAD
         // 바닥에 닿으면 점프 상태를 리셋
         if (isGrounded && rb.velocity.y <= 0)
         {
@@ -159,6 +260,8 @@ public class PlayerMove : MonoBehaviour
         }
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
     }
+=======
+>>>>>>> 6b1f6440190eb5d3dc3f8bffe66c23a53b579b44
 
     void OnDrawGizmos()
     {
