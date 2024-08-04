@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSkill : MonoBehaviour
 {
     PlayerMove playerMove;
+    PlayerAnimator playerAnimator;
     Rigidbody2D rb;
     TrailRenderer tr;
 
@@ -17,6 +18,7 @@ public class PlayerSkill : MonoBehaviour
     void Awake()
     {
         playerMove = GetComponent<PlayerMove>();
+        playerAnimator = GetComponent<PlayerAnimator>();
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<TrailRenderer>();
     }
@@ -34,6 +36,7 @@ public class PlayerSkill : MonoBehaviour
     {
         playerMove.canDash = false;
         playerMove.isDashing = true;
+        playerAnimator.PlayAnimation("Dash");
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower * -1, 0f);
