@@ -24,20 +24,12 @@ public class PlayerMove : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     private PlayerAnimator animator;
 
-<<<<<<< HEAD
-    private bool isGrounded;                    // 바닥에 있는지 여부
-    private float coyoteTimeCounter;            // 코요테 타임 카운터
-    private float jumpBufferCounter;            // 점프 버퍼링 카운터
-    private bool isJumping;                     // 점프 중인지 여부
-    //private bool isFacingRight = false;         // 플레이어가 오른쪽을 보고 있는지 여부
-=======
     [Header("IsAtcitoning")]
     [SerializeField] public bool isPlatform = false;
     [SerializeField] private bool isJumping;                     // 점프 중인지 여부
     [SerializeField] private bool isFacingRight = false;         // 플레이어가 오른쪽을 보고 있는지 여부
 
     private int facingDir;
->>>>>>> 6b1f6440190eb5d3dc3f8bffe66c23a53b579b44
     private int moveInput = 0;
 
     private float coyoteTimeCounter;
@@ -153,6 +145,7 @@ public class PlayerMove : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         isJumping = false;
     }
+
     private void GroundCheck()
     {
         if (!isPlatform)
@@ -185,83 +178,6 @@ public class PlayerMove : MonoBehaviour
             animator.PlayAnimation("Idle");
         }
     }
-
-
-<<<<<<< HEAD
-        // 바닥에 닿으면 점프 상태를 리셋
-        if (isGrounded && rb.velocity.y <= 0)
-        {
-            isJumping = false;
-        }
-    }
-
-    private void JumpBuffering()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            jumpBufferCounter = jumpBufferTime;
-        }
-        else
-        {
-            jumpBufferCounter -= Time.deltaTime;
-        }
-    }
-
-    private void CoyoteTime()
-    {
-        if (isGrounded)
-        {
-            coyoteTimeCounter = coyoteTime;
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.deltaTime;
-        }
-    }
-
-    private void GroundCheck()
-    {
-        if (!isPlatform)
-        {
-            isGrounded = Physics2D.Raycast(groundCheck1.position, Vector2.down, groundChekDistance, groundLayer)
-                               || Physics2D.Raycast(groundCheck2.position, Vector2.down, groundChekDistance, groundLayer);
-        }
-        else
-        {
-            isGrounded = false;
-        }
-    }
-
-    private void CharacterFlip()
-    {
-        if (moveInput < 0)
-        {
-            //isFacingRight = false;
-            spriteRenderer.flipX = false;
-        }
-        else if (moveInput > 0)
-        {
-            //isFacingRight = true;
-            spriteRenderer.flipX = true;
-        }
-    }
-
-    void MoveInput()
-    {
-        moveInput = 0;
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            moveInput = -1;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            moveInput = 1;
-        }
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
-    }
-=======
->>>>>>> 6b1f6440190eb5d3dc3f8bffe66c23a53b579b44
 
     void OnDrawGizmos()
     {
