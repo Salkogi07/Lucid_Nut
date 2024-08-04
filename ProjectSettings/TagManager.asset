@@ -11,6 +11,7 @@ TagManager:
   - cloud_move_point
   - Dark_Cloud_Attack_point
   - abc
+  - Platform
   layers:
   - Default
   - TransparentFX

@@ -5251,10 +5251,9 @@ GameObject:
   - component: {fileID: 284159365}
   - component: {fileID: 284159364}
   - component: {fileID: 284159363}
-  - component: {fileID: 284159362}
   m_Layer: 3
   m_Name: ground (15)
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5274,19 +5273,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 794133651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &284159362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284159360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30287faddc3bf4246802df7928d36c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 0.3
 --- !u!251 &284159363
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -6265,10 +6251,9 @@ GameObject:
   - component: {fileID: 562701608}
   - component: {fileID: 562701607}
   - component: {fileID: 562701606}
-  - component: {fileID: 562701605}
   m_Layer: 3
   m_Name: ground (13)
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6288,19 +6273,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 794133651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &562701605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562701603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30287faddc3bf4246802df7928d36c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 0.3
 --- !u!251 &562701606
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -6432,10 +6404,9 @@ GameObject:
   - component: {fileID: 592057956}
   - component: {fileID: 592057955}
   - component: {fileID: 592057954}
-  - component: {fileID: 592057953}
   m_Layer: 3
   m_Name: ground (11)
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6455,19 +6426,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 794133651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &592057953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592057951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30287faddc3bf4246802df7928d36c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 0.3
 --- !u!251 &592057954
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -6852,10 +6810,9 @@ GameObject:
   - component: {fileID: 790857540}
   - component: {fileID: 790857539}
   - component: {fileID: 790857538}
-  - component: {fileID: 790857537}
   m_Layer: 3
   m_Name: ground (10)
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6875,19 +6832,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 794133651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &790857537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790857535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30287faddc3bf4246802df7928d36c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 0.3
 --- !u!251 &790857538
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -7226,10 +7170,9 @@ GameObject:
   - component: {fileID: 1034299502}
   - component: {fileID: 1034299501}
   - component: {fileID: 1034299500}
-  - component: {fileID: 1034299499}
   m_Layer: 3
   m_Name: ground (14)
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7249,19 +7192,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 794133651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &1034299499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034299497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30287faddc3bf4246802df7928d36c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 0.3
 --- !u!251 &1034299500
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -7666,10 +7596,9 @@ GameObject:
   - component: {fileID: 1285972395}
   - component: {fileID: 1285972394}
   - component: {fileID: 1285972393}
-  - component: {fileID: 1285972392}
   m_Layer: 3
   m_Name: ground (12)
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7689,19 +7618,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 794133651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &1285972392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285972390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30287faddc3bf4246802df7928d36c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 0.3
 --- !u!251 &1285972393
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -8159,6 +8075,7 @@ GameObject:
   - component: {fileID: 1565292977}
   - component: {fileID: 1565292976}
   - component: {fileID: 1565292975}
+  - component: {fileID: 1565292979}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -8306,7 +8223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 14
-  coyoteTime: 0.3
+  coyoteTime: 0.5
   jumpBufferTime: 0.2
   groundChekDistance: 0.1
   groundCheck1: {fileID: 758381376}
@@ -8314,6 +8231,19 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &1565292979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565292969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30287faddc3bf4246802df7928d36c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCollider: {fileID: 0}
 --- !u!1 &1618398642
 GameObject:
   m_ObjectHideFlags: 0
@@ -8719,10 +8649,9 @@ GameObject:
   - component: {fileID: 1981880306}
   - component: {fileID: 1981880305}
   - component: {fileID: 1981880308}
-  - component: {fileID: 1981880309}
   m_Layer: 3
   m_Name: ground (8)
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8861,19 +8790,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &1981880309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981880304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30287faddc3bf4246802df7928d36c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 0.3
 --- !u!1 &2000569159
 GameObject:
   m_ObjectHideFlags: 0
@@ -9066,10 +8982,9 @@ GameObject:
   - component: {fileID: 2084793354}
   - component: {fileID: 2084793353}
   - component: {fileID: 2084793352}
-  - component: {fileID: 2084793351}
   m_Layer: 3
   m_Name: ground (9)
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9089,19 +9004,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 794133651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &2084793351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084793349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30287faddc3bf4246802df7928d36c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 0.3
 --- !u!251 &2084793352
 PlatformEffector2D:
   m_ObjectHideFlags: 0
