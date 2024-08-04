@@ -153,19 +153,6 @@ public class PlayerMove : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        // groundCheck 위치 표시 (디버깅용)
-        if (groundCheck1 != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(groundCheck1.position, 0.1f);
-        }
-
-        if (groundCheck2 != null)
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(groundCheck2.position, 0.1f);
-        }
-
         // 바닥 체크 범위 표시
         Gizmos.color = Color.green;
         Gizmos.DrawLine(groundCheck1.position, new Vector3(groundCheck1.position.x, groundCheck1.position.y - groundChekDistance));
