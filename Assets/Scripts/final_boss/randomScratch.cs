@@ -5,7 +5,7 @@ public class RandomObjectSpawner : MonoBehaviour
 {
     public GameObject objectToSpawn; // 소환할 오브젝트
     public float spawnInterval = 0.05f; // 소환 간격
-    public float spawnDuration = 10f; // 소환 지속 시간
+    public float spawnDuration = 14f; // 소환 지속 시간
     public Vector2 spawnAreaMin; // 소환 영역의 최소 좌표
     public Vector2 spawnAreaMax; // 소환 영역의 최대 좌표
 
