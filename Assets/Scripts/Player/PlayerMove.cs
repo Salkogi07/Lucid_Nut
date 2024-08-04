@@ -24,7 +24,7 @@ public class PlayerMove : MonoBehaviour
     private float coyoteTimeCounter;            // 코요테 타임 카운터
     private float jumpBufferCounter;            // 점프 버퍼링 카운터
     private bool isJumping;                     // 점프 중인지 여부
-    private bool isFacingRight = false;         // 플레이어가 오른쪽을 보고 있는지 여부
+    //private bool isFacingRight = false;         // 플레이어가 오른쪽을 보고 있는지 여부
     private int moveInput = 0;
 
     void Start()
@@ -135,12 +135,12 @@ public class PlayerMove : MonoBehaviour
     {
         if (moveInput < 0)
         {
-            isFacingRight = false;
+            //isFacingRight = false;
             spriteRenderer.flipX = false;
         }
         else if (moveInput > 0)
         {
-            isFacingRight = true;
+            //isFacingRight = true;
             spriteRenderer.flipX = true;
         }
     }

@@ -12,6 +12,8 @@ TagManager:
   - Dark_Cloud_Attack_point
   - abc
   - Platform
+  - energe
+  - total_E
   layers:
   - Default
   - TransparentFX
