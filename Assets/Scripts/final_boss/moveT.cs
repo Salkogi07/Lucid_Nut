@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class moveT : MonoBehaviour
 {
-    public float speed = 5f; // 이동 속도
+    public float speed = 8f; // 이동 속도
     private bool movingLeft = true; // 초기 방향은 왼쪽으로 설정
-    public float lifetime = 12f; // 오브젝트의 생명 시간
+    public float lifetime = 14f; // 오브젝트의 생명 시간
 
     void Start()
     {
