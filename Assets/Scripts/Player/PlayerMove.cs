@@ -17,14 +17,12 @@ public class PlayerMove : MonoBehaviour
     private PlayerAnimator animator;
     private SpriteRenderer spriteRenderer;
 
-
     private bool isGrounded;                    // 바닥에 있는지 여부
     private float coyoteTimeCounter;            // 코요테 타임 카운터
     private float jumpBufferCounter;            // 점프 버퍼링 카운터
     private bool isJumping;                     // 점프 중인지 여부
     private bool isFacingRight = false;          // 플레이어가 오른쪽을 보고 있는지 여부
     private int moveInput = 0;
-
 
     void Start()
     {
@@ -58,29 +56,22 @@ public class PlayerMove : MonoBehaviour
 
     private void AnimationController()
     {
-        if (rb.velocity.y < 0)
+        if (!isGrounded && rb.velocity.y < 0)
         {
             animator.PlayAnimation("Fall");
         }
-        else
+        else if (!isGrounded && rb.velocity.y > 0)
         {
-            if (!isJumping)
-            {
-                if (moveInput != 0)
-                    animator.PlayAnimation("Move");
-                else
-                    animator.PlayAnimation("Idle");
-            }
-            else
-            {
-                if (rb.velocity.y > 0)
-                {
-                    animator.PlayAnimation("Jump");
-                }
-            }
-
+            animator.PlayAnimation("Jump");
         }
-
+        else if (isGrounded && moveInput != 0)
+        {
+            animator.PlayAnimation("Move");
+        }
+        else if (isGrounded && moveInput == 0)
+        {
+            animator.PlayAnimation("Idle");
+        }
     }
 
     private void Jump()
