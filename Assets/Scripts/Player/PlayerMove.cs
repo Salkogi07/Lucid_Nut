@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMove : MonoBehaviour
 {
     [Header("Player Info")]
     [SerializeField] public float moveSpeed = 5f;                // 이동 속도
     [SerializeField] public float jumpForce = 10f;               // 점프 힘
+
     [SerializeField] public float coyoteTime = 0.2f;
     [SerializeField] public float jumpBufferTime = 0.2f;
 
@@ -25,13 +27,17 @@ public class PlayerMove : MonoBehaviour
     [Header("IsAtcitoning")]
     [SerializeField] public bool isPlatform = false;
     [SerializeField] private bool isJumping;                     // 점프 중인지 여부
-    [SerializeField] private bool facingRight = false;         // 플레이어가 오른쪽을 보고 있는지 여부
+    [SerializeField] private bool isFacingRight = false;         // 플레이어가 오른쪽을 보고 있는지 여부
 
     private int facingDir;
     private int moveInput = 0;
 
     private float coyoteTimeCounter;
     private float jumpBufferCounter;
+
+    public bool isDashing;
+    public bool canDash = true;
+
 
 
     void Start()
@@ -42,6 +48,11 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         Jump();
 
         AnimationController();
@@ -50,11 +61,16 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         // 좌우 이동
         MoveInput();
 
         // 캐릭터 방향 설정
-        CharacterFlip();
+        Flip();
 
         // 바닥 체크
         GroundCheck();
@@ -75,19 +91,15 @@ public class PlayerMove : MonoBehaviour
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
     }
 
-    private void CharacterFlip()
+    private void Flip()
     {
-        if (moveInput > 0 && !facingRight)
-            Flip();
-        else if (moveInput < 0 && facingRight)
-            Flip();
-    }
-
-    public void Flip()
-    {
-        facingDir = facingDir * -1;
-        facingRight = !facingRight;
-        transform.Rotate(0, 180, 0);
+        if (isFacingRight && moveInput < 0f || !isFacingRight && moveInput > 0f)
+        {
+            Vector3 localScale = transform.localScale;
+            isFacingRight = !isFacingRight;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
     }
 
 
