@@ -33,7 +33,6 @@ public class PlayerAttack : MonoBehaviour
                     }
                 }
                 animator.PlayAnimation("Attack");
-                playerMove.isAttack = true;
                 curTime = coolTime;
             }
         }
