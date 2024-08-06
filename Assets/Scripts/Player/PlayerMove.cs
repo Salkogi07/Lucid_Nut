@@ -193,7 +193,11 @@ public class PlayerMove : MonoBehaviour
 
     private void AnimationController()
     {
-        if (!isGrounded && rb.velocity.y < 0)
+        if (isAttack)
+        {
+            animator.PlayAnimation("Attack");
+        }
+        else if (!isGrounded && rb.velocity.y < 0)
         {
             animator.PlayAnimation("Fall");
         }
@@ -210,6 +214,7 @@ public class PlayerMove : MonoBehaviour
             animator.PlayAnimation("Idle");
         }
     }
+
 
     void OnDrawGizmos()
     {

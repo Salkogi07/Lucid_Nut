@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     PlayerMove playerMove;
-    PlayerAnimator animator;
 
     private float curTime;
     public float coolTime = 0.5f;
@@ -15,7 +14,6 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         playerMove = GetComponent<PlayerMove>();
-        animator = GetComponent<PlayerAnimator>();
     }
 
     void Update()
@@ -32,13 +30,12 @@ public class PlayerAttack : MonoBehaviour
                         //enemy hp다는 함수
                     }
                 }
-                animator.PlayAnimation("Attack");
+                playerMove.isAttack = true;
                 curTime = coolTime;
             }
         }
         else
         {
-            playerMove.isAttack= false;
             curTime -= Time.deltaTime;
         }
     }
