@@ -14,6 +14,7 @@ TagManager:
   - Platform
   - energe
   - total_E
+  - Enemy
   layers:
   - Default
   - TransparentFX

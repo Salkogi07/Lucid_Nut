@@ -11,8 +11,15 @@ public class PlayerSkill : MonoBehaviour
 
     [Header("Dash info")]
     [SerializeField] private float dashingPower = 24f;
-    [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
+    [SerializeField] private float dashingTime = 0.2f;
+    private bool canDash = true;
+
+    [Header("Umbrella info")]
+    [SerializeField] public bool isUmbrellaOpen = false;
+    [SerializeField] private float UmbrellaCoolTime = 0.8f;
+    [SerializeField] private float UmbrellaTime = 0.8f;
+    [SerializeField] public float umbrellaFallMultiplier = 0.5f;
 
 
     void Awake()
@@ -23,18 +30,30 @@ public class PlayerSkill : MonoBehaviour
         tr = GetComponent<TrailRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D) && playerMove.canDash)
+        if (Input.GetKeyDown(KeyCode.D) && canDash)
         {
             StartCoroutine(Dash());
+        }
+
+        if(UmbrellaTime <= 0)
+        {
+            if (Input.GetKeyDown(KeyCode.S) && playerMove.canUmbrella())
+            {
+                isUmbrellaOpen = !isUmbrellaOpen;
+                UmbrellaTime = UmbrellaCoolTime;
+            }
+        }
+        else
+        {
+            UmbrellaTime -= Time.deltaTime;
         }
     }
 
     private IEnumerator Dash()
     {
-        playerMove.canDash = false;
+        canDash = false;
         playerMove.isDashing = true;
         playerAnimator.PlayAnimation("Dash");
         float originalGravity = rb.gravityScale;
@@ -46,6 +65,6 @@ public class PlayerSkill : MonoBehaviour
         rb.gravityScale = originalGravity;
         playerMove.isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
-        playerMove.canDash = true;
+        canDash = true;
     }
 }

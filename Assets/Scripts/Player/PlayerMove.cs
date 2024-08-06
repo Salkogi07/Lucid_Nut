@@ -10,6 +10,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] public float coyoteTime = 0.2f;
     [SerializeField] public float jumpBufferTime = 0.2f;
 
+    private float gravityScale = 3.5f;
+
     [Header("Ground Check")]
     [SerializeField] private bool isGrounded; // 바닥에 있는지 여부
     [SerializeField] public float groundCheckDistance;
@@ -20,6 +22,7 @@ public class PlayerMove : MonoBehaviour
     [Header("Component")]
     public Rigidbody2D rb { get; private set; }
     private PlayerAnimator animator;
+    private PlayerSkill playerSkill;
 
     [Header("IsAtcitoning")]
     [SerializeField] public bool isPlatform = false;
@@ -32,18 +35,21 @@ public class PlayerMove : MonoBehaviour
     private float coyoteTimeCounter;
     private float jumpBufferCounter;
 
-    public bool isDashing;
-    public bool canDash = true;
+    public bool isDashing = false;
+    public bool isAttack = false;
 
     // 추가된 변수들
     [Header("Double Jump")]
     [SerializeField] private bool canDoubleJump = true; // 더블 점프 기능을 켜고 끄는 변수
     private bool doubleJumpAvailable = false; // 더블 점프 가능 여부
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerSkill = GetComponent<PlayerSkill>();
         animator = GetComponent<PlayerAnimator>();
+
+        gravityScale = rb.gravityScale;
     }
 
     void Update()
@@ -55,7 +61,21 @@ public class PlayerMove : MonoBehaviour
 
         Jump();
 
+        GravitySetting();
+
         AnimationController();
+    }
+
+    private void GravitySetting()
+    {
+        if (playerSkill.isUmbrellaOpen && rb.velocity.y <= 0)
+        {
+            rb.gravityScale = playerSkill.umbrellaFallMultiplier;
+        }
+        else
+        {
+            rb.gravityScale = gravityScale;
+        }
     }
 
     private void FixedUpdate()
@@ -151,6 +171,11 @@ public class PlayerMove : MonoBehaviour
         isJumping = true;
         yield return new WaitForSeconds(0.4f);
         isJumping = false;
+    }
+
+    public bool canUmbrella()
+    {
+        return !isDashing && !isAttack;
     }
 
     private void GroundCheck()
