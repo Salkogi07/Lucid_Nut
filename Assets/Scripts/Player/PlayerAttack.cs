@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public float coolTime = 0.5f;
     public Transform pos;
     public Vector2 boxSize;
+    private int playerAttack = 100;
 
     private void Awake()
     {
@@ -27,7 +28,10 @@ public class PlayerAttack : MonoBehaviour
                 {
                     if (collider.CompareTag("Enemy"))
                     {
-                        //enemy hp다는 함수
+                        Debug.Log("어쩔");
+                        FinalBossScript boss = collider.GetComponent<FinalBossScript>();
+                        boss.BossHp -= playerAttack;
+                        Debug.Log(boss.BossHp);
                     }
                 }
                 playerMove.isAttack = true;
