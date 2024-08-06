@@ -10,10 +10,10 @@ public class PlayerSkill : MonoBehaviour
     TrailRenderer tr;
 
     [Header("Dash info")]
+    [SerializeField] public bool canDash = true;
     [SerializeField] private float dashingPower = 24f;
-    [SerializeField] private float dashingCooldown = 1f;
     [SerializeField] private float dashingTime = 0.2f;
-    private bool canDash = true;
+    [SerializeField] private float dashingCooldown = 1f;
 
     [Header("Umbrella info")]
     [SerializeField] public bool isUmbrellaOpen = false;
