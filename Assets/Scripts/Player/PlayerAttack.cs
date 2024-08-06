@@ -49,4 +49,9 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(pos.position, boxSize);
     }
+
+    public void OnAttackAnimationEnd()
+    {
+        playerMove.isAttack = false;
+    }
 }
