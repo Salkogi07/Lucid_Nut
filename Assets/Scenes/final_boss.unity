@@ -6700,7 +6700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6b8a8a4c46d0c4eb5520978d64dded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolTime: 0.5
+  coolTime: 0.3
   pos: {fileID: 661672324}
   boxSize: {x: 1.5, y: 1.3}
 --- !u!114 &726144321
