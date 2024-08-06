@@ -8806,8 +8806,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canDash: 1
   dashingPower: 24
-  dashingCooldown: 0.8
   dashingTime: 0.2
+  dashingCooldown: 0.8
   isUmbrellaOpen: 0
   UmbrellaCoolTime: 0.8
   UmbrellaTime: 0.8
@@ -9994,6 +9994,7 @@ GameObject:
   - component: {fileID: 2128822785}
   - component: {fileID: 2128822787}
   - component: {fileID: 2128822786}
+  - component: {fileID: 2128822788}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -10092,6 +10093,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2128822788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128822784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4477da3aeb921ba43aa9a4ed22632b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
