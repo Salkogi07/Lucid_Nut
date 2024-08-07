@@ -17,15 +17,6 @@ public class PlayerHp : MonoBehaviour
         Set_HP(player_HP);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("attack"))
-        {
-            Debug.Log("공격받음");
-            Change_HP(-10);
-        }
-    }
-
     public void Change_HP(int _value)
     {
         player_HP += _value;
