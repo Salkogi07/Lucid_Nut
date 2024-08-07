@@ -8069,6 +8069,7 @@ GameObject:
   - component: {fileID: 1683185484}
   - component: {fileID: 1683185486}
   - component: {fileID: 1683185487}
+  - component: {fileID: 1683185488}
   m_Layer: 0
   m_Name: final_boss
   m_TagString: Enemy
@@ -8171,7 +8172,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683185475}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 741d6dcc14a13b0408db17be13a18911, type: 3}
   m_Name: 
@@ -8374,6 +8375,24 @@ MonoBehaviour:
   spawnAreaCollider: {fileID: 2092970863}
   feather_attack: 0
   minDistanceBetweenObjects: 6
+--- !u!114 &1683185488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683185475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6402e392ed7f48e4fac28766ad7f6e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sideObject: {fileID: 4235588078264757470, guid: bab87e50b3f2c6e4f9575b00ce9ae2d9, type: 3}
+  topObject: {fileID: 8089286977468073884, guid: 5a07488de439aab41ad4ec54cc5d97bc, type: 3}
+  sideOffset: 10
+  topOffset: 5
+  AE_charge: 1
+  deleteDelay: 15
 --- !u!1 &1721824982
 GameObject:
   m_ObjectHideFlags: 0
