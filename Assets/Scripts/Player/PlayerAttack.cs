@@ -28,7 +28,6 @@ public class PlayerAttack : MonoBehaviour
                 {
                     if (collider.CompareTag("Enemy"))
                     {
-                        Debug.Log("¾îÂ¿");
                         FinalBossScript boss = collider.GetComponent<FinalBossScript>();
                         boss.BossHp -= playerAttack;
                         Debug.Log(boss.BossHp);

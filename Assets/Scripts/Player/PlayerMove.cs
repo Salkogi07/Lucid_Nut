@@ -15,8 +15,8 @@ public class PlayerMove : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private bool isGrounded; // 바닥에 있는지 여부
     [SerializeField] public float groundCheckDistance;
-    [SerializeField] public Transform groundCheck1; // 바닥 체크 위치 1
-    [SerializeField] public Transform groundCheck2; // 바닥 체크 위치 2
+    [SerializeField] public Transform groundCheck; // 바닥 체크 위치
+    [SerializeField] public Vector2 groundCheckSize = new Vector2(1f, 0.1f); // 바닥 체크 박스 크기
     [SerializeField] public LayerMask groundLayer; // 바닥 레이어 마스크
 
     [Header("Component")]
@@ -185,8 +185,8 @@ public class PlayerMove : MonoBehaviour
     {
         if (!isPlatform)
         {
-            isGrounded = Physics2D.Raycast(groundCheck1.position, Vector2.down, groundCheckDistance, groundLayer)
-                        || Physics2D.Raycast(groundCheck2.position, Vector2.down, groundCheckDistance, groundLayer);
+            Collider2D collider = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
+            isGrounded = collider != null;
         }
         else
         {
@@ -223,7 +223,6 @@ public class PlayerMove : MonoBehaviour
     {
         // 바닥 체크 범위 표시
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(groundCheck1.position, new Vector3(groundCheck1.position.x, groundCheck1.position.y - groundCheckDistance));
-        Gizmos.DrawLine(groundCheck2.position, new Vector3(groundCheck2.position.x, groundCheck2.position.y - groundCheckDistance));
+        Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
     }
 }
