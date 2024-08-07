@@ -8,6 +8,9 @@ public class BlankBandAttack : MonoBehaviour
     public float moveSpeed = 10f; // 이동 속도를 조절하는 변수
     public bool isActive = false; // 동작 여부를 제어하는 변수
 
+    public GameObject additionalObject; // 추가할 오브젝트
+    public float additionalObjectActivationDelay = 0.5f; // 추가 오브젝트 활성화 지연 시간
+
     private Vector3 startPosition;
     private GameObject player;
     private float chaseStartTime;
@@ -21,6 +24,11 @@ public class BlankBandAttack : MonoBehaviour
 
         // 초기 위치 설정 (활성화되지 않은 경우 이동하지 않음)
         transform.position = startPosition;
+
+        if (additionalObject != null)
+        {
+            additionalObject.SetActive(false); // 스크립트 시작 시 추가 오브젝트 비활성화
+        }
     }
 
     void Update()
@@ -30,13 +38,19 @@ public class BlankBandAttack : MonoBehaviour
             if (!hasMovedToInitial)
             {
                 // 공격 시작 시 특정 위치로 이동 (속도 증가)
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, -15, 10), (moveSpeed*2) * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, -15, 10), (moveSpeed * 2) * Time.deltaTime);
 
                 if (Vector3.Distance(transform.position, new Vector3(0, -15, 10)) < 0.1f)
                 {
                     transform.position = new Vector3(0, -15, 10); // 정확한 위치로 이동
                     hasMovedToInitial = true; // 이동 완료로 표시
                     chaseStartTime = Time.time; // 추적 시작 시간 기록
+
+                    // 추가 오브젝트를 일정 시간 후 활성화
+                    if (additionalObject != null)
+                    {
+                        Invoke(nameof(ActivateAdditionalObject), additionalObjectActivationDelay);
+                    }
                 }
             }
             else if (Time.time - chaseStartTime < chaseDuration)
@@ -72,6 +86,14 @@ public class BlankBandAttack : MonoBehaviour
         }
     }
 
+    void ActivateAdditionalObject()
+    {
+        if (additionalObject != null)
+        {
+            additionalObject.SetActive(true);
+        }
+    }
+
     // Optional: Reset method to set `isActive` to false
     public void ResetAttack()
     {
@@ -81,6 +103,12 @@ public class BlankBandAttack : MonoBehaviour
         ascendStartTime = 0f; // 초기화
         transform.position = startPosition;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        // 추가 오브젝트 비활성화
+        if (additionalObject != null)
+        {
+            additionalObject.SetActive(false);
+        }
     }
 
     public void StartAttack()
