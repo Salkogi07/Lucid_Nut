@@ -11,6 +11,13 @@ public class PlayerHp : MonoBehaviour
     [SerializeField] Image player_HpBar;
     [SerializeField] Text player_HpTxt;
 
+    PlayerMove playerMove;
+
+    private void Awake()
+    {
+        playerMove = GetComponent<PlayerMove>();
+    }
+
     void Start()
     {
         player_HP = player_maxHP;
@@ -21,6 +28,15 @@ public class PlayerHp : MonoBehaviour
     {
         player_HP += _value;
         Set_HP(player_HP);
+    }
+
+    public void Damage_HP(int _value)
+    {
+        if (!playerMove.isDashing)
+        {
+            player_HP -= _value;
+            Set_HP(player_HP);
+        }
     }
 
     private void Set_HP(int _value)
