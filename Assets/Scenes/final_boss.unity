@@ -5741,7 +5741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &410327627
 Transform:
   m_ObjectHideFlags: 0
@@ -8453,7 +8453,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683185475}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 741d6dcc14a13b0408db17be13a18911, type: 3}
   m_Name: 
@@ -8518,6 +8518,8 @@ MonoBehaviour:
   returnSpeed: 2
   moveSpeed: 10
   isActive: 0
+  additionalObject: {fileID: 410327626}
+  additionalObjectActivationDelay: 0.5
 --- !u!50 &1683185483
 Rigidbody2D:
   serializedVersion: 4
