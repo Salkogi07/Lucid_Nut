@@ -139,7 +139,10 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            jumpBufferCounter -= Time.deltaTime;
+            if(jumpBufferCounter > 0)
+            {
+                jumpBufferCounter -= Time.deltaTime;
+            }
         }
 
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isJumping)
