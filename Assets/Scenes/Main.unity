@@ -8533,7 +8533,7 @@ MonoBehaviour:
   isGrounded: 0
   groundCheckDistance: 0.1
   groundCheck: {fileID: 758381376}
-  groundCheckSize: {x: 0.5, y: 0.1}
+  groundCheckSize: {x: 0.48, y: 0.1}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
