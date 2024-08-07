@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3068482358722381150}
   - component: {fileID: 2767569846594065309}
   - component: {fileID: -3744059397335443221}
+  - component: {fileID: 4132713861694858825}
   m_Layer: 0
   m_Name: Enemy_Boss
   m_TagString: attack
@@ -112,6 +113,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   lifetime: 14
+--- !u!114 &4132713861694858825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013504681572162509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c69e07dc81d0e4fb45c3b030541ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &4343073840517679558
 GameObject:
   m_ObjectHideFlags: 0

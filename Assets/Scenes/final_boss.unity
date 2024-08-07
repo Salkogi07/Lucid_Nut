@@ -5735,6 +5735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410327627}
   - component: {fileID: 410327628}
+  - component: {fileID: 410327629}
   m_Layer: 0
   m_Name: attack_point
   m_TagString: attack
@@ -5787,7 +5788,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -5803,6 +5804,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.998378, y: 0.73971653}
   m_EdgeRadius: 0
+--- !u!114 &410327629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410327626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c69e07dc81d0e4fb45c3b030541ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
 --- !u!1 &519002022
 GameObject:
   m_ObjectHideFlags: 0

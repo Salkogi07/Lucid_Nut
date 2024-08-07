@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4995450708269707650}
   - component: {fileID: 4047916839256943542}
   - component: {fileID: -1892432881645793967}
+  - component: {fileID: -947252592734575278}
   m_Layer: 0
   m_Name: total_Energe
   m_TagString: attack
@@ -188,3 +189,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 15
+--- !u!114 &-947252592734575278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4206047291092087853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c69e07dc81d0e4fb45c3b030541ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
