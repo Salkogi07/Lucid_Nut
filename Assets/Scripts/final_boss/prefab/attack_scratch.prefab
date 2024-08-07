@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6461695757470644922}
   m_Layer: 0
   m_Name: attack_scratch
-  m_TagString: Untagged
+  m_TagString: attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

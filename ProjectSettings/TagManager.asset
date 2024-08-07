@@ -16,6 +16,7 @@ TagManager:
   - total_E
   - Enemy
   - Energe
+  - attack
   layers:
   - Default
   - TransparentFX

@@ -17,11 +17,12 @@ public class PlayerHp : MonoBehaviour
         Set_HP(player_HP);
     }
 
-    private void Update()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (other.CompareTag("attack"))
         {
-            Change_HP(-20);
+            Debug.Log("공격받음");
+            Change_HP(-10);
         }
     }
 
