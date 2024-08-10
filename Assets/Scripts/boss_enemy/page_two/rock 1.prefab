@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7254450220595081490}
   - component: {fileID: 4411646762004401020}
   - component: {fileID: 4735910055567888248}
+  - component: {fileID: 5855614434822918124}
   m_Layer: 0
   m_Name: rock 1
   m_TagString: rock
@@ -175,3 +176,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
+--- !u!114 &5855614434822918124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5049542284021208551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c69e07dc81d0e4fb45c3b030541ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10

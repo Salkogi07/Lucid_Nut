@@ -28,9 +28,11 @@ public class PlayerAttack : MonoBehaviour
                 {
                     if (collider.CompareTag("Enemy"))
                     {
+
+                        BossScript boss2 = collider.GetComponent<BossScript>();
                         FinalBossScript boss = collider.GetComponent<FinalBossScript>();
+                        boss2.BossHp -= playerAttack;
                         boss.BossHp -= playerAttack;
-                        Debug.Log(boss.BossHp);
                     }
                 }
                 playerMove.isAttack = true;
