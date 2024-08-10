@@ -15,8 +15,8 @@ public class suck_rock2 : MonoBehaviour
 
     public GameObject centerObjectPrefab; // 중앙에 소환할 오브젝트 프리팹
     public GameObject additionalObjectPrefab; // 추가로 소환할 오브젝트 프리팹
-    public float centerObjectOffsetY = 1f; // 중앙 오브젝트의 Y 방향 오프셋
-    public float additionalObjectOffsetY = 2f; // 추가 오브젝트의 Y 방향 오프셋
+    public float centerObjectOffsetY = 5f; // 중앙 오브젝트의 Y 방향 오프셋
+    public float additionalObjectOffsetY = 0f; // 추가 오브젝트의 Y 방향 오프셋
 
     public bool SR = false;            // 스킬 실행을 위한 불 값
     private bool isUsingSkill = false;  // 스킬 사용 중인지 여부
