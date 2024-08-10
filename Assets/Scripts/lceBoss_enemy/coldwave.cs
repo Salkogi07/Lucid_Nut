@@ -9,9 +9,7 @@ public class coldwave : MonoBehaviour
     bool on = true; //시간 변수 제어
     float cooldownTime = 5; //한파 소환 시간
     float Duration = 7; //한파 장벽 지속시간
-    float cooltime = 1;
     float time; //시간
-    float time1;
     public Transform player;
 
 
@@ -48,7 +46,6 @@ public class coldwave : MonoBehaviour
 
             yield return new WaitForSeconds(Duration); //지속시간이 끝나면
             Destroy(go); //오브젝트 삭제
-                time1 = 0;
                 on = true; //시간 재가동
             
         }

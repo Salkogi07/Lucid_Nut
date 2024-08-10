@@ -9140,6 +9140,7 @@ GameObject:
   - component: {fileID: 1962447923}
   - component: {fileID: 1962447924}
   - component: {fileID: 1962447926}
+  - component: {fileID: 1962447933}
   - component: {fileID: 1962447929}
   - component: {fileID: 1962447934}
   - component: {fileID: 1962447928}
@@ -9147,7 +9148,6 @@ GameObject:
   - component: {fileID: 1962447931}
   - component: {fileID: 1962447930}
   - component: {fileID: 1962447935}
-  - component: {fileID: 1962447933}
   - component: {fileID: 1962447936}
   - component: {fileID: 1962447937}
   m_Layer: 0
@@ -9341,7 +9341,7 @@ MonoBehaviour:
   SmallST: {fileID: 1962447935}
   lightningfire: {fileID: 1962447936}
   dark_cloud_spawn: {fileID: 1962447937}
-  BossHp: 1000
+  BossHp: 10000
 --- !u!114 &1962447934
 MonoBehaviour:
   m_ObjectHideFlags: 0

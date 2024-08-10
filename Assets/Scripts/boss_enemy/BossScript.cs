@@ -30,7 +30,7 @@ public class BossScript : MonoBehaviour
     private void Start()
     {
         // Call the ChooseSkill method every 30 seconds
-        InvokeRepeating("ChooseSkill", 0f, 15f);
+        InvokeRepeating("ChooseSkill", 0f, 5f);
     }
 
     private void ChooseSkill()
