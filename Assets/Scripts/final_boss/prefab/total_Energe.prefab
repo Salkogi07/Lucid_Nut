@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -947252592734575278}
   m_Layer: 0
   m_Name: total_Energe
-  m_TagString: attack
+  m_TagString: total_E
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -26,11 +26,6 @@ public class total_E : MonoBehaviour
         if (totalObjects.Length > 0)
         {
             targetObject = totalObjects[0];
-            Debug.Log("Target object found: " + targetObject.name);
-        }
-        else
-        {
-            Debug.LogWarning("No object with tag 'total_E' found.");
         }
     }
 
