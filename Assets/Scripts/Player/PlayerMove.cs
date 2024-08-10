@@ -59,6 +59,15 @@ public class PlayerMove : MonoBehaviour
             return;
         }
 
+        // 좌우 이동
+        MoveInput();
+
+        // 캐릭터 방향 설정
+        Flip();
+
+        // 바닥 체크
+        GroundCheck();
+
         Jump();
 
         GravitySetting();
@@ -76,23 +85,6 @@ public class PlayerMove : MonoBehaviour
         {
             rb.gravityScale = gravityScale;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        if (isDashing)
-        {
-            return;
-        }
-
-        // 좌우 이동
-        MoveInput();
-
-        // 캐릭터 방향 설정
-        Flip();
-
-        // 바닥 체크
-        GroundCheck();
     }
 
     void MoveInput()
