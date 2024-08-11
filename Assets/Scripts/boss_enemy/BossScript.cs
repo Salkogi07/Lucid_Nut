@@ -1,14 +1,6 @@
 using System;
 using UnityEngine;
 
-[System.Serializable]
-public class Skill
-{
-    public string skillName;
-    public float cooldown;
-    // 다른 스킬 관련 속성을 추가할 수 있습니다.
-}
-
 public class BossScript : MonoBehaviour
 {
     //Page_Two
