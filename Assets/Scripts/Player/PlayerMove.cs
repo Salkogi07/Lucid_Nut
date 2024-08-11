@@ -37,6 +37,7 @@ public class PlayerMove : MonoBehaviour
 
     public bool isDashing = false;
     public bool isAttack = false;
+    private bool isJumpCut = false;
 
     // 추가된 변수들
     [Header("Double Jump")]
@@ -140,17 +141,20 @@ public class PlayerMove : MonoBehaviour
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isJumping)
         {
             PerformJump();
+            isJumpCut = true;
         }
         else if (canDoubleJump && doubleJumpAvailable && !isGrounded && Input.GetButtonDown("Jump"))
         {
             PerformJump();
+            isJumpCut = true;
             doubleJumpAvailable = false; // 더블 점프 사용 후에는 더블 점프 불가
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        if (isJumpCut && Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             coyoteTimeCounter = 0f;
+            isJumpCut = false;
         }
     }
 
