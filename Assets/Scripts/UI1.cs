@@ -10,6 +10,7 @@ public class UI1 : MonoBehaviour
 
     private float maxBH;
     private float curBH;
+    float imsi;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,12 @@ public class UI1 : MonoBehaviour
     void Update()
     {
         curBH = Finalboss.BossHp;
+        imsi = (float)curBH / (float)maxBH;
         HandleHP();
     }
 
     private void HandleHP()
     {
-        BossHP.value = (float)curBH / (float)maxBH;
+        BossHP.value = Mathf.Lerp(BossHP.value, imsi, Time.deltaTime * 10);
     }
 }
