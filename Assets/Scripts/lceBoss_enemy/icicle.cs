@@ -18,26 +18,30 @@ public class icicle : MonoBehaviour
     {
          on = true;
     }
-
+    public void icicleshot()
+        {
+            StartCoroutine(Objecton());  //한파 장벽 실행
+        }
     // Update is called once per frame
     void Update()
     {
-        if (on == true) //시간
-        {
-            time += Time.deltaTime;
+        /*        if (on == true) //시간
+                {
+                    time += Time.deltaTime;
+                }
+
+                if (time >= cooldownTime) //쿨타임이 돌면(시간이 쿨타임보다 높으면)
+                {
+                    on = false; //시간 중지
+                    time = 0;  //시간 초기화
+        }       public void DecreaseHp()
+        */
+        
         }
 
-        if (time >= cooldownTime) //쿨타임이 돌면(시간이 쿨타임보다 높으면)
-        {
-            on = false; //시간 중지
-            time = 0;  //시간 초기화
 
 
-            StartCoroutine(Objecton());  //한파 장벽 실행
-
-
-
-        }
+        
         
         IEnumerator Objecton()
         {
@@ -52,7 +56,7 @@ public class icicle : MonoBehaviour
 
             }
 
-            on = true; //시간 재가동
+            /*on = true; //시간 재가동*/
 
 
             /*transform.Translate(speed * Time.deltaTime);*/
@@ -61,7 +65,7 @@ public class icicle : MonoBehaviour
 
 
 
-        }
+        
     }
         
 }
