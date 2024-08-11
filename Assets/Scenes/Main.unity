@@ -9560,7 +9560,7 @@ GameObject:
   - component: {fileID: 1962447937}
   - component: {fileID: 1962447938}
   m_Layer: 0
-  m_Name: Enemy_Boss
+  m_Name: Tornado_boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

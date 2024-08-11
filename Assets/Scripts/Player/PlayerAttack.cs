@@ -28,10 +28,18 @@ public class PlayerAttack : MonoBehaviour
                 {
                     if (collider.CompareTag("Enemy"))
                     {
-                        BossScript boss2 = collider.GetComponent<BossScript>();
-                        FinalBossScript boss = collider.GetComponent<FinalBossScript>();
-                        boss2.BossHp -= playerAttack;
-                        boss.BossHp -= playerAttack;
+                        if (collider.name == "Tornado_boss")
+                        {
+                            Debug.Log("토네이도보스");
+                            BossScript boss = collider.GetComponent<BossScript>();
+                            boss.BossHp -= playerAttack;
+                        }
+                        else if (collider.name == "final_boss")
+                        {
+                            Debug.Log("최종보스");
+                            FinalBossScript boss = collider.GetComponent<FinalBossScript>();
+                            boss.BossHp -= playerAttack;
+                        }                 
                     }
                 }
                 playerMove.isAttack = true;
