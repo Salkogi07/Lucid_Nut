@@ -49,7 +49,7 @@ public class icicle : MonoBehaviour
             {
                 
                 Vector3 shooterPosition = transform.position; 
-                Vector3 spawnPosition = shooterPosition + new Vector3(Random.Range(-10.0f, 10.0f), 10, 0); //위치 랜덤지정
+                Vector3 spawnPosition = shooterPosition + new Vector3(Random.Range(-30.0f, 20.0f), 10, 0); //위치 랜덤지정
                 icicleObjects = Instantiate(iciclePrefab, spawnPosition, Quaternion.identity);
                 GameObject icicle = Instantiate(icicleObjects); //오브젝트 소환
                 yield return new WaitForSeconds(delay);

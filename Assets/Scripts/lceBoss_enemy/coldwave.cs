@@ -4,7 +4,7 @@ using System.Collections;
 
 public class coldwave : MonoBehaviour
 {
-    public GameObject coldPrefab; 
+    public GameObject coldPrefab;
     public GameObject redPrefab;
     bool on = true; //시간 변수 제어
     float cooldownTime = 5; //한파 소환 시간
@@ -16,24 +16,38 @@ public class coldwave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         on = true;
+        on = true;
     }
 
     // Update is called once per frame
+
+
+
+    public void coldwaveshot()
+    {
+        StartCoroutine(Objecton()); //한파 장벽 실행
+    }
+
+
+
+
     void Update()
     {
-        if (on == true) //시간
-        {
-            time += Time.deltaTime;
-        }
+    }
+    /* if (on == true) //시간
+     {
+         time += Time.deltaTime;
+     }
 
-        if (time >= cooldownTime) //쿨타임이 돌면(시간이 쿨타임보다 높으면)
-        {
-            on = false; //시간 중지
-            time = 0;  //시간 초기화
-            StartCoroutine(Objecton()); //한파 장벽 실행
-            
-        }
+     if (time >= cooldownTime) //쿨타임이 돌면(시간이 쿨타임보다 높으면)
+     {
+         on = false; //시간 중지
+         time = 0;  //시간 초기화*/
+    
+    
+    
+
+/*}*/
 
         IEnumerator Objecton()
         {
@@ -49,5 +63,5 @@ public class coldwave : MonoBehaviour
                 on = true; //시간 재가동
             
         }
-    }
+    
 }

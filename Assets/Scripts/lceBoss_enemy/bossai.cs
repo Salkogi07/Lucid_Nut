@@ -6,9 +6,17 @@ using UnityEngine;
 public class bossai : MonoBehaviour
 {
     public bool on = true;
-    public float Cooldown = 1f;
+    public float Cooldown = 7f;
     public float Coolup = 1f;
-    public float time = 0;
+    public float time = 0f;
+
+
+    public icicle icicle;
+    public coldwave coldwave;
+    public Snowcrystal snowcrystal;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +30,32 @@ public class bossai : MonoBehaviour
         {
             time += Time.deltaTime;
         }
-         int i = Random.Range(1, 10);
+         
+        if(time>= Cooldown)
+        {
+            int i = Random.Range(1, 3) ;
+            time = 0;
 
+           /* Debug.Log("¿Ã¿◊");*/
+           /*GameObject director = GameObject.Find("icicle");
+           director.GetComponent<icicle>().icicleshot();*/
         if(i==1)
         {
-            GameObject director = GameObject.Find("icicle");
-            director.GetComponent<icicle>().icicleshot();
+                /*Debug.Log("¿Ã¿Ã¿◊");*/
+                icicle.icicleshot();
+                i = 0;
         }
+            if (i == 2)
+            {
+                snowcrystal.Snowcrystalshot();
+                i = 0;
+            }
+            if (i == 3)
+            {
+                coldwave.coldwaveshot();
+                i = 0;
+            }
+        }
+        
     }
 }
