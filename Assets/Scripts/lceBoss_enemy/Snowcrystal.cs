@@ -5,25 +5,28 @@ using UnityEngine;
 
 
 
-public class snowcrystal : MonoBehaviour
+public class Snowcrystal : MonoBehaviour
 {
     public GameObject projectilePrefab;  // 발사할 투사체 프리팹
     public float projectileSpeed = 1f;  // 투사체 속도
     /*public float fireRate = 1f;*/     // 발사 간격
     public float time;
     public Transform firePoint;          // 투사체 발사 위치
-    public float projectileRange = 15f; // 투사체 사거리
+    public float projectileRange = 30f; // 투사체 사거리
     public int snowcrystalnmber = 20; //투사체 수량
     public float delay = 0.25f; //소환 간격
 
     public bool on = true;
 
     private float cooldownTime = 10f;     // 다음 발사 시간
-
+       public void Snowcrystalshot()
+        {
+            StartCoroutine(re());
+        }
     void Update()
     {
-
-        if (on == true)
+    }
+        /*if (on == true)
         {
             time += Time.deltaTime;
         }
@@ -32,10 +35,11 @@ public class snowcrystal : MonoBehaviour
         {
             on = false;
             time = 0;
-            StartCoroutine(re());
+            
 
-        }
-
+        }*/
+        
+            
         IEnumerator re()
         {
             
@@ -62,7 +66,7 @@ public class snowcrystal : MonoBehaviour
             ProjectileMovement projectileMovement = projectile.AddComponent<ProjectileMovement>();
             projectileMovement.Initialize(randomDirection, projectileSpeed, projectileRange);
         }
-    }
+    
 
     public class ProjectileMovement : MonoBehaviour
     {
@@ -86,10 +90,10 @@ public class snowcrystal : MonoBehaviour
             transform.Translate(direction * speed * Time.deltaTime);
 
             // 사거리 체크
-            if (Vector2.Distance(startPoint, transform.position) >= rangeup)
+            if (Vector2.Distance(startPoint, transform.position) >= rangeup) //일정거리의 도달하면
             {
-                speed = speed + 0.045f;
-                rangeup = rangeup + 0.5f;
+                speed = speed + 0.07f; //투사체 속도 증가
+                rangeup = rangeup + 0.5f; // 일정거리 증가
             }
                 if (Vector2.Distance(startPoint, transform.position) >= range)
             {
