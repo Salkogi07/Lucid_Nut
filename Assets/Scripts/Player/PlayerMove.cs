@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] public LayerMask groundLayer; // 바닥 레이어 마스크
 
     [Header("Component")]
+    public GameObject wingBong;
     public Rigidbody2D rb { get; private set; }
     private PlayerAnimator animator;
     private PlayerSkill playerSkill;
@@ -146,6 +147,7 @@ public class PlayerMove : MonoBehaviour
         else if (canDoubleJump && doubleJumpAvailable && !isGrounded && Input.GetButtonDown("Jump"))
         {
             PerformJump();
+            StartCoroutine(sdfsf());
             isJumpCut = true;
             doubleJumpAvailable = false; // 더블 점프 사용 후에는 더블 점프 불가
         }
@@ -156,6 +158,13 @@ public class PlayerMove : MonoBehaviour
             coyoteTimeCounter = 0f;
             isJumpCut = false;
         }
+    }
+
+    IEnumerator sdfsf()
+    {
+        wingBong.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        wingBong.SetActive(false);
     }
 
     private void PerformJump()
