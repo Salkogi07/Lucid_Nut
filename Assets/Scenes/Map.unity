@@ -7012,7 +7012,7 @@ GameObject:
   - component: {fileID: 1243277156}
   m_Layer: 3
   m_Name: ground (2)
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8085,7 +8085,7 @@ MonoBehaviour:
   isGrounded: 0
   groundCheckDistance: 0.1
   groundCheck: {fileID: 758381376}
-  groundCheckSize: {x: 0.48, y: 0.1}
+  groundCheckSize: {x: 0.45, y: 0.1}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
