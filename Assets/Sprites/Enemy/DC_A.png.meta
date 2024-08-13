@@ -1,31 +1,34 @@
 fileFormatVersion: 2
-guid: 2906b3d362a5bcf469dbcb74530c185b
+guid: 5d212253c4e06a04a9db694661c57afe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2818428513412729264
-    second: player_move_0
+      213: 7506725004470068409
+    second: DC_A_0
   - first:
-      213: 5260684762499650057
-    second: player_move_1
+      213: -8288745446585642663
+    second: DC_A_1
   - first:
-      213: -3308717793270664449
-    second: player_move_2
+      213: -8930141722734266599
+    second: DC_A_2
   - first:
-      213: -7747645841164725587
-    second: player_move_3
+      213: -7513780935672597856
+    second: DC_A_3
   - first:
-      213: 6787443719386497838
-    second: player_move_4
+      213: 2279259294718167135
+    second: DC_A_4
   - first:
-      213: 3105340001632321046
-    second: player_move_5
+      213: 6247762917707619464
+    second: DC_A_5
   - first:
-      213: -9038080974893075049
-    second: player_move_6
+      213: 2090364114642217888
+    second: DC_A_6
   - first:
-      213: -4461981064981020287
-    second: player_move_7
+      213: -58460051251080230
+    second: DC_A_7
+  - first:
+      213: -6186063245744749138
+    second: DC_A_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,7 +97,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -130,225 +133,194 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_move_0
+      name: DC_A_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 25
-        height: 23
-      alignment: 9
-      pivot: {x: 0.3, y: 0.45}
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 11447d855a93ed341b8490d458ac9c6a
-      internalID: -2818428513412729264
+      spriteID: 9b42bf58e9e3d2860800000000000000
+      internalID: 7506725004470068409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_move_1
+      name: DC_A_1
       rect:
         serializedVersion: 2
-        x: 25
+        x: 26
         y: 0
-        width: 25
-        height: 23
-      alignment: 9
-      pivot: {x: 0.3, y: 0.45}
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cd5b2ae3aa2f44f47ac2d89a33b712f6
-      internalID: 5260684762499650057
+      spriteID: 95150a69ee578fc80800000000000000
+      internalID: -8288745446585642663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_move_2
+      name: DC_A_2
       rect:
         serializedVersion: 2
-        x: 50
+        x: 52
         y: 0
-        width: 25
-        height: 23
-      alignment: 9
-      pivot: {x: 0.3, y: 0.45}
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d76f95c696626554197071179e6d82ab
-      internalID: -3308717793270664449
+      spriteID: 9177786ca63c11480800000000000000
+      internalID: -8930141722734266599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_move_3
+      name: DC_A_3
       rect:
         serializedVersion: 2
-        x: 75
+        x: 81
         y: 0
-        width: 25
-        height: 23
-      alignment: 9
-      pivot: {x: 0.3, y: 0.45}
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a72d7530c11b716468fa11a002a72547
-      internalID: -7747645841164725587
+      spriteID: 0a2f1297c00b9b790800000000000000
+      internalID: -7513780935672597856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_move_4
+      name: DC_A_4
       rect:
         serializedVersion: 2
-        x: 100
+        x: 107
         y: 0
-        width: 25
-        height: 23
-      alignment: 9
-      pivot: {x: 0.3, y: 0.45}
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 119f1ea9e109dd24c95529be0cc08b40
-      internalID: 6787443719386497838
+      spriteID: f580fa4a04e81af10800000000000000
+      internalID: 2279259294718167135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_move_5
+      name: DC_A_5
       rect:
         serializedVersion: 2
-        x: 125
+        x: 134
         y: 0
-        width: 25
-        height: 23
-      alignment: 9
-      pivot: {x: 0.3, y: 0.45}
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1e5e2e8492aec434ba9ab8da49840c3a
-      internalID: 3105340001632321046
+      spriteID: 88c12d6854384b650800000000000000
+      internalID: 6247762917707619464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_move_6
+      name: DC_A_6
       rect:
         serializedVersion: 2
-        x: 150
+        x: 157
         y: 0
-        width: 25
+        width: 23
         height: 23
-      alignment: 9
-      pivot: {x: 0.3, y: 0.45}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: af1c2c33a07b6bf43af78750a628dfa5
-      internalID: -9038080974893075049
+      spriteID: 0ab29784617720d10800000000000000
+      internalID: 2090364114642217888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_move_7
+      name: DC_A_7
       rect:
         serializedVersion: 2
-        x: 175
+        x: 180
         y: 0
-        width: 25
-        height: 23
-      alignment: 9
-      pivot: {x: 0.3, y: 0.45}
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b1d7d164d669ba540accd92014ecc14a
-      internalID: -4461981064981020287
+      spriteID: ad3d0a3a4ee403ff0800000000000000
+      internalID: -58460051251080230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DC_A_8
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 0
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea5c84fc040b62aa0800000000000000
+      internalID: -6186063245744749138
       vertices: []
       indices: 
       edges: []
@@ -356,7 +328,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 946f0af76c899be4d99822c08086f1c9
+    spriteID: a85593337a43c9b40b5962651d0d5ef2
     internalID: 0
     vertices: []
     indices: 
@@ -364,14 +336,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player_move_0: -2818428513412729264
-      player_move_1: 5260684762499650057
-      player_move_2: -3308717793270664449
-      player_move_3: -7747645841164725587
-      player_move_4: 6787443719386497838
-      player_move_5: 3105340001632321046
-      player_move_6: -9038080974893075049
-      player_move_7: -4461981064981020287
+      DC_A_0: 7506725004470068409
+      DC_A_1: -8288745446585642663
+      DC_A_2: -8930141722734266599
+      DC_A_3: -7513780935672597856
+      DC_A_4: 2279259294718167135
+      DC_A_5: 6247762917707619464
+      DC_A_6: 2090364114642217888
+      DC_A_7: -58460051251080230
+      DC_A_8: -6186063245744749138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
