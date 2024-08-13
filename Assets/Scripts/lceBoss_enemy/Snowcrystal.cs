@@ -12,9 +12,9 @@ public class Snowcrystal : MonoBehaviour
     /*public float fireRate = 1f;*/     // 발사 간격
     public float time;
     public Transform firePoint;          // 투사체 발사 위치
-    public float projectileRange = 30f; // 투사체 사거리
-    public int snowcrystalnmber = 20; //투사체 수량
-    public float delay = 0.25f; //소환 간격
+    public float projectileRange = 35f; // 투사체 사거리
+    public int snowcrystalnmber = 30; //투사체 수량
+    public float delay = 0.225f; //소환 간격
 
     public bool on = true;
 
@@ -92,7 +92,7 @@ public class Snowcrystal : MonoBehaviour
             // 사거리 체크
             if (Vector2.Distance(startPoint, transform.position) >= rangeup) //일정거리의 도달하면
             {
-                speed = speed + 0.07f; //투사체 속도 증가
+                speed = speed + 0.1f; //투사체 속도 증가
                 rangeup = rangeup + 0.5f; // 일정거리 증가
             }
                 if (Vector2.Distance(startPoint, transform.position) >= range)

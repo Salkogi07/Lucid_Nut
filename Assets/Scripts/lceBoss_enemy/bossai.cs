@@ -6,7 +6,7 @@ using UnityEngine;
 public class bossai : MonoBehaviour
 {
     public bool on = true;
-    public float Cooldown = 7f;
+    public float Cooldown = 10f;
     public float Coolup = 1f;
     public float time = 0f;
 
@@ -33,7 +33,7 @@ public class bossai : MonoBehaviour
          
         if(time>= Cooldown)
         {
-            int i = Random.Range(1, 3) ;
+            int i = Random.Range(1, 4) ;
             time = 0;
 
            /* Debug.Log("ÀÌÀ×");*/
