@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class IcicleProjectile : MonoBehaviour
 {
-    public float speed = -20f; //고드름 속도
-    public float Duration = 5f; //고드름 지속시간
+    public float speed = -30f; //고드름 속도
+    public float Duration = 4f; //고드름 지속시간
     public float Durationtime = 0f; //고드름 사라지는 시간
     // Start is called before the first frame update
     void Start()
