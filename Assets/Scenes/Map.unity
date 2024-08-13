@@ -6836,10 +6836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17af4a1c0ccccf429c30f133f5ec3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 5
-  cooldownTime: 5
-  isDashing: 0
-  isPreparingToDash: 0
 --- !u!61 &968373474
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8286,7 +8282,7 @@ MonoBehaviour:
   isGrounded: 0
   groundCheckDistance: 0.1
   groundCheck: {fileID: 758381376}
-  groundCheckSize: {x: 0.45, y: 0.1}
+  groundCheckSize: {x: 0.3, y: 0.1}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
