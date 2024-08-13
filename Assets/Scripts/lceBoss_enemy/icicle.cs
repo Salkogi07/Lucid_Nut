@@ -7,9 +7,9 @@ public class icicle : MonoBehaviour
     public GameObject iciclePrefab; 
     bool on = true; //시간 변수 제어
     float cooldownTime = 5; //한파 소환 시간
-    float delay = 0.38f; //고드름 소환 격차
+    float delay = 0.18f; //고드름 소환 격차
     public float time; //시간
-    float cicileunmber = 15; //고드름 수
+    float cicileunmber = 25; //고드름 수
     /*public Transform player;*/
     private GameObject icicleObjects;
 
@@ -49,7 +49,7 @@ public class icicle : MonoBehaviour
             {
                 
                 Vector3 shooterPosition = transform.position; 
-                Vector3 spawnPosition = shooterPosition + new Vector3(Random.Range(-30.0f, 20.0f), 10, 0); //위치 랜덤지정
+                Vector3 spawnPosition = shooterPosition + new Vector3(Random.Range(-32.5f, 7.0f), 20, 0); //위치 랜덤지정
                 icicleObjects = Instantiate(iciclePrefab, spawnPosition, Quaternion.identity);
                 GameObject icicle = Instantiate(icicleObjects); //오브젝트 소환
                 yield return new WaitForSeconds(delay);
