@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -21,6 +22,7 @@ public class PlayerMove : MonoBehaviour
 
     [Header("Component")]
     public GameObject wingBong;
+    public ParticleSystem dust;
     public Rigidbody2D rb { get; private set; }
     private PlayerAnimator animator;
     private PlayerSkill playerSkill;
@@ -108,6 +110,9 @@ public class PlayerMove : MonoBehaviour
     {
         if (isFacingRight && moveInput < 0f || !isFacingRight && moveInput > 0f)
         {
+            if(isGrounded)
+                CreateDust();
+
             Vector3 localScale = transform.localScale;
             isFacingRight = !isFacingRight;
             localScale.x *= -1f;
@@ -141,13 +146,14 @@ public class PlayerMove : MonoBehaviour
 
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isJumping)
         {
+            CreateDust();
             PerformJump();
             isJumpCut = true;
         }
         else if (canDoubleJump && doubleJumpAvailable && !isGrounded && Input.GetButtonDown("Jump"))
         {
             PerformJump();
-            StartCoroutine(sdfsf());
+            StartCoroutine(WingEffectStart());
             isJumpCut = true;
             doubleJumpAvailable = false; // 더블 점프 사용 후에는 더블 점프 불가
         }
@@ -160,7 +166,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    IEnumerator sdfsf()
+    IEnumerator WingEffectStart()
     {
         wingBong.SetActive(true);
         yield return new WaitForSeconds(0.5f);
@@ -197,6 +203,11 @@ public class PlayerMove : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    void CreateDust()
+    {
+        dust.Play();
     }
 
     private void AnimationController()
