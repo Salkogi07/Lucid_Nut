@@ -6746,7 +6746,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7916,6 +7916,7 @@ MonoBehaviour:
     m_Bits: 8
   wingBong: {fileID: 1975870895}
   dust: {fileID: 1876430545}
+  featherEffect: {fileID: 1195503660750778827, guid: febcb86af68b12e40af076f142aaeb5b, type: 3}
   isPlatform: 0
   isJumping: 0
   isFacingRight: 0
@@ -8362,7 +8363,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

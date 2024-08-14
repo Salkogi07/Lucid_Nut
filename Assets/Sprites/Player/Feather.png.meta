@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 58e786dee2cad4d42ad620c20b326af8
+guid: e151f2dfcc0e40c47a380203d066bc97
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4227099900596849526
-    second: Wing-Move_0
-  - first:
-      213: 8971060783752607419
-    second: Wing-Move_1
-  - first:
-      213: 9050497207077264786
-    second: Wing-Move_2
+      213: 170912805055401693
+    second: Feather_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 8, y: 10, z: 8, w: 10}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -158,64 +152,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wing-Move_0
+      name: Feather_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 26
-        height: 26
+        x: 7
+        y: 9
+        width: 12
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7ed47115e3622a74d8b49d7679d22c9e
-      internalID: -4227099900596849526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wing-Move_1
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 0
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa233a5c9d30f56439b0815f1803cd80
-      internalID: 8971060783752607419
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wing-Move_2
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 0
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7717ff3dd0d028c40802d720bd500e9c
-      internalID: 9050497207077264786
+      spriteID: dde84e86a443f5200800000000000000
+      internalID: 170912805055401693
       vertices: []
       indices: 
       edges: []
@@ -223,17 +175,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bbbc36e65180ad4459ffda1dffef29b5
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wing-Move_0: -4227099900596849526
-      Wing-Move_1: 8971060783752607419
-      Wing-Move_2: 9050497207077264786
+      Feather_0: 170912805055401693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
