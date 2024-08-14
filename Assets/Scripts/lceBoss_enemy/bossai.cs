@@ -9,12 +9,13 @@ public class bossai : MonoBehaviour
     public float Cooldown = 10f;
     public float Coolup = 1f;
     public float time = 0f;
-
+    public float delay = 0f;
+    public float down = 0f;
 
     public icicle icicle;
     public coldwave coldwave;
     public Snowcrystal snowcrystal;
-
+    public Bossmove bossmove;
 
 
     // Start is called before the first frame update
@@ -43,16 +44,22 @@ public class bossai : MonoBehaviour
         {
                 /*Debug.Log("¿Ã¿Ã¿◊");*/
                 icicle.icicleshot();
+                delay = 1.5f;
+                bossmove.stopdirector(delay);
                 i = 0;
         }
             if (i == 2)
             {
                 snowcrystal.Snowcrystalshot();
+                /*down = 1.8f;*/
+                bossmove.speeddirector();
                 i = 0;
             }
             if (i == 3)
             {
                 coldwave.coldwaveshot();
+                delay = 2f;
+                bossmove.stopdirector(delay);
                 i = 0;
             }
         }

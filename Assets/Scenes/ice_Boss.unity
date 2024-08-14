@@ -8285,7 +8285,7 @@ GameObject:
   - component: {fileID: 1978319423}
   - component: {fileID: 1978319422}
   - component: {fileID: 1978319429}
-  - component: {fileID: 1978319426}
+  - component: {fileID: 1978319431}
   - component: {fileID: 1978319428}
   - component: {fileID: 1978319418}
   - component: {fileID: 1978319427}
@@ -8381,25 +8381,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1978319426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978319417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adbf1de4d54787e449313e4b9000ed60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  on: 1
-  Cooldown: 7
-  Coolup: 1
-  time: 0
-  icicle: {fileID: 1978319428}
-  coldwave: {fileID: 1978319418}
-  snowcrystal: {fileID: 1978319427}
 --- !u!114 &1978319427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8446,7 +8427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cc15397b02e8543a7c1de09c0eeeab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
   stoppingDistance: 0
   stop: 0
   delaymove: 0
@@ -8496,6 +8477,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &1978319431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978319417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbf1de4d54787e449313e4b9000ed60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: 1
+  Cooldown: 10
+  Coolup: 1
+  time: 0
+  delay: 0
+  down: 0
+  icicle: {fileID: 1978319428}
+  coldwave: {fileID: 1978319418}
+  snowcrystal: {fileID: 1978319427}
+  bossmove: {fileID: 1978319429}
 --- !u!1 &2000569159
 GameObject:
   m_ObjectHideFlags: 0
