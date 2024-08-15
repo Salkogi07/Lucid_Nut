@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bossmove : MonoBehaviour
 {
     private Transform player; // 플레이어의 Transform을 설정합니다.
-    public float speed = 2.3f; // 적이 이동하는 속도입니다.
+    public float speed = 2f; // 적이 이동하는 속도입니다.
     public float stoppingDistance = 1f; // 플레이어와의 멈추는 거리입니다.
     public bool stop = false;
     public float delaymove = 0f;
@@ -37,9 +37,9 @@ public class Bossmove : MonoBehaviour
     IEnumerator speeddown()
     {
         // 백분율로 50%감소 만드는 중
-        speed = 1.15f;
+        speed = 1f;
         yield return new WaitForSeconds(5f);
-        speed = 2.3f;
+        speed = 2f;
     }
         IEnumerator stopon()
     {

@@ -454,7 +454,7 @@ Transform:
   m_GameObject: {fileID: 105158538}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -28.4, y: -5.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11365,7 +11365,7 @@ Transform:
   m_GameObject: {fileID: 851577397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.00000023841858, z: -10}
+  m_LocalPosition: {x: -28.9, y: -5.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11866,7 +11866,7 @@ Transform:
   m_GameObject: {fileID: 1119699272}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.00000023841858, z: -10}
+  m_LocalPosition: {x: -28.9, y: -5.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13320,8 +13320,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coldPrefab: {fileID: 6390869981349425632, guid: 337551201c90ef240b5a110908469f00, type: 3}
-  redPrefab: {fileID: 0}
-  player: {fileID: 0}
+  redPrefab: {fileID: 6390869981349425632, guid: 9d7fe6b17896f144b876b70a5d789f97, type: 3}
+  Warning_Time: 1
+  player: {fileID: 105158547}
 --- !u!212 &1978319422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13386,7 +13387,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.3, y: -2.4, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -13408,8 +13409,8 @@ MonoBehaviour:
   time: 0
   firePoint: {fileID: 1978319423}
   projectileRange: 35
-  snowcrystalnmber: 30
-  delay: 0.25
+  snowcrystalnmber: 45
+  delay: 0.15
   on: 1
 --- !u!114 &1978319428
 MonoBehaviour:
@@ -13437,7 +13438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cc15397b02e8543a7c1de09c0eeeab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   stoppingDistance: 0
   stop: 0
   delaymove: 0

@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class coldwave : MonoBehaviour
 {
@@ -9,16 +10,20 @@ public class coldwave : MonoBehaviour
     bool on = true; //시간 변수 제어
     float cooldownTime = 5; //한파 소환 시간
     float Duration = 7; //한파 장벽 지속시간
+    public float Warning_Time = 1f;
     float time; //시간
     public Transform player;
 
-
+    private Renderer attention;
+    private Color originalColor;
     // Start is called before the first frame update
     void Start()
     {
         on = true;
-    }
 
+       
+        
+    }
     // Update is called once per frame
 
 
@@ -43,23 +48,40 @@ public class coldwave : MonoBehaviour
      {
          on = false; //시간 중지
          time = 0;  //시간 초기화*/
-    
-    
+
+
+
+
+    /*}*/
+
     
 
-/*}*/
-
-        IEnumerator Objecton()
+    IEnumerator Objecton()
         {
-            /*GameObject attention = Instantiate(redPrefab);
-            attention.transform.position = player.position;
-            yield return new WaitForSeconds(cooltime); // 추후 경고표시후 생성되는 코드 짤 예정
-            Destroy(attention);*/
-            GameObject go = Instantiate(coldPrefab); //오브젝트 소환
-            go.transform.position = player.position; //플레이어 위치로 이동
 
+        
+        GameObject attention = Instantiate(redPrefab);
+        attention.transform.position = player.position;
+         
+      
+
+        
+
+      
+        
+        /*for(int i=0;i<=10; i++)
+        {
+            float Visibility =0f;
+            yield return new WaitForSeconds(0.1f);
+            Visibility = Visibility + 0.1f;
+            
+        }*/
+        yield return new WaitForSeconds(2f);
+        GameObject coldwave = Instantiate(coldPrefab); //오브젝트 소환
+            coldwave.transform.position = attention.transform.position; //플레이어 위치로 이동
+        Destroy(attention);
             yield return new WaitForSeconds(Duration); //지속시간이 끝나면
-            Destroy(go); //오브젝트 삭제
+            Destroy(coldwave); //오브젝트 삭제
                 on = true; //시간 재가동
             
         }
