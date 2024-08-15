@@ -1,40 +1,52 @@
 fileFormatVersion: 2
-guid: af8553011c392714d96a2379b51462f2
+guid: 7d181afcff1f52a488627596043f60c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3303377771132391943
-    second: DC_0
+      213: -1654656170125196498
+    second: CSAttack_0
   - first:
-      213: -3733537543298824328
-    second: DC_1
+      213: -5256676300981746592
+    second: CSAttack_1
   - first:
-      213: 584051778948657657
-    second: DC_2
+      213: 1658836399312502479
+    second: CSAttack_2
   - first:
-      213: -2609045251871591324
-    second: DC_3
+      213: 6226888892379836709
+    second: CSAttack_3
   - first:
-      213: -3830876623973135765
-    second: DC_4
+      213: 2471581508410759332
+    second: CSAttack_4
   - first:
-      213: -7397393246505034662
-    second: DC_5
+      213: -5718339941238936396
+    second: CSAttack_5
   - first:
-      213: -3910108438829866268
-    second: DC_6
+      213: -8893554442829843446
+    second: CSAttack_6
   - first:
-      213: 6607486516553845340
-    second: DC_7
+      213: -6122546573232367141
+    second: CSAttack_7
   - first:
-      213: 4329737470857216270
-    second: DC_8
+      213: 1543000942008932482
+    second: CSAttack_8
   - first:
-      213: 6688780410950337581
-    second: DC_9
+      213: -2268988541523882056
+    second: CSAttack_9
   - first:
-      213: 3617027966242692142
-    second: DC_10
+      213: 2616459833756159623
+    second: CSAttack_10
+  - first:
+      213: -5770334007789931244
+    second: CSAttack_11
+  - first:
+      213: 8491329017238774326
+    second: CSAttack_12
+  - first:
+      213: 8907443497042944272
+    second: CSAttack_13
+  - first:
+      213: -8111081676517356414
+    second: CSAttack_14
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -143,12 +155,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DC_0
+      name: CSAttack_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 25
+        width: 26
         height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -157,17 +169,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 702944fa494f7dd20800000000000000
-      internalID: 3303377771132391943
+      spriteID: e238742eafa7909e0800000000000000
+      internalID: -1654656170125196498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DC_2
+      name: CSAttack_1
       rect:
         serializedVersion: 2
-        x: 25
+        x: 26
         y: 0
         width: 26
         height: 26
@@ -178,17 +190,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f17bae9ff7fa1800800000000000000
-      internalID: 584051778948657657
+      spriteID: 064c4cc51c88c07b0800000000000000
+      internalID: -5256676300981746592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DC_4
+      name: CSAttack_2
       rect:
         serializedVersion: 2
-        x: 51
+        x: 52
         y: 0
         width: 26
         height: 26
@@ -199,17 +211,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6acbb1e10ef5dac0800000000000000
-      internalID: -3830876623973135765
+      spriteID: fce72819aee550710800000000000000
+      internalID: 1658836399312502479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DC_6
+      name: CSAttack_3
       rect:
         serializedVersion: 2
-        x: 77
+        x: 78
         y: 0
         width: 26
         height: 26
@@ -220,59 +232,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e2e94e67118cb9c0800000000000000
-      internalID: -3910108438829866268
+      spriteID: 5213026c47a5a6650800000000000000
+      internalID: 6226888892379836709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DC_7
+      name: CSAttack_4
       rect:
         serializedVersion: 2
-        x: 103
-        y: 0
-        width: 25
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c5a00659af182bb50800000000000000
-      internalID: 6607486516553845340
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DC_8
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 0
-        width: 25
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0184213a41561c30800000000000000
-      internalID: 4329737470857216270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DC_9
-      rect:
-        serializedVersion: 2
-        x: 154
+        x: 104
         y: 0
         width: 26
         height: 26
@@ -283,19 +253,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d244947585253dc50800000000000000
-      internalID: 6688780410950337581
+      spriteID: 4a85f327942dc4220800000000000000
+      internalID: 2471581508410759332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DC_10
+      name: CSAttack_5
       rect:
         serializedVersion: 2
-        x: 180
+        x: 130
         y: 0
-        width: 25
+        width: 26
         height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -304,8 +274,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2c9c8e75c3423230800000000000000
-      internalID: 3617027966242692142
+      spriteID: 4bc6689de1064a0b0800000000000000
+      internalID: -5718339941238936396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSAttack_6
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04b784ba5fb39480800000000000000
+      internalID: -8893554442829843446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSAttack_7
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd913bd8458580ba0800000000000000
+      internalID: -6122546573232367141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSAttack_8
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 288198c7e27d96510800000000000000
+      internalID: 1543000942008932482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSAttack_10
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78e0d103b588f4420800000000000000
+      internalID: 2616459833756159623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSAttack_11
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415335edac7abefa0800000000000000
+      internalID: -5770334007789931244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSAttack_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011ab1abaa89d9b70800000000000000
+      internalID: 8907443497042944272
       vertices: []
       indices: 
       edges: []
@@ -313,7 +409,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 917c2c97b10b05b4a96c9d9bcc307005
+    spriteID: b331821d22369bc4fb565187e7d2b4b6
     internalID: 0
     vertices: []
     indices: 
@@ -321,17 +417,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DC_0: 3303377771132391943
-      DC_1: -3733537543298824328
-      DC_10: 3617027966242692142
-      DC_2: 584051778948657657
-      DC_3: -2609045251871591324
-      DC_4: -3830876623973135765
-      DC_5: -7397393246505034662
-      DC_6: -3910108438829866268
-      DC_7: 6607486516553845340
-      DC_8: 4329737470857216270
-      DC_9: 6688780410950337581
+      CSAttack_0: -1654656170125196498
+      CSAttack_1: -5256676300981746592
+      CSAttack_10: 2616459833756159623
+      CSAttack_11: -5770334007789931244
+      CSAttack_12: 8491329017238774326
+      CSAttack_13: 8907443497042944272
+      CSAttack_14: -8111081676517356414
+      CSAttack_2: 1658836399312502479
+      CSAttack_3: 6226888892379836709
+      CSAttack_4: 2471581508410759332
+      CSAttack_5: -5718339941238936396
+      CSAttack_6: -8893554442829843446
+      CSAttack_7: -6122546573232367141
+      CSAttack_8: 1543000942008932482
+      CSAttack_9: -2268988541523882056
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
