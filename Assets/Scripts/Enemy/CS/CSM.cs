@@ -40,18 +40,19 @@ public class CSM : MonoBehaviour
 
     private void Update()
     {
-        if (move) // 대쉬 중이 아닐 때만 이동
+        spriteRenderer.flipX = rigid.velocity.x > 0;
+        Attack();
+        DetectAndMoveTowardsPlayer();
+        if (move)
         {
+            moveSpeed = 3f;
             rigid.velocity = new Vector2(nextmove * moveSpeed, rigid.velocity.y);
         }
-        spriteRenderer.flipX = rigid.velocity.x > 0;
-        DetectAndMoveTowardsPlayer();
-        Attack();
     }
 
     void think()
     {
-        if (!nmove)
+        if (nmove)
         {
             nextmove = Random.Range(-1, 2);
         }
@@ -66,9 +67,8 @@ public class CSM : MonoBehaviour
 
         foreach (Collider2D collider in player)
         {
-            if (collider.tag == "Player")
+            if (collider.tag == "Player" && attackC)
             {
-                Debug.Log("플레이어 감지");
                 playerTransform = collider.transform;
                 Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
                 nextmove = directionToPlayer.x > 0 ? 1 : -1;
@@ -94,11 +94,14 @@ public class CSM : MonoBehaviour
 
     private IEnumerator FireProjectile(Vector2 targetPosition)
     {
-        animator.SetBool("Attack", true);
-        // 발사체 생성
-        nmove = true;
+        // 스킬 사용 중 이동을 멈추고 애니메이션 시작
         nextmove = 0;
+        nmove = false;
+        moveSpeed = 0f;
+        animator.SetBool("Attack", true);
         yield return new WaitForSeconds(1f);
+
+        // 발사체 생성 및 방향 설정
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         targetPosition = (Vector2)players[0].transform.position;
@@ -110,13 +113,23 @@ public class CSM : MonoBehaviour
             // 목표 위치로의 방향 계산
             Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
             projectileRb.velocity = direction * projectileSpeed;
+
+            // 발사체의 회전 계산
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 180, angle + 90)); // 90도 추가
         }
+
         animator.SetBool("Attack", false);
+        move = true;
+
+        Destroy(projectile, 3f);
+
         yield return new WaitForSeconds(1f);
-        nmove = false;
+        nmove = true;
         nextmove = Random.Range(-1, 2);
         attackC = true;
     }
+
 
     // 시각적으로 감지 범위 표시용 (디버그)
     void OnDrawGizmosSelected()

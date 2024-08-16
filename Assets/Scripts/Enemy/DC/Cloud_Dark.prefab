@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3305776135747823464}
   - component: {fileID: 8012789635054815483}
   m_Layer: 0
-  m_Name: DC_0
+  m_Name: Cloud_Dark
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
