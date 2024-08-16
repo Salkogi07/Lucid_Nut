@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ba4a0cd0417704d4fad7706b2d7869e8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284980
+  packageName: Pixel Art Futuristic City - Pack
+  packageVersion: 1.0
+  assetPath: Assets/Sprites/Pixel Skies DEMO/Scenes/MoveBackground.cs
+  uploadId: 677193

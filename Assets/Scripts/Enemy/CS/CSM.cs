@@ -30,23 +30,20 @@ public class CSM : MonoBehaviour
 
     private Transform playerTransform;
 
-    void Awake()
+    void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>(); // SpriteRenderer 컴포넌트 가져오기
         think();
     }
 
-    void FixedUpdate()
+
+    private void Update()
     {
         if (move) // 대쉬 중이 아닐 때만 이동
         {
             rigid.velocity = new Vector2(nextmove * moveSpeed, rigid.velocity.y);
         }
-    }
-
-    private void Update()
-    {
         spriteRenderer.flipX = rigid.velocity.x > 0;
         DetectAndMoveTowardsPlayer();
         Attack();
