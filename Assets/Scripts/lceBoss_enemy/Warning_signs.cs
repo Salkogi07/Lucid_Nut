@@ -40,10 +40,10 @@ public class FadeOut : MonoBehaviour
             objectRenderer.material.color = newColor;
 
             // 완전히 투명해지면 오브젝트를 삭제
-            if (alpha <= 0f)
+           /* if (alpha <= 0f)
             {
                 Destroy(gameObject); // 오브젝트 삭제
-            }
+            }*/
         }
     }
 
