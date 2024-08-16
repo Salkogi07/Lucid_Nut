@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 41a63b906a62b458db81dadee798e0a6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254291
+  packageName: Elemental Golems - Pixel Art Fantasy Creature Pack
+  packageVersion: 1.0.0
+  assetPath: Assets/AssetsForStore/Elemental Golems/Animations/Lava Golem/Lava Golem
+    Video.controller
+  uploadId: 582416
