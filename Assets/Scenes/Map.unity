@@ -5717,8 +5717,20 @@ PrefabInstance:
       value: Cloud_Storm
       objectReference: {fileID: 0}
     - target: {fileID: 1161798391108569509, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161798391108569509, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273820715935035830, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273820715935035830, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1934172816970159158, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5758,6 +5770,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1934172816970159158, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977621659559910624, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8310508148489124162, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
@@ -13907,17 +13923,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3197151571494084147, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197151571494084147, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: detectionSize1.x
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664086626497034983, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7257834447649280896, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: m_Name
       value: Cloud_Dark
       objectReference: {fileID: 0}
     - target: {fileID: 7257834447649280896, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257834447649280896, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14215,13 +14247,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4421399291808795044, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207815886559758028, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207815886559758028, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8255373567955771112, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
       propertyPath: m_Name
       value: Cloud_Ice
       objectReference: {fileID: 0}
     - target: {fileID: 8255373567955771112, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255373567955771112, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
