@@ -62,25 +62,11 @@ public class coldwave : MonoBehaviour
         
         GameObject attention = Instantiate(redPrefab);
         attention.transform.position = player.position;
-         
-      
-
-        
-
-      
-        
-        /*for(int i=0;i<=10; i++)
-        {
-            float Visibility =0f;
-            yield return new WaitForSeconds(0.1f);
-            Visibility = Visibility + 0.1f;
-            
-        }*/
         yield return new WaitForSeconds(2f);
         GameObject coldwave = Instantiate(coldPrefab); //오브젝트 소환
             coldwave.transform.position = attention.transform.position; //플레이어 위치로 이동
         Destroy(attention);
-            yield return new WaitForSeconds(Duration); //지속시간이 끝나면
+        yield return new WaitForSeconds(Duration); //지속시간이 끝나면
             Destroy(coldwave); //오브젝트 삭제
                 on = true; //시간 재가동
             
