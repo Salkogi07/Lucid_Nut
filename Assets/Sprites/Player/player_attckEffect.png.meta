@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: d77967782178aa544aa21ccbd9557447
+guid: 2cd8a5d144baeb24c889668f0e56d5b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8081018149557128194
-    second: player_attackEffect_0
+      213: -6103651776549556510
+    second: player_attckEffect_0
   - first:
-      213: -2975040679518563506
-    second: player_attackEffect_1
+      213: 5257966292060382606
+    second: player_attckEffect_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -155,7 +155,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_attackEffect_0
+      name: player_attckEffect_0
       rect:
         serializedVersion: 2
         x: 0
@@ -169,17 +169,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef3b92cdec47adf80800000000000000
-      internalID: -8081018149557128194
+      spriteID: 2eee41a3c097b4ba0800000000000000
+      internalID: -6103651776549556510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_attackEffect_1
+      name: player_attckEffect_1
       rect:
         serializedVersion: 2
-        x: 60
+        x: 59
         y: 0
         width: 59
         height: 52
@@ -190,17 +190,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e4395f0b34886b6d0800000000000000
-      internalID: -2975040679518563506
+      spriteID: e85ac371c7c08f840800000000000000
+      internalID: 5257966292060382606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_attackEffect_2
+      name: player_attckEffect_2
       rect:
         serializedVersion: 2
-        x: 120
+        x: 118
         y: 0
         width: 59
         height: 52
@@ -211,8 +211,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 135e44dd10fe2e0488824afdf56cb28a
-      internalID: 1895328811
+      spriteID: 0377aca3c9573d94fa154c661f7596da
+      internalID: -1921057978
       vertices: []
       indices: 
       edges: []
@@ -220,7 +220,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ebd774c31ee00fe419e23600bdf8bfc0
+    spriteID: 3db5032f90940e34ea47c2e0e48fe841
     internalID: 0
     vertices: []
     indices: 
@@ -228,9 +228,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player_attackEffect_0: -8081018149557128194
-      player_attackEffect_1: -2975040679518563506
-      player_attackEffect_2: 1895328811
+      player_attckEffect_0: -6103651776549556510
+      player_attckEffect_1: 5257966292060382606
+      player_attckEffect_2: -1921057978
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
