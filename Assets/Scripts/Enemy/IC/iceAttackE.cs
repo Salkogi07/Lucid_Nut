@@ -15,7 +15,7 @@ public class iceAttackE : MonoBehaviour
             {
                 Quaternion currentRotation = this.transform.rotation;
                 GameObject explosion = Instantiate(iceEffect, this.transform.position, currentRotation);
-                Destroy(explosion, 1f);
+                Destroy(explosion, 0.7f);
             }
 
             Destroy(gameObject);

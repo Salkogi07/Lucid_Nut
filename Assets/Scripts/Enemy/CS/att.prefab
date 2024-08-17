@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1408590535427611262}
   - component: {fileID: -6262730706621742066}
   - component: {fileID: -3269879180837521859}
+  - component: {fileID: -9003526862810142321}
   m_Layer: 0
   m_Name: att
   m_TagString: Untagged
@@ -175,3 +176,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 6737075357395661251, guid: d8f1c41edeb46ed4faa0dcdd73c146ba, type: 3}
+--- !u!114 &-9003526862810142321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547969831880647123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c69e07dc81d0e4fb45c3b030541ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5

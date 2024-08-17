@@ -98,6 +98,7 @@ public class ICM : MonoBehaviour
         nextmove = 0;
         nmove = false;
         moveSpeed = 0f;
+        move = false;
         animator.SetBool("Attack", true);
 
         // 발사체 생성 위치
