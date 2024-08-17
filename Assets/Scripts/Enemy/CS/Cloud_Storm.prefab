@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4465611481785869014}
   - component: {fileID: 1273820715935035830}
   - component: {fileID: 4977621659559910624}
-  - component: {fileID: 2387556890897010948}
+  - component: {fileID: 8310508148489124162}
   m_Layer: 0
   m_Name: Cloud_Storm
   m_TagString: Untagged
@@ -186,7 +186,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.625, y: 1.3125}
   m_EdgeRadius: 0
---- !u!114 &2387556890897010948
+--- !u!114 &8310508148489124162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1161798391108569509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 116194b884a5b0a49895ce40cd6b7258, type: 3}
+  m_Script: {fileID: 11500000, guid: bdf5560a3caa24f408a57128aa21d96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4465611481785869014}
@@ -227,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9105067017900406536}
   - component: {fileID: 3911810732631900486}
-  - component: {fileID: 1764318212171482720}
+  - component: {fileID: 4857457791775921379}
   m_Layer: 0
   m_Name: wall
   m_TagString: Untagged
@@ -296,7 +296,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.74, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1764318212171482720
+--- !u!114 &4857457791775921379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,4 +308,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3c46ea537a9844d9409e020853c12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CS: {fileID: 2387556890897010948}
+  CS: {fileID: 8310508148489124162}

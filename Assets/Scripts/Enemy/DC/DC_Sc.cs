@@ -22,6 +22,7 @@ public class DC_Sc : MonoBehaviour
     public Vector2 detectionSize1 = new Vector2(5f, 2f); // 플레이어 감지 범위 (사각형 크기)
     public Vector2 detectionOffset1 = Vector2.zero; // 사각형의 위치 오프셋
     public LayerMask playerLayer1; // 플레이어 레이어
+    public GameObject dashEffect;
 
     [Header("Detection info")]
     public Vector2 detectionSize = new Vector2(15f, 5f); // 플레이어 감지 범위 (사각형 크기)
@@ -107,6 +108,9 @@ public class DC_Sc : MonoBehaviour
         yield return new WaitForSeconds(0.7f); // 준비 시간 동안 대기
 
         dashTarget = targetPosition; // 대쉬 목표 설정
+
+        GameObject explosion = Instantiate(dashEffect, this.transform.position, Quaternion.identity);
+        Destroy(explosion, 0.5f);
 
         // 대쉬 중 목표 위치로 이동
         while (Vector2.Distance(transform.position, dashTarget) > 0.1f)

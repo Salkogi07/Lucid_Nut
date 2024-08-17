@@ -300,11 +300,12 @@ MonoBehaviour:
   isPreparingToDash: 0
   dashSpeed: 15
   cooldownTime: 0.7
-  detectionSize1: {x: 8.77, y: 2}
+  detectionSize1: {x: 12, y: 2}
   detectionOffset1: {x: 0, y: 0}
   playerLayer1:
     serializedVersion: 2
     m_Bits: 4294967295
+  dashEffect: {fileID: 6802674829951136677, guid: 81e1d6593854b734eb31fccdcfdc2d2d, type: 3}
   detectionSize: {x: 22, y: 2}
   detectionOffset: {x: 0, y: 0}
   playerLayer:
