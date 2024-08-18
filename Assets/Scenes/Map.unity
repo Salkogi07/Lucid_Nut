@@ -14379,6 +14379,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5045630334778765047, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
+      propertyPath: attackC
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6314773418307664677, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
       propertyPath: m_SortingOrder
       value: 1

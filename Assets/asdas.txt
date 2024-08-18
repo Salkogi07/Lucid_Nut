@@ -1,1 +1,0 @@
-https://docs.unity3d.com/kr/530/Manual/UnderstandingVectorArithmetic.html
