@@ -100,42 +100,55 @@ public class ICM : MonoBehaviour
         moveSpeed = 0f;
         move = false;
         animator.SetBool("Attack", true);
-
         // 발사체 생성 위치
         Vector3 spawnPosition = transform.position + new Vector3(0, 2f, 0); // 위쪽으로 오프셋 추가
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 
         // 타겟 위치 설정
-        yield return new WaitForSeconds(1f); // 애니메이션 대기
-
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        if (players.Length > 0)
+        yield return new WaitForSeconds(1.2f); // 애니메이션 대기
+        
+        if (projectile == null)
         {
-            targetPosition = (Vector2)players[0].transform.position;
-
-            // 발사체의 Rigidbody2D 컴포넌트 가져오기
-            Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
-            if (projectileRb != null)
-            {
-                // 목표 위치로의 방향 계산
-                Vector2 direction = (targetPosition - (Vector2)spawnPosition).normalized;
-                projectileRb.velocity = direction * projectileSpeed;
-
-                // 발사체의 회전 계산
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle+180));
-            }
+            animator.SetBool("Attack", false);
+            nmove = true;
+            nextmove = Random.Range(-1, 2);
+            attackC = true;
+            move = true;
         }
+        else 
+        {
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            if (players.Length > 0)
+            {
+                targetPosition = (Vector2)players[0].transform.position;
 
-        animator.SetBool("Attack", false);
-        move = true;
+                // 발사체의 Rigidbody2D 컴포넌트 가져오기
+                Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+                if (projectileRb != null)
+                {
+                    // 목표 위치로의 방향 계산
+                    Vector2 direction = (targetPosition - (Vector2)spawnPosition).normalized;
+                    projectileRb.velocity = direction * projectileSpeed;
 
-        Destroy(projectile, 3f);
+                    // 발사체의 회전 계산
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+                }
+            }
 
-        yield return new WaitForSeconds(1f);
-        nmove = true;
-        nextmove = Random.Range(-1, 2);
-        attackC = true;
+            animator.SetBool("Attack", false);
+            move = true;
+
+            if (projectile != null)
+            {
+                Destroy(projectile, 3f);
+            }
+
+            yield return new WaitForSeconds(1f);
+            nmove = true;
+            nextmove = Random.Range(-1, 2);
+            attackC = true;
+        }
     }
 
 
