@@ -169,7 +169,7 @@ public class PlayerMove : MonoBehaviour
     IEnumerator WingEffectStart()
     {
         wingBong.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.35f);
         wingBong.SetActive(false);
     }
 
