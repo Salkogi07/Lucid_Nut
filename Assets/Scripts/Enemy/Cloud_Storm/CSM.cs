@@ -40,13 +40,13 @@ public class CSM : MonoBehaviour
 
     private void Update()
     {
-        spriteRenderer.flipX = rigid.velocity.x > 0;
         Attack();
         DetectAndMoveTowardsPlayer();
         if (move)
         {
             moveSpeed = 3f;
             rigid.velocity = new Vector2(nextmove * moveSpeed, rigid.velocity.y);
+            spriteRenderer.flipX = rigid.velocity.x > 0;
         }
     }
 
@@ -94,9 +94,14 @@ public class CSM : MonoBehaviour
 
     private IEnumerator FireProjectile(Vector2 targetPosition)
     {
+        Vector2 directionToPlayer = (targetPosition - (Vector2)transform.position).normalized;
+        nextmove = directionToPlayer.x > 0 ? 1 : -1;
+        spriteRenderer.flipX = nextmove > 0;    
+
         // 스킬 사용 중 이동을 멈추고 애니메이션 시작
         nextmove = 0;
         nmove = false;
+        move = false;
         moveSpeed = 0f;
         animator.SetBool("Attack", true);
         yield return new WaitForSeconds(1f);
@@ -120,13 +125,13 @@ public class CSM : MonoBehaviour
         }
 
         animator.SetBool("Attack", false);
-        move = true;
 
         Destroy(projectile, 3f);
 
         yield return new WaitForSeconds(1f);
         nmove = true;
         nextmove = Random.Range(-1, 2);
+        move = true;
         attackC = true;
     }
 

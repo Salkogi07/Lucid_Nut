@@ -40,11 +40,11 @@ public class ICM : MonoBehaviour
 
     private void Update()
     {
-        spriteRenderer.flipX = rigid.velocity.x > 0;
         Attack();
         DetectAndMoveTowardsPlayer();
         if (move)
         {
+            spriteRenderer.flipX = rigid.velocity.x > 0;
             moveSpeed = 3f;
             rigid.velocity = new Vector2(nextmove * moveSpeed, rigid.velocity.y);
         }
@@ -94,6 +94,15 @@ public class ICM : MonoBehaviour
 
     private IEnumerator FireProjectile(Vector2 targetPosition)
     {
+        Vector2 directionToPlayer = (targetPosition - (Vector2)transform.position).normalized;
+        nextmove = directionToPlayer.x > 0 ? 1 : -1;
+        spriteRenderer.flipX = nextmove > 0;
+        int a = 0;
+        if (nextmove == 1)
+        {
+            a = 180;
+        }
+
         // 스킬 사용 중 이동을 멈추고 애니메이션 시작
         nextmove = 0;
         nmove = false;
@@ -103,7 +112,7 @@ public class ICM : MonoBehaviour
         // 발사체 생성 위치
         Vector3 spawnPosition = transform.position + new Vector3(0, 2f, 0); // 위쪽으로 오프셋 추가
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
-
+        projectile.transform.Rotate(0,a,0);
         // 타겟 위치 설정
         yield return new WaitForSeconds(1.2f); // 애니메이션 대기
         
@@ -126,18 +135,18 @@ public class ICM : MonoBehaviour
                 Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
                 if (projectileRb != null)
                 {
+                    
                     // 목표 위치로의 방향 계산
                     Vector2 direction = (targetPosition - (Vector2)spawnPosition).normalized;
                     projectileRb.velocity = direction * projectileSpeed;
 
                     // 발사체의 회전 계산
                     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                    projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+                    projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle+180-a));
                 }
             }
 
             animator.SetBool("Attack", false);
-            move = true;
 
             if (projectile != null)
             {
@@ -148,6 +157,7 @@ public class ICM : MonoBehaviour
             nmove = true;
             nextmove = Random.Range(-1, 2);
             attackC = true;
+            move = true;
         }
     }
 
