@@ -1,9 +1,16 @@
 fileFormatVersion: 2
 guid: e378e7fa0a6a37f4d8aae1a91213c0f6
+AssetOrigin:
+  serializedVersion: 1
+  productId: 165307
+  packageName: Dark Platformer SET1
+  packageVersion: 1.0
+  assetPath: Assets/DPSET1/Sliced/0. front layer.png
+  uploadId: 532751
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +27,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +71,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +84,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +97,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +110,59 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -9733,474 +9797,466 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      0. front layer_193: -1687897211
-      0. front layer_84: -1396976591
-      0. front layer_161: 168060239
-      0. front layer_196: -317792622
-      0. front layer_12: -733136599
-      0. front layer_97: -129370152
-      0. front layer_44: 175055216
-      0. front layer_16: 1731543444
-      0. front layer_26: 1701481179
-      0. front layer_66: -180870949
-      0. front layer_238: -1312181206
-      0. front layer_378: 401385639
-      0. front layer_14: 1289363704
-      0. front layer_198: 280061540
-      0. front layer_160: -320345186
-      0. front layer_364: -1279953255
-      0. front layer_40: 1405013621
-      0. front layer_59: -1668161081
-      0. front layer_234: 972835902
-      0. front layer_448: 277127210
-      0. front layer_265: -31473414
-      0. front layer_395: -1739388512
-      0. front layer_309: -729677627
-      0. front layer_54: 553489900
-      0. front layer_76: -2121124093
-      0. front layer_189: -298032605
-      0. front layer_294: -1054543351
-      0. front layer_82: 1237147908
-      0. front layer_99: -2125227852
-      0. front layer_427: 261297037
-      0. front layer_456: -1020469948
-      0. front layer_440: -178198060
-      0. front layer_143: -81216126
-      0. front layer_437: -502009443
-      0. front layer_197: 1645994083
-      0. front layer_2: 1615615401
-      0. front layer_230: 1312533371
-      0. front layer_162: 372449
-      0. front layer_74: 1278204188
-      0. front layer_250: 1044563666
-      0. front layer_434: 568414880
-      0. front layer_93: -1525865829
-      0. front layer_45: -219108127
-      0. front layer_88: 2083002376
-      0. front layer_177: 1959943246
-      0. front layer_274: -1195098903
-      0. front layer_359: 2128599766
-      0. front layer_442: -1979984177
-      0. front layer_91: 1576250750
-      0. front layer_416: 1725046839
-      0. front layer_396: -2095676964
       0. front layer_0: 950576448
-      0. front layer_63: -1576768164
-      0. front layer_337: -1335628182
-      0. front layer_210: 1060992509
-      0. front layer_133: -199531889
-      0. front layer_95: 1957171414
-      0. front layer_319: 1019664200
-      0. front layer_9: -664552440
-      0. front layer_116: 1611140546
-      0. front layer_415: 899578065
-      0. front layer_289: 583481680
-      0. front layer_86: -85582941
-      0. front layer_80: -1090356785
-      0. front layer_117: -1863791462
-      0. front layer_145: 808904173
-      0. front layer_399: 860709820
-      0. front layer_126: 1538953653
-      0. front layer_35: 551337597
-      0. front layer_77: -738503034
-      0. front layer_195: -1208315624
-      0. front layer_216: -1167487281
-      0. front layer_386: 883019377
-      0. front layer_286: 693479299
-      0. front layer_429: 375594060
-      0. front layer_225: -1848530065
-      0. front layer_388: 1489475818
-      0. front layer_15: -1711032327
-      0. front layer_406: 724721187
-      0. front layer_149: 1051984240
-      0. front layer_51: 2012314549
-      0. front layer_182: 1136294329
-      0. front layer_68: 1976466235
-      0. front layer_121: -317001353
-      0. front layer_178: 114021762
-      0. front layer_212: 1055870379
-      0. front layer_248: 531173183
-      0. front layer_331: 1172241688
-      0. front layer_436: 242615614
-      0. front layer_237: 533424760
-      0. front layer_277: 504090733
-      0. front layer_360: 2028970817
-      0. front layer_39: 1366525692
-      0. front layer_199: -171800235
-      0. front layer_393: -1117833320
-      0. front layer_52: 1088432538
-      0. front layer_228: 1823401193
-      0. front layer_287: -1180291345
-      0. front layer_172: -1511714681
-      0. front layer_349: 1497055668
-      0. front layer_152: 1719715150
-      0. front layer_350: -1199287117
-      0. front layer_374: -1331314429
-      0. front layer_108: -1273832282
-      0. front layer_455: 1924588758
-      0. front layer_449: 1212554671
-      0. front layer_78: -2120136819
-      0. front layer_245: -1987792809
-      0. front layer_284: 1407066229
-      0. front layer_87: 1053763938
-      0. front layer_304: 1937999500
-      0. front layer_447: 966228627
-      0. front layer_431: -241991323
-      0. front layer_441: 674432553
-      0. front layer_165: -247460046
-      0. front layer_385: 1442216558
-      0. front layer_136: -939531757
-      0. front layer_11: 1541047699
-      0. front layer_186: -196335620
-      0. front layer_452: -1981638794
-      0. front layer_336: -1300451138
-      0. front layer_321: 1132559583
-      0. front layer_412: -2051641521
-      0. front layer_409: 958857225
-      0. front layer_127: 1307334831
-      0. front layer_313: -1513793856
-      0. front layer_173: 1996738594
-      0. front layer_272: 1685674904
-      0. front layer_211: 63462747
-      0. front layer_369: 464953296
-      0. front layer_150: -112109842
-      0. front layer_428: -987967328
-      0. front layer_387: -1123657926
-      0. front layer_255: 2011569352
-      0. front layer_422: 636759372
-      0. front layer_300: 140831208
-      0. front layer_260: 681577016
-      0. front layer_75: 201220417
-      0. front layer_206: 2010341735
-      0. front layer_170: 730619075
-      0. front layer_377: -411323067
-      0. front layer_49: -1162676970
-      0. front layer_83: -1647656728
-      0. front layer_223: 371235804
-      0. front layer_231: -2093960871
-      0. front layer_60: 415920325
-      0. front layer_98: 1421711602
-      0. front layer_361: -1090115587
-      0. front layer_353: -1379834153
-      0. front layer_90: -477899568
-      0. front layer_104: 1403676687
-      0. front layer_370: 1799349436
-      0. front layer_267: 2037517848
-      0. front layer_27: 754556678
-      0. front layer_333: 1449547951
-      0. front layer_158: -1058733900
-      0. front layer_103: -1622344381
-      0. front layer_308: -111703324
-      0. front layer_166: 1049678392
-      0. front layer_109: 509072585
-      0. front layer_247: 31806735
-      0. front layer_220: 711008865
-      0. front layer_454: 476889509
-      0. front layer_368: -527683486
-      0. front layer_184: 1577878275
-      0. front layer_174: 456010862
-      0. front layer_253: -561611545
-      0. front layer_208: 1971949053
-      0. front layer_444: -14258449
-      0. front layer_314: 1189489534
-      0. front layer_356: 1789773440
-      0. front layer_58: -154570977
-      0. front layer_256: -1340407760
-      0. front layer_419: 2032788514
-      0. front layer_73: -381829709
-      0. front layer_24: 888369750
-      0. front layer_71: 763012388
-      0. front layer_317: 1232838712
-      0. front layer_181: 254553463
-      0. front layer_275: -1705406074
-      0. front layer_400: -623639049
-      0. front layer_159: 1694603834
-      0. front layer_301: 336830842
-      0. front layer_421: -1923312115
-      0. front layer_81: -1619287954
-      0. front layer_167: -1826982484
-      0. front layer_258: -796939818
-      0. front layer_271: 143416898
-      0. front layer_147: -1535941995
-      0. front layer_62: 1516701457
-      0. front layer_119: 1099504828
-      0. front layer_410: 1629503256
-      0. front layer_124: -1920994824
-      0. front layer_288: 592670257
-      0. front layer_179: -1106495441
-      0. front layer_339: 337965668
-      0. front layer_373: 612041646
-      0. front layer_50: 1610800842
-      0. front layer_115: 947533642
-      0. front layer_325: 754854093
-      0. front layer_381: -1439533543
-      0. front layer_217: 1079358370
-      0. front layer_423: 191492722
-      0. front layer_293: -1293295090
-      0. front layer_332: -1394138645
-      0. front layer_413: -1443270001
-      0. front layer_297: -488850774
-      0. front layer_382: -1498032955
-      0. front layer_65: -1735607403
-      0. front layer_457: 1938601918
-      0. front layer_106: 729734022
-      0. front layer_53: -733129391
-      0. front layer_341: 813126359
-      0. front layer_29: 1081861551
-      0. front layer_326: 1987564852
-      0. front layer_139: -39973543
-      0. front layer_401: 1120998493
-      0. front layer_34: 1458427928
-      0. front layer_31: -1940304774
-      0. front layer_398: 1466968783
-      0. front layer_226: -160578619
-      0. front layer_243: 594011619
-      0. front layer_299: -21640435
-      0. front layer_5: -600066646
-      0. front layer_279: -874357542
-      0. front layer_22: 1592201543
-      0. front layer_89: -890584852
-      0. front layer_351: 32261990
-      0. front layer_445: 1579853848
-      0. front layer_417: -882618157
-      0. front layer_446: 1442973192
-      0. front layer_187: -1321759471
-      0. front layer_281: 145821554
-      0. front layer_4: 295135550
-      0. front layer_283: 1920195989
-      0. front layer_315: -1933048001
-      0. front layer_453: -378059165
-      0. front layer_371: 834992123
-      0. front layer_55: 1896126034
-      0. front layer_213: -176562029
-      0. front layer_270: -519227650
-      0. front layer_365: -1763529570
-      0. front layer_391: -894607038
-      0. front layer_348: -1374238761
-      0. front layer_329: 764034945
-      0. front layer_19: 1567726523
-      0. front layer_276: 948116524
-      0. front layer_322: 1110984108
-      0. front layer_318: -90698245
-      0. front layer_6: -170738608
-      0. front layer_376: -569935870
-      0. front layer_261: -2135264005
-      0. front layer_363: -1987362644
-      0. front layer_345: 1405059645
-      0. front layer_214: -514454885
-      0. front layer_180: 1742725436
-      0. front layer_153: 1005365799
-      0. front layer_30: 473568593
-      0. front layer_402: 1953028579
-      0. front layer_268: 167175785
-      0. front layer_94: -1058352797
-      0. front layer_163: -288230816
-      0. front layer_375: 1303075418
-      0. front layer_239: 699828928
-      0. front layer_280: 1898674247
-      0. front layer_269: 723995001
-      0. front layer_42: 141172797
-      0. front layer_21: 1539644865
-      0. front layer_92: -1531276330
-      0. front layer_85: -1414555913
-      0. front layer_101: -1119155072
-      0. front layer_380: -419274108
-      0. front layer_168: 1811815573
-      0. front layer_221: -1606215517
-      0. front layer_246: -212497590
-      0. front layer_324: 1057363462
-      0. front layer_425: 1285615470
-      0. front layer_224: -329942140
-      0. front layer_295: 917611194
-      0. front layer_236: -430974788
-      0. front layer_188: 1667752004
-      0. front layer_438: 1659997971
-      0. front layer_303: -2060619209
-      0. front layer_383: -21559425
-      0. front layer_96: 1462657295
-      0. front layer_64: 257757859
-      0. front layer_128: 1702660851
-      0. front layer_164: -1273561166
-      0. front layer_346: -1119649366
-      0. front layer_263: -105012617
-      0. front layer_46: -421215722
-      0. front layer_154: -478197061
-      0. front layer_310: 203138029
-      0. front layer_148: 702749343
-      0. front layer_252: -653243259
       0. front layer_1: -550158354
-      0. front layer_175: -344850989
-      0. front layer_100: 1570162245
-      0. front layer_273: -1895623661
-      0. front layer_355: -1191697936
-      0. front layer_298: 539375600
-      0. front layer_8: -619616763
-      0. front layer_56: -2068084888
-      0. front layer_249: 1093749608
-      0. front layer_379: 1416892153
-      0. front layer_43: 24604973
-      0. front layer_171: 941794288
-      0. front layer_340: 1679553794
-      0. front layer_215: -1171521558
-      0. front layer_262: 1523435238
-      0. front layer_23: -1544054257
-      0. front layer_118: -1175775093
-      0. front layer_204: 1767940416
-      0. front layer_251: 610477256
-      0. front layer_316: -894948515
-      0. front layer_390: -1246888860
-      0. front layer_131: -1317753591
-      0. front layer_146: -2109952770
-      0. front layer_185: -760830350
-      0. front layer_36: 1843003279
-      0. front layer_257: -303450653
-      0. front layer_432: 742799633
-      0. front layer_232: -240111409
-      0. front layer_61: 259683057
-      0. front layer_79: 677575616
-      0. front layer_203: 1380021746
-      0. front layer_32: -1972054562
-      0. front layer_305: -2085722097
-      0. front layer_72: 301347575
-      0. front layer_344: -577221769
-      0. front layer_227: -2111220289
-      0. front layer_342: 1567392032
-      0. front layer_222: 803984953
-      0. front layer_7: -588647760
-      0. front layer_404: -584650979
-      0. front layer_194: -1405392611
-      0. front layer_259: 735992241
-      0. front layer_357: -1648200026
-      0. front layer_407: -564893273
-      0. front layer_394: 1778998495
-      0. front layer_134: -281618617
-      0. front layer_389: -21019037
-      0. front layer_430: -786678591
-      0. front layer_235: -1138480191
-      0. front layer_18: 79016853
-      0. front layer_169: 2034440506
-      0. front layer_141: 280770524
-      0. front layer_114: 2091623
-      0. front layer_451: 218770643
-      0. front layer_67: 1428417288
-      0. front layer_347: -143059313
-      0. front layer_335: -1776415292
-      0. front layer_372: 2032219984
-      0. front layer_3: 1106256611
-      0. front layer_205: -2091362152
-      0. front layer_334: 720936037
-      0. front layer_155: 1204622845
-      0. front layer_144: 779957933
-      0. front layer_113: -793062840
-      0. front layer_420: 232243281
-      0. front layer_110: 536970846
-      0. front layer_102: 1929082921
-      0. front layer_358: 2077525202
       0. front layer_10: -501859013
-      0. front layer_312: -2101977459
-      0. front layer_338: 1689565667
-      0. front layer_107: -1376556383
-      0. front layer_156: 535836530
-      0. front layer_241: -66910654
-      0. front layer_285: -1086503092
-      0. front layer_135: -2119794013
-      0. front layer_439: -1913094465
-      0. front layer_37: 1312002539
-      0. front layer_191: -427829457
-      0. front layer_209: 1445369833
-      0. front layer_450: -1254845660
-      0. front layer_69: -1956124094
-      0. front layer_151: -479531495
-      0. front layer_328: 462891180
-      0. front layer_20: 72489478
-      0. front layer_229: 824104926
-      0. front layer_408: -2140749635
-      0. front layer_202: 244194796
-      0. front layer_411: 435474976
-      0. front layer_176: 2072996143
-      0. front layer_47: -578292682
-      0. front layer_343: 1274292925
+      0. front layer_100: 1570162245
+      0. front layer_101: -1119155072
+      0. front layer_102: 1929082921
+      0. front layer_103: -1622344381
+      0. front layer_104: 1403676687
       0. front layer_105: 883044182
-      0. front layer_426: 327301491
-      0. front layer_354: 1048685309
-      0. front layer_38: -626102794
-      0. front layer_367: -1101999558
-      0. front layer_112: -409806440
-      0. front layer_190: 1013442921
-      0. front layer_418: 1716722722
-      0. front layer_132: 539131236
-      0. front layer_311: 1765968817
-      0. front layer_242: -119521565
-      0. front layer_443: 903693795
-      0. front layer_296: 928226479
-      0. front layer_292: -321502331
-      0. front layer_57: 2057248009
-      0. front layer_405: 91375980
-      0. front layer_17: -481956912
-      0. front layer_138: -880485725
-      0. front layer_254: -1142916050
-      0. front layer_282: -1702515145
-      0. front layer_137: -533631242
-      0. front layer_320: 1302930725
-      0. front layer_140: 1219928015
-      0. front layer_200: -124002948
-      0. front layer_130: -476166263
-      0. front layer_218: 211064657
-      0. front layer_392: 1068995600
-      0. front layer_122: -637041840
-      0. front layer_33: 537180478
-      0. front layer_219: -1062757705
-      0. front layer_330: 1356168991
-      0. front layer_362: 1398182703
-      0. front layer_142: -1100765336
-      0. front layer_123: 254887342
-      0. front layer_25: 1380340147
-      0. front layer_120: 463019481
-      0. front layer_306: 1244572133
-      0. front layer_278: -1450857468
-      0. front layer_424: 1689507559
-      0. front layer_307: 26570147
-      0. front layer_41: 1374246925
-      0. front layer_201: 1011635995
-      0. front layer_414: 496321655
-      0. front layer_183: 1412453049
-      0. front layer_397: 1474805488
-      0. front layer_352: 600029445
-      0. front layer_157: 539825580
-      0. front layer_403: 2101372044
-      0. front layer_207: -1247128209
-      0. front layer_264: 1989576864
-      0. front layer_323: -61035701
+      0. front layer_106: 729734022
+      0. front layer_107: -1376556383
+      0. front layer_108: -1273832282
+      0. front layer_109: 509072585
+      0. front layer_11: 1541047699
+      0. front layer_110: 536970846
       0. front layer_111: -647929939
-      0. front layer_129: -1455826217
-      0. front layer_70: 631695319
-      0. front layer_291: 1438051713
-      0. front layer_435: 434114371
-      0. front layer_192: -1857807476
-      0. front layer_244: -224028218
-      0. front layer_366: -1133782897
-      0. front layer_433: -218377832
-      0. front layer_266: -681667765
-      0. front layer_384: 615555090
-      0. front layer_327: -794001810
-      0. front layer_13: -1345861104
+      0. front layer_112: -409806440
+      0. front layer_113: -793062840
+      0. front layer_114: 2091623
+      0. front layer_115: 947533642
+      0. front layer_116: 1611140546
+      0. front layer_117: -1863791462
+      0. front layer_118: -1175775093
+      0. front layer_119: 1099504828
+      0. front layer_12: -733136599
+      0. front layer_120: 463019481
+      0. front layer_121: -317001353
+      0. front layer_122: -637041840
+      0. front layer_123: 254887342
+      0. front layer_124: -1920994824
       0. front layer_125: -2067993067
-      0. front layer_48: 389624220
-      0. front layer_240: 1266330193
-      0. front layer_28: 1933275929
+      0. front layer_126: 1538953653
+      0. front layer_127: 1307334831
+      0. front layer_128: 1702660851
+      0. front layer_129: -1455826217
+      0. front layer_13: -1345861104
+      0. front layer_130: -476166263
+      0. front layer_131: -1317753591
+      0. front layer_132: 539131236
+      0. front layer_133: -199531889
+      0. front layer_134: -281618617
+      0. front layer_135: -2119794013
+      0. front layer_136: -939531757
+      0. front layer_137: -533631242
+      0. front layer_138: -880485725
+      0. front layer_139: -39973543
+      0. front layer_14: 1289363704
+      0. front layer_140: 1219928015
+      0. front layer_141: 280770524
+      0. front layer_142: -1100765336
+      0. front layer_143: -81216126
+      0. front layer_144: 779957933
+      0. front layer_145: 808904173
+      0. front layer_146: -2109952770
+      0. front layer_147: -1535941995
+      0. front layer_148: 702749343
+      0. front layer_149: 1051984240
+      0. front layer_15: -1711032327
+      0. front layer_150: -112109842
+      0. front layer_151: -479531495
+      0. front layer_152: 1719715150
+      0. front layer_153: 1005365799
+      0. front layer_154: -478197061
+      0. front layer_155: 1204622845
+      0. front layer_156: 535836530
+      0. front layer_157: 539825580
+      0. front layer_158: -1058733900
+      0. front layer_159: 1694603834
+      0. front layer_16: 1731543444
+      0. front layer_160: -320345186
+      0. front layer_161: 168060239
+      0. front layer_162: 372449
+      0. front layer_163: -288230816
+      0. front layer_164: -1273561166
+      0. front layer_165: -247460046
+      0. front layer_166: 1049678392
+      0. front layer_167: -1826982484
+      0. front layer_168: 1811815573
+      0. front layer_169: 2034440506
+      0. front layer_17: -481956912
+      0. front layer_170: 730619075
+      0. front layer_171: 941794288
+      0. front layer_172: -1511714681
+      0. front layer_173: 1996738594
+      0. front layer_174: 456010862
+      0. front layer_175: -344850989
+      0. front layer_176: 2072996143
+      0. front layer_177: 1959943246
+      0. front layer_178: 114021762
+      0. front layer_179: -1106495441
+      0. front layer_18: 79016853
+      0. front layer_180: 1742725436
+      0. front layer_181: 254553463
+      0. front layer_182: 1136294329
+      0. front layer_183: 1412453049
+      0. front layer_184: 1577878275
+      0. front layer_185: -760830350
+      0. front layer_186: -196335620
+      0. front layer_187: -1321759471
+      0. front layer_188: 1667752004
+      0. front layer_189: -298032605
+      0. front layer_19: 1567726523
+      0. front layer_190: 1013442921
+      0. front layer_191: -427829457
+      0. front layer_192: -1857807476
+      0. front layer_193: -1687897211
+      0. front layer_194: -1405392611
+      0. front layer_195: -1208315624
+      0. front layer_196: -317792622
+      0. front layer_197: 1645994083
+      0. front layer_198: 280061540
+      0. front layer_199: -171800235
+      0. front layer_2: 1615615401
+      0. front layer_20: 72489478
+      0. front layer_200: -124002948
+      0. front layer_201: 1011635995
+      0. front layer_202: 244194796
+      0. front layer_203: 1380021746
+      0. front layer_204: 1767940416
+      0. front layer_205: -2091362152
+      0. front layer_206: 2010341735
+      0. front layer_207: -1247128209
+      0. front layer_208: 1971949053
+      0. front layer_209: 1445369833
+      0. front layer_21: 1539644865
+      0. front layer_210: 1060992509
+      0. front layer_211: 63462747
+      0. front layer_212: 1055870379
+      0. front layer_213: -176562029
+      0. front layer_214: -514454885
+      0. front layer_215: -1171521558
+      0. front layer_216: -1167487281
+      0. front layer_217: 1079358370
+      0. front layer_218: 211064657
+      0. front layer_219: -1062757705
+      0. front layer_22: 1592201543
+      0. front layer_220: 711008865
+      0. front layer_221: -1606215517
+      0. front layer_222: 803984953
+      0. front layer_223: 371235804
+      0. front layer_224: -329942140
+      0. front layer_225: -1848530065
+      0. front layer_226: -160578619
+      0. front layer_227: -2111220289
+      0. front layer_228: 1823401193
+      0. front layer_229: 824104926
+      0. front layer_23: -1544054257
+      0. front layer_230: 1312533371
+      0. front layer_231: -2093960871
+      0. front layer_232: -240111409
       0. front layer_233: 407966631
+      0. front layer_234: 972835902
+      0. front layer_235: -1138480191
+      0. front layer_236: -430974788
+      0. front layer_237: 533424760
+      0. front layer_238: -1312181206
+      0. front layer_239: 699828928
+      0. front layer_24: 888369750
+      0. front layer_240: 1266330193
+      0. front layer_241: -66910654
+      0. front layer_242: -119521565
+      0. front layer_243: 594011619
+      0. front layer_244: -224028218
+      0. front layer_245: -1987792809
+      0. front layer_246: -212497590
+      0. front layer_247: 31806735
+      0. front layer_248: 531173183
+      0. front layer_249: 1093749608
+      0. front layer_25: 1380340147
+      0. front layer_250: 1044563666
+      0. front layer_251: 610477256
+      0. front layer_252: -653243259
+      0. front layer_253: -561611545
+      0. front layer_254: -1142916050
+      0. front layer_255: 2011569352
+      0. front layer_256: -1340407760
+      0. front layer_257: -303450653
+      0. front layer_258: -796939818
+      0. front layer_259: 735992241
+      0. front layer_26: 1701481179
+      0. front layer_260: 681577016
+      0. front layer_261: -2135264005
+      0. front layer_262: 1523435238
+      0. front layer_263: -105012617
+      0. front layer_264: 1989576864
+      0. front layer_265: -31473414
+      0. front layer_266: -681667765
+      0. front layer_267: 2037517848
+      0. front layer_268: 167175785
+      0. front layer_269: 723995001
+      0. front layer_27: 754556678
+      0. front layer_270: -519227650
+      0. front layer_271: 143416898
+      0. front layer_272: 1685674904
+      0. front layer_273: -1895623661
+      0. front layer_274: -1195098903
+      0. front layer_275: -1705406074
+      0. front layer_276: 948116524
+      0. front layer_277: 504090733
+      0. front layer_278: -1450857468
+      0. front layer_279: -874357542
+      0. front layer_28: 1933275929
+      0. front layer_280: 1898674247
+      0. front layer_281: 145821554
+      0. front layer_282: -1702515145
+      0. front layer_283: 1920195989
+      0. front layer_284: 1407066229
+      0. front layer_285: -1086503092
+      0. front layer_286: 693479299
+      0. front layer_287: -1180291345
+      0. front layer_288: 592670257
+      0. front layer_289: 583481680
+      0. front layer_29: 1081861551
       0. front layer_290: 1764687296
+      0. front layer_291: 1438051713
+      0. front layer_292: -321502331
+      0. front layer_293: -1293295090
+      0. front layer_294: -1054543351
+      0. front layer_295: 917611194
+      0. front layer_296: 928226479
+      0. front layer_297: -488850774
+      0. front layer_298: 539375600
+      0. front layer_299: -21640435
+      0. front layer_3: 1106256611
+      0. front layer_30: 473568593
+      0. front layer_300: 140831208
+      0. front layer_301: 336830842
       0. front layer_302: -1641663727
-  spritePackingTag: 
+      0. front layer_303: -2060619209
+      0. front layer_304: 1937999500
+      0. front layer_305: -2085722097
+      0. front layer_306: 1244572133
+      0. front layer_307: 26570147
+      0. front layer_308: -111703324
+      0. front layer_309: -729677627
+      0. front layer_31: -1940304774
+      0. front layer_310: 203138029
+      0. front layer_311: 1765968817
+      0. front layer_312: -2101977459
+      0. front layer_313: -1513793856
+      0. front layer_314: 1189489534
+      0. front layer_315: -1933048001
+      0. front layer_316: -894948515
+      0. front layer_317: 1232838712
+      0. front layer_318: -90698245
+      0. front layer_319: 1019664200
+      0. front layer_32: -1972054562
+      0. front layer_320: 1302930725
+      0. front layer_321: 1132559583
+      0. front layer_322: 1110984108
+      0. front layer_323: -61035701
+      0. front layer_324: 1057363462
+      0. front layer_325: 754854093
+      0. front layer_326: 1987564852
+      0. front layer_327: -794001810
+      0. front layer_328: 462891180
+      0. front layer_329: 764034945
+      0. front layer_33: 537180478
+      0. front layer_330: 1356168991
+      0. front layer_331: 1172241688
+      0. front layer_332: -1394138645
+      0. front layer_333: 1449547951
+      0. front layer_334: 720936037
+      0. front layer_335: -1776415292
+      0. front layer_336: -1300451138
+      0. front layer_337: -1335628182
+      0. front layer_338: 1689565667
+      0. front layer_339: 337965668
+      0. front layer_34: 1458427928
+      0. front layer_340: 1679553794
+      0. front layer_341: 813126359
+      0. front layer_342: 1567392032
+      0. front layer_343: 1274292925
+      0. front layer_344: -577221769
+      0. front layer_345: 1405059645
+      0. front layer_346: -1119649366
+      0. front layer_347: -143059313
+      0. front layer_348: -1374238761
+      0. front layer_349: 1497055668
+      0. front layer_35: 551337597
+      0. front layer_350: -1199287117
+      0. front layer_351: 32261990
+      0. front layer_352: 600029445
+      0. front layer_353: -1379834153
+      0. front layer_354: 1048685309
+      0. front layer_355: -1191697936
+      0. front layer_356: 1789773440
+      0. front layer_357: -1648200026
+      0. front layer_358: 2077525202
+      0. front layer_359: 2128599766
+      0. front layer_36: 1843003279
+      0. front layer_360: 2028970817
+      0. front layer_361: -1090115587
+      0. front layer_362: 1398182703
+      0. front layer_363: -1987362644
+      0. front layer_364: -1279953255
+      0. front layer_365: -1763529570
+      0. front layer_366: -1133782897
+      0. front layer_367: -1101999558
+      0. front layer_368: -527683486
+      0. front layer_369: 464953296
+      0. front layer_37: 1312002539
+      0. front layer_370: 1799349436
+      0. front layer_371: 834992123
+      0. front layer_372: 2032219984
+      0. front layer_373: 612041646
+      0. front layer_374: -1331314429
+      0. front layer_375: 1303075418
+      0. front layer_376: -569935870
+      0. front layer_377: -411323067
+      0. front layer_378: 401385639
+      0. front layer_379: 1416892153
+      0. front layer_38: -626102794
+      0. front layer_380: -419274108
+      0. front layer_381: -1439533543
+      0. front layer_382: -1498032955
+      0. front layer_383: -21559425
+      0. front layer_384: 615555090
+      0. front layer_385: 1442216558
+      0. front layer_386: 883019377
+      0. front layer_387: -1123657926
+      0. front layer_388: 1489475818
+      0. front layer_389: -21019037
+      0. front layer_39: 1366525692
+      0. front layer_390: -1246888860
+      0. front layer_391: -894607038
+      0. front layer_392: 1068995600
+      0. front layer_393: -1117833320
+      0. front layer_394: 1778998495
+      0. front layer_395: -1739388512
+      0. front layer_396: -2095676964
+      0. front layer_397: 1474805488
+      0. front layer_398: 1466968783
+      0. front layer_399: 860709820
+      0. front layer_4: 295135550
+      0. front layer_40: 1405013621
+      0. front layer_400: -623639049
+      0. front layer_401: 1120998493
+      0. front layer_402: 1953028579
+      0. front layer_403: 2101372044
+      0. front layer_404: -584650979
+      0. front layer_405: 91375980
+      0. front layer_406: 724721187
+      0. front layer_407: -564893273
+      0. front layer_408: -2140749635
+      0. front layer_409: 958857225
+      0. front layer_41: 1374246925
+      0. front layer_410: 1629503256
+      0. front layer_411: 435474976
+      0. front layer_412: -2051641521
+      0. front layer_413: -1443270001
+      0. front layer_414: 496321655
+      0. front layer_415: 899578065
+      0. front layer_416: 1725046839
+      0. front layer_417: -882618157
+      0. front layer_418: 1716722722
+      0. front layer_419: 2032788514
+      0. front layer_42: 141172797
+      0. front layer_420: 232243281
+      0. front layer_421: -1923312115
+      0. front layer_422: 636759372
+      0. front layer_423: 191492722
+      0. front layer_424: 1689507559
+      0. front layer_425: 1285615470
+      0. front layer_426: 327301491
+      0. front layer_427: 261297037
+      0. front layer_428: -987967328
+      0. front layer_429: 375594060
+      0. front layer_43: 24604973
+      0. front layer_430: -786678591
+      0. front layer_431: -241991323
+      0. front layer_432: 742799633
+      0. front layer_433: -218377832
+      0. front layer_434: 568414880
+      0. front layer_435: 434114371
+      0. front layer_436: 242615614
+      0. front layer_437: -502009443
+      0. front layer_438: 1659997971
+      0. front layer_439: -1913094465
+      0. front layer_44: 175055216
+      0. front layer_440: -178198060
+      0. front layer_441: 674432553
+      0. front layer_442: -1979984177
+      0. front layer_443: 903693795
+      0. front layer_444: -14258449
+      0. front layer_445: 1579853848
+      0. front layer_446: 1442973192
+      0. front layer_447: 966228627
+      0. front layer_448: 277127210
+      0. front layer_449: 1212554671
+      0. front layer_45: -219108127
+      0. front layer_450: -1254845660
+      0. front layer_451: 218770643
+      0. front layer_452: -1981638794
+      0. front layer_453: -378059165
+      0. front layer_454: 476889509
+      0. front layer_455: 1924588758
+      0. front layer_456: -1020469948
+      0. front layer_457: 1938601918
+      0. front layer_46: -421215722
+      0. front layer_47: -578292682
+      0. front layer_48: 389624220
+      0. front layer_49: -1162676970
+      0. front layer_5: -600066646
+      0. front layer_50: 1610800842
+      0. front layer_51: 2012314549
+      0. front layer_52: 1088432538
+      0. front layer_53: -733129391
+      0. front layer_54: 553489900
+      0. front layer_55: 1896126034
+      0. front layer_56: -2068084888
+      0. front layer_57: 2057248009
+      0. front layer_58: -154570977
+      0. front layer_59: -1668161081
+      0. front layer_6: -170738608
+      0. front layer_60: 415920325
+      0. front layer_61: 259683057
+      0. front layer_62: 1516701457
+      0. front layer_63: -1576768164
+      0. front layer_64: 257757859
+      0. front layer_65: -1735607403
+      0. front layer_66: -180870949
+      0. front layer_67: 1428417288
+      0. front layer_68: 1976466235
+      0. front layer_69: -1956124094
+      0. front layer_7: -588647760
+      0. front layer_70: 631695319
+      0. front layer_71: 763012388
+      0. front layer_72: 301347575
+      0. front layer_73: -381829709
+      0. front layer_74: 1278204188
+      0. front layer_75: 201220417
+      0. front layer_76: -2121124093
+      0. front layer_77: -738503034
+      0. front layer_78: -2120136819
+      0. front layer_79: 677575616
+      0. front layer_8: -619616763
+      0. front layer_80: -1090356785
+      0. front layer_81: -1619287954
+      0. front layer_82: 1237147908
+      0. front layer_83: -1647656728
+      0. front layer_84: -1396976591
+      0. front layer_85: -1414555913
+      0. front layer_86: -85582941
+      0. front layer_87: 1053763938
+      0. front layer_88: 2083002376
+      0. front layer_89: -890584852
+      0. front layer_9: -664552440
+      0. front layer_90: -477899568
+      0. front layer_91: 1576250750
+      0. front layer_92: -1531276330
+      0. front layer_93: -1525865829
+      0. front layer_94: -1058352797
+      0. front layer_95: 1957171414
+      0. front layer_96: 1462657295
+      0. front layer_97: -129370152
+      0. front layer_98: 1421711602
+      0. front layer_99: -2125227852
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 165307
-  packageName: Dark Platformer SET1
-  packageVersion: 1.0
-  assetPath: Assets/DPSET1/Sliced/0. front layer.png
-  uploadId: 532751
