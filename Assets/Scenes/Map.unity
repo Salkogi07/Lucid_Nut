@@ -6013,7 +6013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1273820715935035830, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: m_Constraints
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1934172816970159158, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14139,7 +14139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3197151571494084147, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: m_Constraints
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: detectionSize1.x
@@ -14355,6 +14355,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3748135339121590538, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066636222990027682, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6314773418307664677, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -14414,7 +14422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4421399291808795044, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5207815886559758028, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
       propertyPath: m_Simulated
@@ -14422,7 +14430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5207815886559758028, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
       propertyPath: m_Constraints
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5412283541547048161, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
       propertyPath: m_SortingOrder
