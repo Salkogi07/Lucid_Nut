@@ -1,0 +1,379 @@
+fileFormatVersion: 2
+guid: 7fb172b3c6ee68a45b64adf83084043f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8822539432364836462
+    second: Icicle-Explosion-png_0
+  - first:
+      213: -6877389077937181699
+    second: Icicle-Explosion-png_1
+  - first:
+      213: -471100001800596056
+    second: Icicle-Explosion-png_2
+  - first:
+      213: 7634298969656619640
+    second: Icicle-Explosion-png_3
+  - first:
+      213: -6499091391404915987
+    second: Icicle-Explosion-png_4
+  - first:
+      213: -7851128515338532186
+    second: Icicle-Explosion-png_5
+  - first:
+      213: 1555690870220463733
+    second: Icicle-Explosion-png_6
+  - first:
+      213: -7731368423856479299
+    second: Icicle-Explosion-png_7
+  - first:
+      213: -6287155427730715641
+    second: Icicle-Explosion-png_8
+  - first:
+      213: -991643253344625981
+    second: Icicle-Explosion-png_9
+  - first:
+      213: 8923685848898005236
+    second: Icicle-Explosion-png_10
+  - first:
+      213: -3301835017254062268
+    second: Icicle-Explosion-png_11
+  - first:
+      213: -3744025226460234537
+    second: Icicle-Explosion-png_12
+  - first:
+      213: 4068907957531036140
+    second: Icicle-Explosion-png_13
+  - first:
+      213: -1648279024114880734
+    second: Icicle-Explosion-png_14
+  - first:
+      213: 5467745536856514627
+    second: Icicle-Explosion-png_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Icicle-Explosion-png_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 299740d412b009580800000000000000
+      internalID: -8822539432364836462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icicle-Explosion-png_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 5
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb2763521b9e80a0800000000000000
+      internalID: -6877389077937181699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icicle-Explosion-png_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 5
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a55dfa5b015679f0800000000000000
+      internalID: -471100001800596056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icicle-Explosion-png_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 5
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8727383f67a72f960800000000000000
+      internalID: 7634298969656619640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icicle-Explosion-png_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 5
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2c28c20d69ec5a0800000000000000
+      internalID: -6499091391404915987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icicle-Explosion-png_5
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 5
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aa8e4d56303b0390800000000000000
+      internalID: -7851128515338532186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icicle-Explosion-png_6
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 4
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e1fc3aa9ce69510800000000000000
+      internalID: 1555690870220463733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icicle-Explosion-png_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 2
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44730a1bb868d22d0800000000000000
+      internalID: -3301835017254062268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icicle-Explosion-png_11
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 3
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dc7cbaa4ec8a0cc0800000000000000
+      internalID: -3744025226460234537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6e4a8f5f45cb6e1438cb0ae247c37514
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Icicle-Explosion-png_0: -8822539432364836462
+      Icicle-Explosion-png_1: -6877389077937181699
+      Icicle-Explosion-png_10: 8923685848898005236
+      Icicle-Explosion-png_11: -3744025226460234537
+      Icicle-Explosion-png_12: -3301835017254062268
+      Icicle-Explosion-png_14: -1648279024114880734
+      Icicle-Explosion-png_15: 5467745536856514627
+      Icicle-Explosion-png_2: -471100001800596056
+      Icicle-Explosion-png_3: 7634298969656619640
+      Icicle-Explosion-png_4: -6499091391404915987
+      Icicle-Explosion-png_5: -7851128515338532186
+      Icicle-Explosion-png_6: 1555690870220463733
+      Icicle-Explosion-png_7: -7731368423856479299
+      Icicle-Explosion-png_8: -6287155427730715641
+      Icicle-Explosion-png_9: -991643253344625981
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

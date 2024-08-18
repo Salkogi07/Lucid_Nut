@@ -5277,7 +5277,7 @@ GameObject:
   - component: {fileID: 285325164}
   - component: {fileID: 285325163}
   - component: {fileID: 285325162}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6062,6 +6062,14 @@ PrefabInstance:
     - target: {fileID: 8310508148489124162, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: detectionSize1.x
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310508148489124162, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310508148489124162, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
+      propertyPath: playerLayer1.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8640,7 +8648,7 @@ GameObject:
   - component: {fileID: 1530621506}
   - component: {fileID: 1530621504}
   - component: {fileID: 1530621505}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DustPartical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13683,7 +13691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586618224}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: AttackPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13960,7 +13968,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1950940402}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
@@ -14145,6 +14153,14 @@ PrefabInstance:
       propertyPath: detectionSize1.x
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
+      propertyPath: playerLayer1.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5664086626497034983, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -14179,7 +14195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2075809960}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Checks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
