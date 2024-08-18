@@ -1,9 +1,16 @@
 fileFormatVersion: 2
 guid: 90aadce9ceeb3a94da47fd0d357389fa
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284980
+  packageName: Pixel Art Futuristic City - Pack
+  packageVersion: 1.0
+  assetPath: Assets/Pixel Art Futuristic City - Pack/PNG/cars/5-middleground-buildings_billboard.png
+  uploadId: 677193
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +27,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +71,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +84,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +97,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +110,59 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -430,31 +494,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      5-middleground-buildings_billboard_0: 1142105766
       5-middleground-buildings_billboard_1: -736482450
-      5-middleground-buildings_billboard_2: 1161098153
-      5-middleground-buildings_billboard_14: 1106208099
-      5-middleground-buildings_billboard_7: 1644345138
+      5-middleground-buildings_billboard_10: 848086466
+      5-middleground-buildings_billboard_11: 1705782393
+      5-middleground-buildings_billboard_12: -1934842118
       5-middleground-buildings_billboard_13: -314743470
+      5-middleground-buildings_billboard_14: 1106208099
+      5-middleground-buildings_billboard_2: 1161098153
+      5-middleground-buildings_billboard_3: 260896668
+      5-middleground-buildings_billboard_4: -1299642757
       5-middleground-buildings_billboard_5: 528700276
+      5-middleground-buildings_billboard_6: -555097219
+      5-middleground-buildings_billboard_7: 1644345138
       5-middleground-buildings_billboard_8: -1650743163
       5-middleground-buildings_billboard_9: 1453450813
-      5-middleground-buildings_billboard_11: 1705782393
-      5-middleground-buildings_billboard_0: 1142105766
-      5-middleground-buildings_billboard_6: -555097219
-      5-middleground-buildings_billboard_12: -1934842118
-      5-middleground-buildings_billboard_3: 260896668
-      5-middleground-buildings_billboard_10: 848086466
-      5-middleground-buildings_billboard_4: -1299642757
-  spritePackingTag: 
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 284980
-  packageName: Pixel Art Futuristic City - Pack
-  packageVersion: 1.0
-  assetPath: Assets/Pixel Art Futuristic City - Pack/PNG/cars/5-middleground-buildings_billboard.png
-  uploadId: 677193

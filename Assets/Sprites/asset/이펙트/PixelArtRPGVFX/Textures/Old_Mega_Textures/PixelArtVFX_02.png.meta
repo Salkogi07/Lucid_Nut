@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 98d773084ad7b614b9a09ae164029883
+AssetOrigin:
+  serializedVersion: 1
+  productId: 204263
+  packageName: Pixel Art RPG VFX
+  packageVersion: 3.0
+  assetPath: Assets/Pixel Art/PixelArtRPGVFX/Textures/Old_Mega_Textures/PixelArtVFX_02.png
+  uploadId: 644646
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -195,7 +202,7 @@ TextureImporter:
       213: -5918004501218928765
     second: PixelArtVFX_02_63
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -212,11 +219,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -255,6 +263,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
@@ -267,6 +276,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -279,6 +289,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -291,6 +302,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -303,6 +315,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -315,6 +328,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -327,6 +341,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1687,80 +1728,72 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PixelArtVFX_02_33: -4918375363163499210
-      PixelArtVFX_02_45: 6303333213797369239
-      PixelArtVFX_02_15: -4699895436857826265
-      PixelArtVFX_02_8: -97246980609309487
-      PixelArtVFX_02_52: -5632103598148172017
-      PixelArtVFX_02_58: 5652877127796002194
-      PixelArtVFX_02_59: 7365717020574092232
-      PixelArtVFX_02_49: 6615404655205348943
-      PixelArtVFX_02_13: 9093815231183945096
-      PixelArtVFX_02_14: 7243337202485442896
-      PixelArtVFX_02_6: -8701474542710977084
-      PixelArtVFX_02_47: 3067883579354962415
-      PixelArtVFX_02_5: -7184106105000225295
-      PixelArtVFX_02_41: -183725500578089977
-      PixelArtVFX_02_37: -3431128060076580437
-      PixelArtVFX_02_62: -8885735296804523553
-      PixelArtVFX_02_51: -4755495825008144528
       PixelArtVFX_02_0: 4573276605267010958
-      PixelArtVFX_02_25: 8677619374169864184
-      PixelArtVFX_02_23: -1813505868986935497
-      PixelArtVFX_02_57: -5953726527455198451
-      PixelArtVFX_02_29: 1368262886964510425
-      PixelArtVFX_02_44: 4695629765183512935
-      PixelArtVFX_02_2: -3867466593376138744
-      PixelArtVFX_02_20: -2642107173616647391
-      PixelArtVFX_02_32: 364497934751119266
-      PixelArtVFX_02_24: 3570650575611163264
-      PixelArtVFX_02_18: -1332509171929150416
-      PixelArtVFX_02_21: 6409131617473354560
-      PixelArtVFX_02_36: 2638420114224040930
-      PixelArtVFX_02_38: 8706375427332682433
-      PixelArtVFX_02_9: -8258958459930204303
-      PixelArtVFX_02_46: -4355898759890795901
-      PixelArtVFX_02_26: 2880972703540350550
-      PixelArtVFX_02_54: 6646766250983524125
-      PixelArtVFX_02_60: 6049243060594731481
-      PixelArtVFX_02_63: -5918004501218928765
+      PixelArtVFX_02_1: 9007738306838212405
+      PixelArtVFX_02_10: 8162547478543427058
       PixelArtVFX_02_11: 4384595400171557939
       PixelArtVFX_02_12: 7744450699031668379
-      PixelArtVFX_02_19: 815601103848430121
-      PixelArtVFX_02_28: 5060363751040459192
-      PixelArtVFX_02_55: 4871864557086992303
-      PixelArtVFX_02_1: 9007738306838212405
-      PixelArtVFX_02_4: -8046215282629865141
-      PixelArtVFX_02_48: 2662971412872097345
-      PixelArtVFX_02_7: -6406677587857110132
-      PixelArtVFX_02_34: -1925382553446115597
-      PixelArtVFX_02_53: -4960630216969457462
-      PixelArtVFX_02_27: 6014180327546050163
-      PixelArtVFX_02_35: -5588345913022620375
-      PixelArtVFX_02_56: 4391917387454572214
-      PixelArtVFX_02_10: 8162547478543427058
-      PixelArtVFX_02_43: -7468181613723937955
-      PixelArtVFX_02_17: -112495794013441922
-      PixelArtVFX_02_3: 5716894205212383084
-      PixelArtVFX_02_39: -1916226418819033419
-      PixelArtVFX_02_22: -5339996614433383268
-      PixelArtVFX_02_40: -390008571561798045
-      PixelArtVFX_02_61: 1200507419141742611
-      PixelArtVFX_02_30: 7760267462173418102
-      PixelArtVFX_02_50: 148321253243032848
+      PixelArtVFX_02_13: 9093815231183945096
+      PixelArtVFX_02_14: 7243337202485442896
+      PixelArtVFX_02_15: -4699895436857826265
       PixelArtVFX_02_16: 3119435278582027566
+      PixelArtVFX_02_17: -112495794013441922
+      PixelArtVFX_02_18: -1332509171929150416
+      PixelArtVFX_02_19: 815601103848430121
+      PixelArtVFX_02_2: -3867466593376138744
+      PixelArtVFX_02_20: -2642107173616647391
+      PixelArtVFX_02_21: 6409131617473354560
+      PixelArtVFX_02_22: -5339996614433383268
+      PixelArtVFX_02_23: -1813505868986935497
+      PixelArtVFX_02_24: 3570650575611163264
+      PixelArtVFX_02_25: 8677619374169864184
+      PixelArtVFX_02_26: 2880972703540350550
+      PixelArtVFX_02_27: 6014180327546050163
+      PixelArtVFX_02_28: 5060363751040459192
+      PixelArtVFX_02_29: 1368262886964510425
+      PixelArtVFX_02_3: 5716894205212383084
+      PixelArtVFX_02_30: 7760267462173418102
       PixelArtVFX_02_31: 2628151605984942249
+      PixelArtVFX_02_32: 364497934751119266
+      PixelArtVFX_02_33: -4918375363163499210
+      PixelArtVFX_02_34: -1925382553446115597
+      PixelArtVFX_02_35: -5588345913022620375
+      PixelArtVFX_02_36: 2638420114224040930
+      PixelArtVFX_02_37: -3431128060076580437
+      PixelArtVFX_02_38: 8706375427332682433
+      PixelArtVFX_02_39: -1916226418819033419
+      PixelArtVFX_02_4: -8046215282629865141
+      PixelArtVFX_02_40: -390008571561798045
+      PixelArtVFX_02_41: -183725500578089977
       PixelArtVFX_02_42: 2768938045903391037
-  spritePackingTag: 
+      PixelArtVFX_02_43: -7468181613723937955
+      PixelArtVFX_02_44: 4695629765183512935
+      PixelArtVFX_02_45: 6303333213797369239
+      PixelArtVFX_02_46: -4355898759890795901
+      PixelArtVFX_02_47: 3067883579354962415
+      PixelArtVFX_02_48: 2662971412872097345
+      PixelArtVFX_02_49: 6615404655205348943
+      PixelArtVFX_02_5: -7184106105000225295
+      PixelArtVFX_02_50: 148321253243032848
+      PixelArtVFX_02_51: -4755495825008144528
+      PixelArtVFX_02_52: -5632103598148172017
+      PixelArtVFX_02_53: -4960630216969457462
+      PixelArtVFX_02_54: 6646766250983524125
+      PixelArtVFX_02_55: 4871864557086992303
+      PixelArtVFX_02_56: 4391917387454572214
+      PixelArtVFX_02_57: -5953726527455198451
+      PixelArtVFX_02_58: 5652877127796002194
+      PixelArtVFX_02_59: 7365717020574092232
+      PixelArtVFX_02_6: -8701474542710977084
+      PixelArtVFX_02_60: 6049243060594731481
+      PixelArtVFX_02_61: 1200507419141742611
+      PixelArtVFX_02_62: -8885735296804523553
+      PixelArtVFX_02_63: -5918004501218928765
+      PixelArtVFX_02_7: -6406677587857110132
+      PixelArtVFX_02_8: -97246980609309487
+      PixelArtVFX_02_9: -8258958459930204303
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 204263
-  packageName: Pixel Art RPG VFX
-  packageVersion: 3.0
-  assetPath: Assets/Pixel Art/PixelArtRPGVFX/Textures/Old_Mega_Textures/PixelArtVFX_02.png
-  uploadId: 644646
