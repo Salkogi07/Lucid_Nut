@@ -6001,7 +6001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1161798391108569509, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1161798391108569509, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: m_TagString
@@ -14159,7 +14159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257834447649280896, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7257834447649280896, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: m_TagString
@@ -14309,7 +14309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1579671473672803755, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1579671473672803755, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
       propertyPath: m_TagString
@@ -14362,6 +14362,10 @@ PrefabInstance:
     - target: {fileID: 4066636222990027682, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045630334778765047, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
+      propertyPath: attackC
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6314773418307664677, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
       propertyPath: m_SortingOrder
@@ -14446,7 +14450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8255373567955771112, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8255373567955771112, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
       propertyPath: m_TagString

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3797658820783521564}
   - component: {fileID: -7723233271519055660}
   - component: {fileID: -4035001749225439176}
+  - component: {fileID: 2979000036930580607}
   m_Layer: 0
   m_Name: snow
   m_TagString: Untagged
@@ -161,3 +162,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &2979000036930580607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3654199315740649657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5546d48c4e9ec0947a26d6ebf800217a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iceEffect: {fileID: 1926962208948576022, guid: c9fc3e96df360174d90c8f1ece884eff, type: 3}
