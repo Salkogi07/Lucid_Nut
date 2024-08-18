@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5546d48c4e9ec0947a26d6ebf800217a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iceEffect: {fileID: 1926962208948576022, guid: c9fc3e96df360174d90c8f1ece884eff, type: 3}
+  iceEffect: {fileID: 1926962208948576022, guid: c85070e07a6098842ae20474211bb576, type: 3}
 --- !u!114 &-2243726795114645866
 MonoBehaviour:
   m_ObjectHideFlags: 0
