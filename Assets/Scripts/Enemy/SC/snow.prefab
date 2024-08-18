@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7723233271519055660}
   - component: {fileID: -4035001749225439176}
   - component: {fileID: 2979000036930580607}
+  - component: {fileID: -2243726795114645866}
   m_Layer: 0
   m_Name: snow
   m_TagString: Untagged
@@ -175,3 +176,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iceEffect: {fileID: 1926962208948576022, guid: c9fc3e96df360174d90c8f1ece884eff, type: 3}
+--- !u!114 &-2243726795114645866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3654199315740649657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c69e07dc81d0e4fb45c3b030541ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
