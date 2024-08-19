@@ -1,0 +1,499 @@
+fileFormatVersion: 2
+guid: abe48cfb2b1a0d3499f5ad7abac79b61
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8549810965320712984
+    second: Cloud_Attack-AnimatedWarter-Attack3_0
+  - first:
+      213: 4193269540808775939
+    second: Cloud_Attack-AnimatedWarter-Attack3_1
+  - first:
+      213: 4743437033470146456
+    second: Cloud_Attack-AnimatedWarter-Attack3_2
+  - first:
+      213: -3075883652727387018
+    second: Cloud_Attack-AnimatedWarter-Attack3_3
+  - first:
+      213: -2007025635663973960
+    second: Cloud_Attack-AnimatedWarter-Attack3_4
+  - first:
+      213: 9188953009390801984
+    second: Cloud_Attack-AnimatedWarter-Attack3_5
+  - first:
+      213: 7039607653348799759
+    second: Cloud_Attack-AnimatedWarter-Attack3_6
+  - first:
+      213: -2119816842048410227
+    second: Cloud_Attack-AnimatedWarter-Attack3_7
+  - first:
+      213: -4440077041598718417
+    second: Cloud_Attack-AnimatedWarter-Attack3_8
+  - first:
+      213: 8114462491378634264
+    second: Cloud_Attack-AnimatedWarter-Attack3_9
+  - first:
+      213: 3509421161201109433
+    second: Cloud_Attack-AnimatedWarter-Attack3_10
+  - first:
+      213: -728291801230901326
+    second: Cloud_Attack-AnimatedWarter-Attack3_11
+  - first:
+      213: -5912789215839675063
+    second: Cloud_Attack-AnimatedWarter-Attack3_12
+  - first:
+      213: 2431809960541589494
+    second: Cloud_Attack-AnimatedWarter-Attack3_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ecb153d938f85980800000000000000
+      internalID: -8549810965320712984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3095f533e6c713a30800000000000000
+      internalID: 4193269540808775939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897bb62a9d214d140800000000000000
+      internalID: 4743437033470146456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67cc0c45d144055d0800000000000000
+      internalID: -3075883652727387018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1752b61dc9524e0800000000000000
+      internalID: -2007025635663973960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 044de7ea318b58f70800000000000000
+      internalID: 9188953009390801984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_6
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f05f9fffcd5b1b160800000000000000
+      internalID: 7039607653348799759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_7
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d60dc30d5e492e0800000000000000
+      internalID: -2119816842048410227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_8
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e1428847da162c0800000000000000
+      internalID: -4440077041598718417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_9
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81ecad5c4ac5c9070800000000000000
+      internalID: 8114462491378634264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_10
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b981a0d3f7f3b030800000000000000
+      internalID: 3509421161201109433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_11
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf7dc6277694e5f0800000000000000
+      internalID: -728291801230901326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_12
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d9d16198d81fda0800000000000000
+      internalID: -5912789215839675063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_13
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff865b56468fb120800000000000000
+      internalID: 2431809960541589494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Attack-AnimatedWarter-Attack3_14
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a968f526d8f1f4a45b9206de3f224b58
+      internalID: -506685091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: da539879d2fca1345b4457d066a37001
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Cloud_Attack-AnimatedWarter-Attack3_0: -8549810965320712984
+      Cloud_Attack-AnimatedWarter-Attack3_1: 4193269540808775939
+      Cloud_Attack-AnimatedWarter-Attack3_10: 3509421161201109433
+      Cloud_Attack-AnimatedWarter-Attack3_11: -728291801230901326
+      Cloud_Attack-AnimatedWarter-Attack3_12: -5912789215839675063
+      Cloud_Attack-AnimatedWarter-Attack3_13: 2431809960541589494
+      Cloud_Attack-AnimatedWarter-Attack3_14: -506685091
+      Cloud_Attack-AnimatedWarter-Attack3_2: 4743437033470146456
+      Cloud_Attack-AnimatedWarter-Attack3_3: -3075883652727387018
+      Cloud_Attack-AnimatedWarter-Attack3_4: -2007025635663973960
+      Cloud_Attack-AnimatedWarter-Attack3_5: 9188953009390801984
+      Cloud_Attack-AnimatedWarter-Attack3_6: 7039607653348799759
+      Cloud_Attack-AnimatedWarter-Attack3_7: -2119816842048410227
+      Cloud_Attack-AnimatedWarter-Attack3_8: -4440077041598718417
+      Cloud_Attack-AnimatedWarter-Attack3_9: 8114462491378634264
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

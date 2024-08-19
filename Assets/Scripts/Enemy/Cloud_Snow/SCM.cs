@@ -38,13 +38,13 @@ public class SCM : MonoBehaviour
 
     private void Update()
     {
-        spriteRenderer.flipX = rigid.velocity.x > 0;
         Attack();
         DetectAndMoveTowardsPlayer();
         if (move)
         {
             moveSpeed = 3f;
             rigid.velocity = new Vector2(nextmove * moveSpeed, rigid.velocity.y);
+            spriteRenderer.flipX = rigid.velocity.x > 0;
         }
     }
 
@@ -92,7 +92,12 @@ public class SCM : MonoBehaviour
 
     private IEnumerator FireProjectiles(Vector2 targetPosition)
     {
+        Vector2 directionToPlayer = (targetPosition - (Vector2)transform.position).normalized;
+        nextmove = directionToPlayer.x > 0 ? 1 : -1;
+        spriteRenderer.flipX = nextmove > 0;
+
         // 스킬 사용 중 이동을 멈추고 애니메이션 시작
+        move = false;
         nextmove = 0;
         nmove = false;
         moveSpeed = 0f;
@@ -106,9 +111,8 @@ public class SCM : MonoBehaviour
         }
 
         animator.SetBool("Attack", false);
-        move = true;
-
         yield return new WaitForSeconds(1f);
+        move = true;
         nmove = true;
         nextmove = Random.Range(-1, 2);
         attackC = true;
@@ -116,6 +120,7 @@ public class SCM : MonoBehaviour
 
     private void FireProjectile(Vector2 targetPosition)
     {
+
         // 발사체 생성 및 방향 설정
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");

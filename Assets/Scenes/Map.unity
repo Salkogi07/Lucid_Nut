@@ -14150,9 +14150,21 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
+      propertyPath: dashCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
+      propertyPath: dashDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: detectionSize1.x
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 7101419246039704061, guid: 85054d66b273e0348be37ef505066e33, type: 3}
     - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: playerLayer.m_Bits
       value: 4294967295
