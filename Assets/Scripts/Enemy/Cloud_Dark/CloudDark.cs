@@ -24,6 +24,7 @@ public class CloudDark : MonoBehaviour
     public LayerMask playerLayer1; // 플레이어 레이어
     public GameObject dashEffect;
     public GameObject projectilePrefab; // 발사체 프리팹
+    public GameObject projectilePrefab2; // 발사체 프리팹
     public int dashCount = 0; // 대쉬 횟수
     private bool hasFiredProjectile = false; // 발사체 발사 여부
 
@@ -169,7 +170,7 @@ public class CloudDark : MonoBehaviour
             // 발사체 인스턴스화 및 초기화
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
-            GameObject player = GameObject.FindWithTag("Player");
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
 
             if (projectileRb != null)
             {
@@ -177,16 +178,14 @@ public class CloudDark : MonoBehaviour
                 Vector2 launchDirection = new Vector2(0, 1); // 위쪽 방향
                 float launchSpeed = 30f; // 발사 속도
 
-                // 발사체를 위로 발사
                 projectileRb.velocity = launchDirection * launchSpeed;
-
                 animator.SetBool("Attack2", false);
 
                 // 2초간 X축만 따라다니기
                 float timeElapsed = 0f;
                 float fixedHeight = 20f; // 일정 고도
 
-                while (timeElapsed < 3f)
+                while (timeElapsed < 1f)
                 {
                     if (projectile.transform.position.y >= fixedHeight)
                     {
@@ -197,25 +196,47 @@ public class CloudDark : MonoBehaviour
                     }
 
                     timeElapsed += Time.deltaTime;
-                    yield return null; // 프레임마다 대기
+                    yield return null;
                 }
 
+                Vector2 playerpos = player.transform.position;
+                Vector2 currpos = projectile.transform.position;
+                currpos.x = playerpos.x;
+                projectile.transform.position = currpos;
 
                 // 발사체가 떨어질 때까지 대기
                 while (projectileRb.velocity.y > 0)
                 {
-                    yield return null; // 프레임마다 대기
+                    yield return null;
                 }
 
+                // 발사체 삭제 전, 여러 오브젝트를 생성하여 아래로 떨어뜨리기
+                int numberOfObjects = 8; // 떨어뜨릴 오브젝트 개수
+                for (int i = 0; i < numberOfObjects; i++)
+                {
+                    Vector2 spawnPosition = new Vector2(projectile.transform.position.x, projectile.transform.position.y);
+                    GameObject fallingObject = Instantiate(projectilePrefab2, spawnPosition, Quaternion.identity);
+                    Rigidbody2D fallingObjectRb = fallingObject.GetComponent<Rigidbody2D>();
 
+                    if (fallingObjectRb != null)
+                    {
+                        Vector2 fallingDirection = new Vector2(Random.Range(-3f, 3f), -1); // 약간의 좌우 랜덤 방향으로 떨어뜨리기
+                        fallingObjectRb.velocity = fallingDirection.normalized * Random.Range(2f, 5f); // 떨어지는 속도 설정
+                    }
+                    Destroy(fallingObject,4f);
+                }
+
+                Destroy(projectile); // 원래 발사체 삭제
+
+                yield return new WaitForSeconds(1f); // 대쉬 종료 대기
+                isDashing = false;
+                move = true;
+                nmove = true;
+                hasFiredProjectile = false;
             }
-            yield return new WaitForSeconds(1f); // 대쉬 종료 대기
-            isDashing = false;
-            move = true;
-            nmove = true;
-            hasFiredProjectile = false;
         }
     }
+
 
     // 시각적으로 감지 범위 표시용 (디버그)
     void OnDrawGizmosSelected()
