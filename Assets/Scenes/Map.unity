@@ -6001,7 +6001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1161798391108569509, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1161798391108569509, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: m_TagString
@@ -6059,6 +6059,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8310508148489124162, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
+      propertyPath: skillCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310508148489124162, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
+      propertyPath: lightningPrefab
+      value: 
+      objectReference: {fileID: 6547969831880647123, guid: 1f69a91474f58b646a103c2b8eea2056, type: 3}
     - target: {fileID: 8310508148489124162, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
       propertyPath: detectionSize1.x
       value: 13
@@ -14137,61 +14145,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 751624665447197432, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197151571494084147, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197151571494084147, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: dashCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: dashDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: detectionSize1.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 7101419246039704061, guid: 85054d66b273e0348be37ef505066e33, type: 3}
-    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: playerLayer.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305776135747823464, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: playerLayer1.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664086626497034983, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7257834447649280896, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: m_Name
       value: Cloud_Dark
       objectReference: {fileID: 0}
     - target: {fileID: 7257834447649280896, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7257834447649280896, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7257834447649280896, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
