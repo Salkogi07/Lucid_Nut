@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 3d960ca0762eb4d4b8151ad9033da6d7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6625140594939466524
+    second: Cloud_Storm-NormalAttack-png_0
+  - first:
+      213: 2938440554645475852
+    second: Cloud_Storm-NormalAttack-png_1
+  - first:
+      213: 4850147323419104994
+    second: Cloud_Storm-NormalAttack-png_2
+  - first:
+      213: -2347034507758506032
+    second: Cloud_Storm-NormalAttack-png_3
+  - first:
+      213: -1680076742327965725
+    second: Cloud_Storm-NormalAttack-png_4
+  - first:
+      213: -7197049189847310236
+    second: Cloud_Storm-NormalAttack-png_5
+  - first:
+      213: -343491398484168056
+    second: Cloud_Storm-NormalAttack-png_6
+  - first:
+      213: 9170927049386821134
+    second: Cloud_Storm-NormalAttack-png_7
+  - first:
+      213: 717262370551508672
+    second: Cloud_Storm-NormalAttack-png_8
+  - first:
+      213: -7308202920099120441
+    second: Cloud_Storm-NormalAttack-png_9
+  - first:
+      213: -2960209570647350165
+    second: Cloud_Storm-NormalAttack-png_10
+  - first:
+      213: 4596255171638266733
+    second: Cloud_Storm-NormalAttack-png_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cloud_Storm-NormalAttack-png_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ecec9bfab5ce04a0800000000000000
+      internalID: -6625140594939466524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Storm-NormalAttack-png_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e615b02b4f2f4340800000000000000
+      internalID: 4850147323419104994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Storm-NormalAttack-png_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df6871ec88ad6fd0800000000000000
+      internalID: -2347034507758506032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Storm-NormalAttack-png_4
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e76522ba1b2fa8e0800000000000000
+      internalID: -1680076742327965725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Storm-NormalAttack-png_5
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 0
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4606328b4e1fe1c90800000000000000
+      internalID: -7197049189847310236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_Storm-NormalAttack-png_8
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce2a77635a34f900800000000000000
+      internalID: 717262370551508672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 02a927c7e978e304e8cac5d94c1a70f5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Cloud_Storm-NormalAttack-png_0: -6625140594939466524
+      Cloud_Storm-NormalAttack-png_1: 2938440554645475852
+      Cloud_Storm-NormalAttack-png_10: -2960209570647350165
+      Cloud_Storm-NormalAttack-png_11: 4596255171638266733
+      Cloud_Storm-NormalAttack-png_2: 4850147323419104994
+      Cloud_Storm-NormalAttack-png_3: -2347034507758506032
+      Cloud_Storm-NormalAttack-png_4: -1680076742327965725
+      Cloud_Storm-NormalAttack-png_5: -7197049189847310236
+      Cloud_Storm-NormalAttack-png_6: -343491398484168056
+      Cloud_Storm-NormalAttack-png_7: 9170927049386821134
+      Cloud_Storm-NormalAttack-png_8: 717262370551508672
+      Cloud_Storm-NormalAttack-png_9: -7308202920099120441
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

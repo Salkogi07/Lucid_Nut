@@ -107,9 +107,9 @@ GameObject:
   - component: {fileID: 5664086626497034983}
   - component: {fileID: 3305776135747823464}
   - component: {fileID: 8012789635054815483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cloud_Dark
-  m_TagString: wall
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +232,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 4
 --- !u!61 &5664086626497034983
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -263,7 +263,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -299,19 +299,22 @@ MonoBehaviour:
   isDashing: 0
   isPreparingToDash: 0
   dashSpeed: 15
-  cooldownTime: 0.7
   detectionSize1: {x: 12, y: 2}
   detectionOffset1: {x: 0, y: 0}
   playerLayer1:
     serializedVersion: 2
     m_Bits: 4294967295
   dashEffect: {fileID: 6802674829951136677, guid: 81e1d6593854b734eb31fccdcfdc2d2d, type: 3}
+  projectilePrefab: {fileID: 7101419246039704061, guid: 85054d66b273e0348be37ef505066e33, type: 3}
+  projectilePrefab2: {fileID: 7101419246039704061, guid: 5d2881a0b341b3c45b89405f2b972e41, type: 3}
+  dashCount: 3
   detectionSize: {x: 22, y: 2}
   detectionOffset: {x: 0, y: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 4294967295
   nmove: 0
+  dashDistance: 10
 --- !u!114 &8012789635054815483
 MonoBehaviour:
   m_ObjectHideFlags: 0
