@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class CSM : MonoBehaviour
 {
@@ -28,6 +28,11 @@ public class CSM : MonoBehaviour
     public LayerMask playerLayer; // 플레이어 레이어
     public bool nmove = false;
 
+    [Header("Special Attack info")]
+    public GameObject lightningPrefab; // 벼락의 프리팹
+    public float lightningRadius = 5f; // 벼락의 반경
+    private int skillCount = 0; // 스킬 사용 카운트
+
     private Transform playerTransform;
 
     void Start()
@@ -36,7 +41,6 @@ public class CSM : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>(); // SpriteRenderer 컴포넌트 가져오기
         think();
     }
-
 
     private void Update()
     {
@@ -86,7 +90,16 @@ public class CSM : MonoBehaviour
             if (collider.tag == "Player" && attackC)
             {
                 attackC = false;
-                StartCoroutine(FireProjectile(collider.transform.position));
+                skillCount++; // 스킬 사용 카운트 증가
+                if (skillCount >= 3)
+                {
+                    skillCount = 0; // 카운트 초기화
+                    StartCoroutine(FireLightning(collider.transform.position));
+                }
+                else
+                {
+                    StartCoroutine(FireProjectile(collider.transform.position));
+                }
                 break; // 감지된 플레이어가 있으면 한 번만 발사
             }
         }
@@ -135,6 +148,45 @@ public class CSM : MonoBehaviour
         attackC = true;
     }
 
+    private IEnumerator FireLightning(Vector2 targetPosition)
+    {
+        Vector2 directionToPlayer = (targetPosition - (Vector2)transform.position).normalized;
+        nextmove = directionToPlayer.x > 0 ? 1 : -1;
+        spriteRenderer.flipX = nextmove > 0;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        Vector2 lightningpos = transform.position;
+
+        lightningpos.x = player.transform.position.x;
+        lightningpos.y = lightningpos.y + 20;
+
+        // 스킬 사용 중 이동을 멈추고 애니메이션 시작
+        nextmove = 0;
+        nmove = false;
+        move = false;
+        moveSpeed = 0f;
+        animator.SetBool("Attack2", true);
+        
+        yield return new WaitForSeconds(0.6f);
+
+        // 벼락 생성
+        GameObject lightning = Instantiate(lightningPrefab, lightningpos, Quaternion.identity);
+        Rigidbody2D lightningRb = lightning.GetComponent<Rigidbody2D>();
+        lightningRb.velocity = new Vector2(0,-1) * 30f;
+
+        // 벼락의 영향 반경 내 플레이어에게 데미지를 입히는 로직 추가 가능
+
+        animator.SetBool("Attack2", false);
+
+        Destroy(lightning, 2f);
+
+        yield return new WaitForSeconds(1f);
+        nmove = true;
+        nextmove = Random.Range(-1, 2);
+        move = true;
+        attackC = true;
+    }
 
     // 시각적으로 감지 범위 표시용 (디버그)
     void OnDrawGizmosSelected()

@@ -251,10 +251,10 @@ TextureImporter:
       name: forest_golem_idle_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 14
         y: 448
-        width: 64
-        height: 64
+        width: 47
+        height: 31
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,10 +272,10 @@ TextureImporter:
       name: forest_golem_idle_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 78
         y: 448
-        width: 64
-        height: 64
+        width: 47
+        height: 30
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +293,10 @@ TextureImporter:
       name: forest_golem_idle_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 142
         y: 448
-        width: 64
-        height: 64
+        width: 47
+        height: 29
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,10 +314,10 @@ TextureImporter:
       name: forest_golem_idle_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 206
         y: 448
-        width: 64
-        height: 64
+        width: 47
+        height: 28
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,10 +335,10 @@ TextureImporter:
       name: forest_golem_run_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 14
         y: 384
-        width: 64
-        height: 64
+        width: 47
+        height: 30
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,10 +356,10 @@ TextureImporter:
       name: forest_golem_run_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 79
         y: 384
-        width: 64
-        height: 64
+        width: 45
+        height: 31
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,10 +377,10 @@ TextureImporter:
       name: forest_golem_run_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 146
         y: 384
-        width: 64
-        height: 64
+        width: 38
+        height: 32
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,10 +398,10 @@ TextureImporter:
       name: forest_golem_run_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 211
         y: 384
-        width: 64
-        height: 64
+        width: 36
+        height: 30
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,10 +419,10 @@ TextureImporter:
       name: forest_golem_run_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 274
         y: 384
-        width: 64
-        height: 64
+        width: 38
+        height: 31
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,10 +440,10 @@ TextureImporter:
       name: forest_golem_run_5
       rect:
         serializedVersion: 2
-        x: 320
+        x: 335
         y: 384
-        width: 64
-        height: 64
+        width: 45
+        height: 32
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,10 +461,10 @@ TextureImporter:
       name: forest_golem_attack_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 320
-        width: 64
-        height: 64
+        width: 50
+        height: 32
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,10 +482,10 @@ TextureImporter:
       name: forest_golem_attack_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 70
         y: 320
-        width: 64
-        height: 64
+        width: 47
+        height: 49
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,10 +503,10 @@ TextureImporter:
       name: forest_golem_attack_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 135
         y: 320
-        width: 64
-        height: 64
+        width: 46
+        height: 50
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -524,10 +524,10 @@ TextureImporter:
       name: forest_golem_attack_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 196
         y: 320
-        width: 64
-        height: 64
+        width: 49
+        height: 27
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,10 +545,10 @@ TextureImporter:
       name: forest_golem_attack_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 261
         y: 320
-        width: 64
-        height: 64
+        width: 48
+        height: 27
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,10 +566,10 @@ TextureImporter:
       name: forest_golem_attack_5
       rect:
         serializedVersion: 2
-        x: 320
+        x: 331
         y: 320
-        width: 64
-        height: 64
+        width: 42
+        height: 30
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}

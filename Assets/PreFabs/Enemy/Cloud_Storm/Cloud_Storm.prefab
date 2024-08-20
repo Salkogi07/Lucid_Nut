@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1273820715935035830}
   - component: {fileID: 4977621659559910624}
   - component: {fileID: 8310508148489124162}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cloud_Storm
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 4
 --- !u!61 &4977621659559910624
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
   nextmove: 0
   projectilePrefab: {fileID: 6547969831880647123, guid: 47eb6b5f5c189f348890945037baf791, type: 3}
   projectileSpeed: 15
-  detectionSize1: {x: 10, y: 2}
+  detectionSize1: {x: 13, y: 2}
   detectionOffset1: {x: 0, y: 0}
   playerLayer1:
     serializedVersion: 2
@@ -217,6 +217,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   nmove: 0
+  lightningPrefab: {fileID: 6547969831880647123, guid: 1f69a91474f58b646a103c2b8eea2056, type: 3}
+  lightningRadius: 5
 --- !u!1 &5730396202851638576
 GameObject:
   m_ObjectHideFlags: 0
