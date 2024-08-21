@@ -251,12 +251,12 @@ TextureImporter:
       name: forest_golem_idle_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 7
         y: 448
-        width: 47
-        height: 31
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -272,12 +272,12 @@ TextureImporter:
       name: forest_golem_idle_1
       rect:
         serializedVersion: 2
-        x: 78
+        x: 71
         y: 448
-        width: 47
-        height: 30
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -293,12 +293,12 @@ TextureImporter:
       name: forest_golem_idle_2
       rect:
         serializedVersion: 2
-        x: 142
+        x: 135
         y: 448
-        width: 47
-        height: 29
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -314,12 +314,12 @@ TextureImporter:
       name: forest_golem_idle_3
       rect:
         serializedVersion: 2
-        x: 206
+        x: 199
         y: 448
-        width: 47
-        height: 28
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -335,12 +335,12 @@ TextureImporter:
       name: forest_golem_run_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 7
         y: 384
-        width: 47
-        height: 30
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -356,12 +356,12 @@ TextureImporter:
       name: forest_golem_run_1
       rect:
         serializedVersion: 2
-        x: 79
+        x: 71
         y: 384
-        width: 45
-        height: 31
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -377,12 +377,12 @@ TextureImporter:
       name: forest_golem_run_2
       rect:
         serializedVersion: 2
-        x: 146
+        x: 135
         y: 384
-        width: 38
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -398,12 +398,12 @@ TextureImporter:
       name: forest_golem_run_3
       rect:
         serializedVersion: 2
-        x: 211
+        x: 199
         y: 384
-        width: 36
-        height: 30
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -419,12 +419,12 @@ TextureImporter:
       name: forest_golem_run_4
       rect:
         serializedVersion: 2
-        x: 274
-        y: 384
-        width: 38
-        height: 31
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 263
+        y: 383
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -440,12 +440,12 @@ TextureImporter:
       name: forest_golem_run_5
       rect:
         serializedVersion: 2
-        x: 335
+        x: 327
         y: 384
-        width: 45
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -461,12 +461,12 @@ TextureImporter:
       name: forest_golem_attack_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 2
         y: 320
-        width: 50
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -482,12 +482,12 @@ TextureImporter:
       name: forest_golem_attack_1
       rect:
         serializedVersion: 2
-        x: 70
+        x: 69
         y: 320
-        width: 47
-        height: 49
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -503,12 +503,12 @@ TextureImporter:
       name: forest_golem_attack_2
       rect:
         serializedVersion: 2
-        x: 135
+        x: 133
         y: 320
-        width: 46
+        width: 60
         height: 50
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -526,10 +526,10 @@ TextureImporter:
         serializedVersion: 2
         x: 196
         y: 320
-        width: 49
-        height: 27
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -547,10 +547,10 @@ TextureImporter:
         serializedVersion: 2
         x: 261
         y: 320
-        width: 48
-        height: 27
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -566,12 +566,12 @@ TextureImporter:
       name: forest_golem_attack_5
       rect:
         serializedVersion: 2
-        x: 331
+        x: 329
         y: 320
-        width: 42
-        height: 30
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
