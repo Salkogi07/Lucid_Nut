@@ -8,18 +8,18 @@ public class Itmepuzzle : MonoBehaviour
 
 
 
-    int redkey;
-    int orangekey;
-    int yellowkey;
-    int Lightgreenkey;
-    int bluekey;
-    int purplekey;
+    public int redkey;
+    public int orangekey;
+    public int yellowkey;
+    public int Lightgreenkey;
+    public int bluekey;
+    public int purplekey;
 
-    public door door;
+    /*public door door;*/
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
     public void key(string keycolor)
     {
@@ -63,22 +63,23 @@ public class Itmepuzzle : MonoBehaviour
 
         }
     }
-    public void doorcord(string doorcolor)
+    public void doorcord()
     {
-        if(doorcolor =="red" && redkey > 0)
+     /*    door door = other.GetComponent<door>();
+        if (door.doorcolor =="red" && redkey > 0)
         {
             redkey = redkey - 1;
-            door.dooropen();
+            
         }
-        if (doorcolor == "orange" && orangekey>0)
+        if (door.doorcolor == "orange" && orangekey>0)
         {
             orangekey = orangekey - 1;
-            door.dooropen();
+            
         }
         else
         {
             Debug.Log("no");
-        }
+        }*/
     }
 
 
