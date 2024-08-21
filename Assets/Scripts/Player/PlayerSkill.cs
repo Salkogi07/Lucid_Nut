@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerSkill : MonoBehaviour
 {
     PlayerMove playerMove;
-    PlayerAnimator playerAnimator;
+    PlayerAnimator_M playerAnimator;
     Rigidbody2D rb;
     TrailRenderer tr;
 
@@ -25,7 +25,7 @@ public class PlayerSkill : MonoBehaviour
     void Awake()
     {
         playerMove = GetComponent<PlayerMove>();
-        playerAnimator = GetComponent<PlayerAnimator>();
+        playerAnimator = GetComponent<PlayerAnimator_M>();
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<TrailRenderer>();
     }
@@ -48,6 +48,23 @@ public class PlayerSkill : MonoBehaviour
         else
         {
             UmbrellaTime -= Time.deltaTime;
+        }
+    }
+
+    public void DashBtn()
+    {
+        if (canDash)
+        {
+            StartCoroutine(Dash());
+        }
+    }
+
+    public void UmbrellaBtn()
+    {
+        if (playerMove.canUmbrella())
+        {
+            isUmbrellaOpen = !isUmbrellaOpen;
+            UmbrellaTime = UmbrellaCoolTime;
         }
     }
 

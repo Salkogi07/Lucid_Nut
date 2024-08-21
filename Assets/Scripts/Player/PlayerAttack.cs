@@ -52,6 +52,36 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    #region MO
+    public void AttackBtn()
+    {
+        if (!playerMove.isMO)
+            return;
+
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
+        foreach (Collider2D collider in collider2Ds)
+        {
+            if (collider.CompareTag("Enemy"))
+            {
+                if (collider.name == "Tornado_boss")
+                {
+                    Debug.Log("토네이도보스");
+                    BossScript boss = collider.GetComponent<BossScript>();
+                    boss.BossHp -= playerAttack;
+                }
+                else if (collider.name == "final_boss")
+                {
+                    Debug.Log("최종보스");
+                    FinalBossScript boss = collider.GetComponent<FinalBossScript>();
+                    boss.BossHp -= playerAttack;
+                }
+            }
+        }
+        playerMove.isAttack = true;
+        curTime = coolTime;
+    }
+    #endregion
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
