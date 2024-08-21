@@ -1,9 +1,18 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
+    #region MO
+    [Header("MO")]
+    public bool isMO = false;
+    public Button leftButton;
+    public Button rightButton;
+    #endregion
+
     [Header("Player Info")]
     [SerializeField] public float moveSpeed = 5f; // 이동 속도
     [SerializeField] public float jumpForce = 10f; // 점프 힘
@@ -24,7 +33,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject wingBong;
     public ParticleSystem dust;
     public Rigidbody2D rb { get; private set; }
-    private PlayerAnimator animator;
+    private PlayerAnimator_M animator;
     private PlayerSkill playerSkill;
 
     [Header("IsAtcitoning")]
@@ -51,10 +60,21 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerSkill = GetComponent<PlayerSkill>();
-        animator = GetComponent<PlayerAnimator>();
+        animator = GetComponent<PlayerAnimator_M>();
 
         gravityScale = rb.gravityScale;
     }
+
+    #region MO
+    private void Start()
+    {
+        AddEventTrigger(leftButton.gameObject, EventTriggerType.PointerDown, () => MoveLeft());
+        AddEventTrigger(leftButton.gameObject, EventTriggerType.PointerUp, () => StopMovement());
+
+        AddEventTrigger(rightButton.gameObject, EventTriggerType.PointerDown, () => MoveRight());
+        AddEventTrigger(rightButton.gameObject, EventTriggerType.PointerUp, () => StopMovement());
+    }
+    #endregion
 
     void Update()
     {
@@ -63,8 +83,17 @@ public class PlayerMove : MonoBehaviour
             return;
         }
 
-        // 좌우 이동
-        MoveInput();
+        if (isMO)
+        {
+            rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+            JumpMO();
+        }
+        else
+        {
+            // 좌우 이동
+            MoveInput();
+            Jump();
+        }
 
         // 캐릭터 방향 설정
         Flip();
@@ -72,12 +101,83 @@ public class PlayerMove : MonoBehaviour
         // 바닥 체크
         GroundCheck();
 
-        Jump();
 
         GravitySetting();
 
         AnimationController();
     }
+
+    #region MO
+    private void AddEventTrigger(GameObject obj, EventTriggerType type, UnityEngine.Events.UnityAction action)
+    {
+        EventTrigger trigger = obj.GetComponent<EventTrigger>();
+        if (trigger == null) trigger = obj.AddComponent<EventTrigger>();
+
+        var entry = new EventTrigger.Entry { eventID = type };
+        entry.callback.AddListener((eventData) => { action(); });
+        trigger.triggers.Add(entry);
+    }
+
+    public void MoveRight()
+    {
+        moveInput = 1;
+    }
+
+    public void MoveLeft()
+    {
+        moveInput = -1;
+    }
+
+    public void StopMovement()
+    {
+        moveInput = 0;
+    }
+
+    public void OnJumpButtonPressed()
+    {
+        jumpBufferCounter = jumpBufferTime;
+    }
+
+    private void JumpMO()
+    {
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+            doubleJumpAvailable = true; // 바닥에 닿으면 더블 점프 가능
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        // 기존 점프 처리 로직
+        if (jumpBufferCounter > 0f)
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isJumping)
+        {
+            CreateDust();
+            PerformJump();
+            isJumpCut = true;
+        }
+        else if (canDoubleJump && doubleJumpAvailable && !isGrounded && jumpBufferCounter > 0f)
+        {
+            PerformJump();
+            StartCoroutine(WingEffectStart());
+            isJumpCut = true;
+            doubleJumpAvailable = false; // 더블 점프 사용 후에는 더블 점프 불가
+        }
+
+        if (isJumpCut && jumpBufferCounter <= 0f && rb.velocity.y > 0f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            coyoteTimeCounter = 0f;
+            isJumpCut = false;
+        }
+    }
+    #endregion
 
     private void GravitySetting()
     {
