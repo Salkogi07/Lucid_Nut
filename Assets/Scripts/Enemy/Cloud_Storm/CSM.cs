@@ -26,7 +26,7 @@ public class CSM : MonoBehaviour
     public Vector2 detectionSize = new Vector2(22f, 2f); // 플레이어 감지 범위 (사각형 크기)
     public Vector2 detectionOffset = Vector2.zero; // 사각형의 위치 오프셋
     public LayerMask playerLayer; // 플레이어 레이어
-    public bool nmove = true;
+    public bool nmove = false;
 
     [Header("Special Attack info")]
     public GameObject lightningPrefab; // 벼락의 프리팹

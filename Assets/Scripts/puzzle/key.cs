@@ -16,8 +16,8 @@ public class key : MonoBehaviour
             if (other.CompareTag("Player"))
             {
 
-            
-
+            /* Debug.Log("플레이어와 충돌했습니다!");*/
+            // 이 오브젝트를 제거
             Itmepuzzle.key(keycolor);
             Destroy(gameObject);
             }
