@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5deacf1dfa851f348acc64381e61cc71
+guid: eaa819fd58d01e94aaab8f5b582bd46d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8026138991076548580
-    second: LightFlash_0
+      213: -6589682050935288458
+    second: StreatLamp_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 26
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LightFlash_0
+      name: StreatLamp_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 8
         y: 0
-        width: 52
-        height: 52
+        width: 11
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c1068f6ac1d6d9090800000000000000
-      internalID: -8026138991076548580
+      spriteID: 67d0c3b961fbc84a0800000000000000
+      internalID: -6589682050935288458
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LightFlash_0: -8026138991076548580
+      StreatLamp_0: -6589682050935288458
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
