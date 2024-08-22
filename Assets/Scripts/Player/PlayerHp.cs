@@ -7,6 +7,7 @@ public class PlayerHp : MonoBehaviour
     private int player_HP = 0;
     private int player_maxHP = 100;
     private bool isDead;
+    public ShakeCam Shaking;
 
     [SerializeField] Image player_HpBar;
     [SerializeField] Text player_HpTxt;
@@ -34,10 +35,13 @@ public class PlayerHp : MonoBehaviour
     {
         if (!playerMove.isDashing)
         {
+            Shaking.Shake();
             player_HP -= _value;
             Set_HP(player_HP);
         }
     }
+
+    
 
     private void Set_HP(int _value)
     {

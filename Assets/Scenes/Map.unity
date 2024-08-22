@@ -5319,7 +5319,7 @@ MonoBehaviour:
   m_Intensity: 5
   m_LightVolumeIntensity: 2
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000af7ccc76615b4c8a
+  m_ApplyToSortingLayers: 00000000af7ccc76615b4c8a1b1092a0
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 3
@@ -6035,6 +6035,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3973510189483860582, guid: abb9fd79b581449479a64d1c98e23a3c, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6053,6 +6057,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6212,6 +6217,22 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822f96474338c334e95d3f4df689d30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShakeDuration: 0.3
+  ShakeAmplitude: 1.2
+  ShakeFrequency: 2
+  virtualCamera: {fileID: 713498933}
 --- !u!1 &565489483
 GameObject:
   m_ObjectHideFlags: 0
@@ -6740,7 +6761,7 @@ MonoBehaviour:
   m_Intensity: 0.8
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000af7ccc76615b4c8a
+  m_ApplyToSortingLayers: 00000000af7ccc76615b4c8a1b1092a0
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -7037,6 +7058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b45c83e473d0046a9c784ec4f75d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Shaking: {fileID: 519420035}
   player_HpBar: {fileID: 1189806944}
   player_HpTxt: {fileID: 289127149}
 --- !u!114 &952614153
@@ -7099,6 +7121,7 @@ MonoBehaviour:
   coolTime: 0.3
   pos: {fileID: 1586618224}
   boxSize: {x: 2, y: 2.5}
+  AttackEffect: {fileID: 1311713776560038866, guid: 22cc026e3c32e104daea6233294b658e, type: 3}
 --- !u!114 &952614157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14104,6 +14127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7135062264417128417, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 7257834447649280896, guid: 60d42ca49f486de4180360a3a8580d91, type: 3}
       propertyPath: m_Name
       value: Cloud_Dark
@@ -14161,6 +14188,7 @@ GameObject:
   - component: {fileID: 2128114510}
   - component: {fileID: 2128114511}
   - component: {fileID: 2128114512}
+  - component: {fileID: 2128114513}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -14238,6 +14266,23 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &2128114513
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128114509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &2048985098170153200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14251,17 +14296,13 @@ PrefabInstance:
       value: Cloud_Snow
       objectReference: {fileID: 0}
     - target: {fileID: 1579671473672803755, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1579671473672803755, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1579671473672803755, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
+    - target: {fileID: 1581076668646251695, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 2140828525891759309, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.15
@@ -14301,22 +14342,6 @@ PrefabInstance:
     - target: {fileID: 2140828525891759309, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748135339121590538, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066636222990027682, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5045630334778765047, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
-      propertyPath: attackC
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314773418307664677, guid: 490cd8c5cc2b7644293a9f425c5ce3c4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14371,37 +14396,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4421399291808795044, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207815886559758028, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207815886559758028, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5412283541547048161, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 7536319157417535922, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 8255373567955771112, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
       propertyPath: m_Name
       value: Cloud_Ice
       objectReference: {fileID: 0}
     - target: {fileID: 8255373567955771112, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8255373567955771112, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8255373567955771112, guid: bcc1c8407005ae74cb030e396b387c40, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14416,13 +14421,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2418789167757930134, guid: 7c957f3e329e42449ac88198a18d110a, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 6500266742886173426, guid: 7c957f3e329e42449ac88198a18d110a, type: 3}
       propertyPath: m_Name
       value: forest_golem
       objectReference: {fileID: 0}
     - target: {fileID: 6500266742886173426, guid: 7c957f3e329e42449ac88198a18d110a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7930541103501475810, guid: 7c957f3e329e42449ac88198a18d110a, type: 3}
       propertyPath: m_LocalPosition.x

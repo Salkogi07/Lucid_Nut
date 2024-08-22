@@ -62,7 +62,6 @@ public class golem_M : MonoBehaviour
         if (nmove)
         {
             nextmove = Random.Range(-1, 2);
-            Debug.Log(nextmove);
         }
         float nextTimeThink = Random.Range(2f, 4f);
         Invoke("think", nextTimeThink);

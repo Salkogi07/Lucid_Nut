@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform pos;
     public Vector2 boxSize;
     private int playerAttack = 100;
+    public GameObject AttackEffect;
 
     private void Awake()
     {
@@ -39,7 +41,16 @@ public class PlayerAttack : MonoBehaviour
                             Debug.Log("최종보스");
                             FinalBossScript boss = collider.GetComponent<FinalBossScript>();
                             boss.BossHp -= playerAttack;
-                        }                 
+                        }
+                        else
+                        {
+                            EnemyHP enemy = collider.GetComponent<EnemyHP>();
+                            enemy.TakeDamage(5);
+                            GameObject AE =  Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
+                            Destroy(AE,0.5f);
+                            Debug.Log(collider.gameObject.name);
+                            break;
+                        }
                     }
                 }
                 playerMove.isAttack = true;
