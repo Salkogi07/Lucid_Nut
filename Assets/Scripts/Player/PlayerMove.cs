@@ -172,7 +172,7 @@ public class PlayerMove : MonoBehaviour
 
         if (isJumpCut && jumpBufferCounter <= 0f && rb.velocity.y > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 1f);
             coyoteTimeCounter = 0f;
             isJumpCut = false;
         }
