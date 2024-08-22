@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5deacf1dfa851f348acc64381e61cc71
+guid: d7ba7f24d20272f4093a09ffd0e85482
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8026138991076548580
-    second: LightFlash_0
+      213: -4841703152030126298
+    second: LightFlash-main_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LightFlash_0
+      name: LightFlash-main_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 68
-        height: 68
+        x: 0
+        y: 0
+        width: 52
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c1068f6ac1d6d9090800000000000000
-      internalID: -8026138991076548580
+      spriteID: 62fea5bb2a0deccb0800000000000000
+      internalID: -4841703152030126298
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 36023049323b16b49bb4118a5d999765
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LightFlash_0: -8026138991076548580
+      LightFlash-main_0: -4841703152030126298
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
