@@ -52,8 +52,6 @@ public class golem_M : MonoBehaviour
         if (nmove)
         {
             nextmove = Random.Range(-1, 2);
-<<<<<<< HEAD
-=======
             if (nextmove == 0)
             {
                 animator.SetBool("move", false);
@@ -62,7 +60,6 @@ public class golem_M : MonoBehaviour
             {
                 animator.SetBool("move", true);
             }
->>>>>>> d34a07ac49a75da99a4fbcd4572a2d458ae75cbb
         }
         float nextTimeThink = Random.Range(2f, 4f);
         Invoke("think", nextTimeThink);

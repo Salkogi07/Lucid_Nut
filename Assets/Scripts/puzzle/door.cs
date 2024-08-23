@@ -24,13 +24,13 @@ public class door : MonoBehaviour
             if (doorcolor == "red" && Itmepuzzle.redkey > 0)
             {
                 Itmepuzzle.redkey = Itmepuzzle.redkey - 1;
-                Itmepuzzle.doorcord();
+                Itmepuzzle.doorcord(doorcolor);
                 Destroy(gameObject);
             }
             if (doorcolor == "orange" && Itmepuzzle.orangekey > 0)
             {
                 Itmepuzzle.orangekey = Itmepuzzle.orangekey - 1;
-                Itmepuzzle.doorcord();
+                Itmepuzzle.doorcord(doorcolor);
 
                 Destroy(gameObject);
 
@@ -38,7 +38,7 @@ public class door : MonoBehaviour
             if (doorcolor == "yellow" && Itmepuzzle.yellowkey > 0)
             {
                 Itmepuzzle.yellowkey = Itmepuzzle.yellowkey - 1;
-                Itmepuzzle.doorcord();
+                Itmepuzzle.doorcord(doorcolor);
 
                 Destroy(gameObject);
 
@@ -46,7 +46,7 @@ public class door : MonoBehaviour
             if (doorcolor == "Lightgreen" && Itmepuzzle.Lightgreenkey > 0)
             {
                 Itmepuzzle.Lightgreenkey = Itmepuzzle.Lightgreenkey - 1;
-                Itmepuzzle.doorcord();
+                Itmepuzzle.doorcord(doorcolor);
 
                 Destroy(gameObject);
 
@@ -54,7 +54,7 @@ public class door : MonoBehaviour
             if (doorcolor == "blue" && Itmepuzzle.bluekey > 0)
             {
                 Itmepuzzle.bluekey = Itmepuzzle.bluekey - 1;
-                Itmepuzzle.doorcord();
+                Itmepuzzle.doorcord(doorcolor);
 
                 Destroy(gameObject);
 
@@ -62,7 +62,7 @@ public class door : MonoBehaviour
             if (doorcolor == "purple" && Itmepuzzle.purplekey > 0)
             {
                 Itmepuzzle.purplekey = Itmepuzzle.purplekey - 1;
-                Itmepuzzle.doorcord();
+                Itmepuzzle.doorcord(doorcolor);
 
                 Destroy(gameObject);
 
