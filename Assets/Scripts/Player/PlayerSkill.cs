@@ -21,6 +21,7 @@ public class PlayerSkill : MonoBehaviour
     [SerializeField] private float UmbrellaTime = 0.8f;
     [SerializeField] public float umbrellaFallMultiplier = 0.5f;
 
+    public GameObject Um;
 
     void Awake()
     {
@@ -32,6 +33,8 @@ public class PlayerSkill : MonoBehaviour
 
     void Update()
     {
+        Um.SetActive(isUmbrellaOpen);
+
         if (Input.GetKeyDown(KeyCode.D) && canDash)
         {
             StartCoroutine(Dash());

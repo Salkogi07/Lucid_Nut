@@ -46,7 +46,11 @@ public class PlayerAttack : MonoBehaviour
                         {
                             EnemyHP enemy = collider.GetComponent<EnemyHP>();
                             enemy.TakeDamage(5);
-                            GameObject AE =  Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
+
+                            float effectDirection = playerMove.isFacingRight ? 1f : -1f;
+                            Vector3 effectScale = new Vector3(effectDirection, 1, 1);
+                            GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
+                            AE.transform.localScale = effectScale;
                             Destroy(AE,0.5f);
                             Debug.Log(collider.gameObject.name);
                             break;
@@ -85,6 +89,19 @@ public class PlayerAttack : MonoBehaviour
                     Debug.Log("최종보스");
                     FinalBossScript boss = collider.GetComponent<FinalBossScript>();
                     boss.BossHp -= playerAttack;
+                }
+                else
+                {
+                    EnemyHP enemy = collider.GetComponent<EnemyHP>();
+                    enemy.TakeDamage(5);
+
+                    float effectDirection = playerMove.isFacingRight ? 1f : -1f;
+                    Vector3 effectScale = new Vector3(effectDirection, 1, 1);
+                    GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
+                    AE.transform.localScale = effectScale;
+                    Destroy(AE, 0.5f);
+                    Debug.Log(collider.gameObject.name);
+                    break;
                 }
             }
         }
