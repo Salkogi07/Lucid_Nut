@@ -15,29 +15,22 @@ public class Itmepuzzle : MonoBehaviour
     int bluekey;
     int purplekey;
 
-    public bool stoneumbrella = false;
-
-
-    /*public door door;
-
-
-    public door door;*/
-
+    public door door;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
     public void key(string keycolor)
     {
-
-
-
-        if (keycolor == "red")
+        
+        
+        
+        if(keycolor == "red")
         {
             redkey = redkey + 1;
             Debug.Log(redkey);
-
+            
         }
         if (keycolor == "orange")
         {
@@ -72,12 +65,12 @@ public class Itmepuzzle : MonoBehaviour
     }
     public void doorcord(string doorcolor)
     {
-        if (doorcolor == "red" && redkey > 0)
+        if(doorcolor =="red" && redkey > 0)
         {
             redkey = redkey - 1;
             door.dooropen();
         }
-        if (doorcolor == "orange" && orangekey > 0)
+        if (doorcolor == "orange" && orangekey>0)
         {
             orangekey = orangekey - 1;
             door.dooropen();
@@ -90,27 +83,27 @@ public class Itmepuzzle : MonoBehaviour
 
 
 
-    /*private void OnTriggerEnter2D(Collider2D other)
-    {
+            /*private void OnTriggerEnter2D(Collider2D other)
+            {
+                // 플레이어와 충돌했는지 확인
+                if (other.CompareTag("Player"))
+                {
+
+                    *//* Debug.Log("플레이어와 충돌했습니다!");*//*
+                    // 이 오브젝트를 제거
+                    Itmepuzzle.key(keycolor);
+                    Destroy(gameObject);
+                }
+            }*/
         
-        if (other.CompareTag("Player"))
-        {
-
-            
-            Itmepuzzle.key(keycolor);
-            Destroy(gameObject);
-        }
-    }*/
-
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
     {
         /*time += Time.deltaTime;
         if(time>=1f)
         {
             Debug.Log(redkey);
         }*/
-
+       
     }
 }
-
