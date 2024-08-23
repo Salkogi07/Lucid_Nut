@@ -5,6 +5,7 @@ public class EnemyHP : MonoBehaviour
 {
     public float maxHealth;
     public float currentHealth;
+    public GameObject DieEffect;
 
     public Image healthSlider;
 
@@ -27,6 +28,8 @@ public class EnemyHP : MonoBehaviour
 
     private void Die()
     {
+        GameObject DE =  Instantiate(DieEffect, this.transform.position, Quaternion.identity);
+        Destroy(DE,0.3f);
         Destroy(gameObject);
     }
 }

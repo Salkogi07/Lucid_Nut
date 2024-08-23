@@ -233,6 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  DieEffect: {fileID: 0}
   healthSlider: {fileID: 865998829743889849}
 --- !u!1 &3549282875444183442
 GameObject:
