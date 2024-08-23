@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
     [Header("IsAtcitoning")]
     [SerializeField] public bool isPlatform = false;
     [SerializeField] private bool isJumping; // 점프 중인지 여부
-    [SerializeField] private bool isFacingRight = false; // 플레이어가 오른쪽을 보고 있는지 여부
+    [SerializeField] public bool isFacingRight = false; // 플레이어가 오른쪽을 보고 있는지 여부
 
     private int facingDir;
     private int moveInput = 0;
