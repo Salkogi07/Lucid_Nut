@@ -8,17 +8,20 @@ public class Itmepuzzle : MonoBehaviour
 
 
 
-    public int redkey;
-    public int orangekey;
-    public int yellowkey;
-    public int Lightgreenkey;
-    public int bluekey;
-    public int purplekey;
+    int redkey;
+    int orangekey;
+    int yellowkey;
+    int Lightgreenkey;
+    int bluekey;
+    int purplekey;
 
     public bool stoneumbrella = false;
 
 
-    public door door;
+    /*public door door;
+
+
+    public door door;*/
 
     // Start is called before the first frame update
     void Start()
