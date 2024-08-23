@@ -40,6 +40,38 @@ public class door : MonoBehaviour
                 Destroy(gameObject);
 
             }
+            if (doorcolor == "yellow" && Itmepuzzle.yellowkey > 0)
+            {
+                Itmepuzzle.yellowkey = Itmepuzzle.yellowkey - 1;
+                Itmepuzzle.doorcord();
+
+                Destroy(gameObject);
+
+            }
+            if (doorcolor == "Lightgreen" && Itmepuzzle.Lightgreenkey > 0)
+            {
+                Itmepuzzle.Lightgreenkey = Itmepuzzle.Lightgreenkey - 1;
+                Itmepuzzle.doorcord();
+
+                Destroy(gameObject);
+
+            }
+            if (doorcolor == "blue" && Itmepuzzle.bluekey > 0)
+            {
+                Itmepuzzle.bluekey = Itmepuzzle.bluekey - 1;
+                Itmepuzzle.doorcord();
+
+                Destroy(gameObject);
+
+            }
+            if (doorcolor == "purple" && Itmepuzzle.purplekey > 0)
+            {
+                Itmepuzzle.purplekey = Itmepuzzle.purplekey - 1;
+                Itmepuzzle.doorcord();
+
+                Destroy(gameObject);
+
+            }
             else
             {
                 Debug.Log("no");
