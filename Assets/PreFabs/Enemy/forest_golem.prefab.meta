@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8403736ba029f7e42bb6422c9a8f4a82
+=======
+guid: 7c957f3e329e42449ac88198a18d110a
+>>>>>>> parent of bf3cd004 (enemy_hp)
 PrefabImporter:
   externalObjects: {}
   userData: 
