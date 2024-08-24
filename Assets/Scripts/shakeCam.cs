@@ -19,7 +19,16 @@ public class ShakeCam : MonoBehaviour
     {
         if (virtualCamera != null)
         {
-            virtualCameranoise = virtualCamera.GetCinemachineComponent < Cinemachine.CinemachineBasicMultiChannelPerlin>();
+            virtualCameranoise = virtualCamera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
+
+            if (virtualCameranoise == null)
+            {
+                Debug.LogError("CinemachineBasicMultiChannelPerlin component not found on the virtual camera.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Virtual Camera is not assigned.");
         }
     }
 
@@ -31,7 +40,7 @@ public class ShakeCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (virtualCamera != null || virtualCameranoise != null)
+        if (virtualCamera != null && virtualCameranoise != null)
         {
             if (ShakeElapsedTime > 0)
             {
@@ -44,6 +53,17 @@ public class ShakeCam : MonoBehaviour
             {
                 virtualCameranoise.m_AmplitudeGain = 0f;
                 ShakeElapsedTime = 0f;
+            }
+        }
+        else
+        {
+            if (virtualCamera == null)
+            {
+                Debug.LogError("Virtual Camera is not assigned.");
+            }
+            if (virtualCameranoise == null)
+            {
+                Debug.LogError("CinemachineBasicMultiChannelPerlin component is missing.");
             }
         }
     }

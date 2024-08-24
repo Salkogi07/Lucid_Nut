@@ -68,11 +68,14 @@ public class PlayerMove : MonoBehaviour
     #region MO
     private void Start()
     {
-        AddEventTrigger(leftButton.gameObject, EventTriggerType.PointerDown, () => MoveLeft());
-        AddEventTrigger(leftButton.gameObject, EventTriggerType.PointerUp, () => StopMovement());
+        if (isMO)
+        {
+            AddEventTrigger(leftButton.gameObject, EventTriggerType.PointerDown, () => MoveLeft());
+            AddEventTrigger(leftButton.gameObject, EventTriggerType.PointerUp, () => StopMovement());
 
-        AddEventTrigger(rightButton.gameObject, EventTriggerType.PointerDown, () => MoveRight());
-        AddEventTrigger(rightButton.gameObject, EventTriggerType.PointerUp, () => StopMovement());
+            AddEventTrigger(rightButton.gameObject, EventTriggerType.PointerDown, () => MoveRight());
+            AddEventTrigger(rightButton.gameObject, EventTriggerType.PointerUp, () => StopMovement());
+        }
     }
     #endregion
 
