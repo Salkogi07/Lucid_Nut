@@ -156,7 +156,7 @@ public class CloudDark : MonoBehaviour
 
     private IEnumerator LaunchProjectile(Vector2 targetPosition)
     {
-        Vector2 directionToPlayer = (targetPosition - (Vector2)transform.position).normalized;
+        Vector2 directionToPlayer = (targetPosition - (Vector2)this.transform.position).normalized;
         spriteRenderer.flipX = directionToPlayer.x > 0;
 
         move = false;
@@ -167,14 +167,17 @@ public class CloudDark : MonoBehaviour
             animator.SetBool("Attack2", true);
             yield return new WaitForSeconds(1.3f);
 
-            // 발사체 인스턴스화 및 초기화
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+            Debug.Log(this.transform.position);
+            
             GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Vector2 shootPos = this.transform.position;
+            shootPos.y = player.transform.position.y;
+            GameObject projectile = Instantiate(projectilePrefab, this.transform.position, Quaternion.identity);
+            Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
 
             if (projectileRb != null)
             {
-                // 발사체를 위로 발사
+                // 발사체를 위로 발사   
                 Vector2 launchDirection = new Vector2(0, 1); // 위쪽 방향
                 float launchSpeed = 30f; // 발사 속도
 
