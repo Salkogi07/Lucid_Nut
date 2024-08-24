@@ -18,6 +18,7 @@ TagManager:
   - Energe
   - attack
   - Stone_umbrella
+  - tuto
   layers:
   - Default
   - TransparentFX

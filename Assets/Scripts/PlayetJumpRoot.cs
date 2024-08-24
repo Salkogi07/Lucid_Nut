@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayetJumpRoot : MonoBehaviour
 {
     public Animator animator;
-    private bool sk = true;
 
     private IEnumerator jump()
     {

@@ -42,6 +42,11 @@ public class PlayerAttack : MonoBehaviour
                             FinalBossScript boss = collider.GetComponent<FinalBossScript>();
                             boss.BossHp -= playerAttack;
                         }
+                        else if (collider.name == "tutorial")
+                        {
+                            AttackTuto tuto = collider.GetComponent<AttackTuto>();
+                            tuto.attackP = true;
+                        }
                         else
                         {
                             EnemyHP enemy = collider.GetComponent<EnemyHP>();

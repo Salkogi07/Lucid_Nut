@@ -7,13 +7,12 @@ public class followingBG : MonoBehaviour
     void Update()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Vector2 playerPosition = player.transform.position;
-        Vector2 backgroundPosition = this.transform.position;
+        Vector3 playerPosition = player.transform.position;
+        Vector3 backgroundPosition = this.transform.position;
 
-        // Time.deltaTime을 사용해 프레임에 독립적인 보간 계산
         backgroundPosition.x = Mathf.Lerp(backgroundPosition.x, playerPosition.x, smoothSpeed * Time.deltaTime);
 
-        // 배경의 위치를 업데이트
+        backgroundPosition.z = 2f;
         this.transform.position = backgroundPosition;
     }
 }
