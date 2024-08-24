@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4063970483703207771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6b2ff22d87b2044894ace85db00cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   iceEffect: {fileID: 5998625177485190994, guid: f21889d9d0f3fbe478d84273a98839a1, type: 3}
 --- !u!114 &-8443554416272735457
 MonoBehaviour:
