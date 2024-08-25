@@ -31,7 +31,7 @@ public class ShakeCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (virtualCamera != null || virtualCameranoise != null)
+        if (virtualCamera != null && virtualCameranoise != null)
         {
             if (ShakeElapsedTime > 0)
             {
