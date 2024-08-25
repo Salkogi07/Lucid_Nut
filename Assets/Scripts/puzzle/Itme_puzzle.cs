@@ -15,7 +15,7 @@ public class Itmepuzzle : MonoBehaviour
     public int bluekey;
     public int purplekey;
 
-    public bool stoneumbrella;
+    public bool stoneumbrella =false;
 
     /*public door door;*/
     // Start is called before the first frame update

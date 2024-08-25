@@ -27,7 +27,7 @@ public class stonedoor : MonoBehaviour
     {
         if (doorPriority == priority)
         {
-            
+            keypoint = keypoint + 1;
         }
     }
 }

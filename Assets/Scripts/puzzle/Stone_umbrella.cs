@@ -8,6 +8,8 @@ public class stoneumbrella : MonoBehaviour
     public Itmepuzzle Itmepuzzle;
     public happy happy;
     /*public Transform player;*/
+
+    public bool d;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,26 +21,36 @@ public class stoneumbrella : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    /*private void OnTriggerEnter2D(Collider2D other)
+    {*/
 
-        if (other.CompareTag("attack") || other.CompareTag("Player"))
+        /*if (other.CompareTag("attack") *//*|| other.CompareTag("Player")*//*) //공격받으면 반응
         {
             Debug.Log("맞았당");
             Itmepuzzle.stoneumbrella = true;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            *//*Destroy(gameObject);*//*
 
 
-        }
+        }*/
+        
 
-        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.T))
+            /*    if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.T))
+                {
+
+                    Itmepuzzle.stoneumbrella = false;
+                    Debug.Log("dkskdskasds");
+
+
+                }*/
+        /*}*/
+    public void umbrellaon()
         {
-
-            Itmepuzzle.stoneumbrella = false;
-            Debug.Log("dkskdskasds");
-
-
+            gameObject.SetActive(true);
         }
+    public void umbrellanone()
+    {
+        gameObject.SetActive(false);
     }
 }
 
