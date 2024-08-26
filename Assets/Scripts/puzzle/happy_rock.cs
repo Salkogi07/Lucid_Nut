@@ -10,6 +10,7 @@ public class happy : MonoBehaviour
     public Itmepuzzle Itmepuzzle;
     public stoneumbrella stoneumbrella;
 
+    public bool on = false;
     public int Priority;
     public string Stoneumbrellastate; // none close open
     // Start is called before the first frame update
@@ -19,10 +20,79 @@ public class happy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        /*GameObject attention = Instantiate(Stoneumbrella);
-        attention.transform.position = Stoneumbrella.transform.position;*/
+
+        if (other.CompareTag("Player"))
+        {
+
+            on = true;
+
+        }
+        if (other.CompareTag("Player"))//공격받으면 반응
+        /*if (Itmepuzzle.stoneumbrella == false )*/
+        {
+            Debug.Log("none");
+            Itmepuzzle.stoneumbrella = true;
+            Stoneumbrellastate = "none";
+            stoneumbrella.umbrellanone();
+
+
+            
+
+        }
+        if (other.CompareTag("Player"))//공격받으면 반응
+        /*if (Itmepuzzle.stoneumbrella == false )*/
+        {
+
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            on = false;
+        }
+           
+    }
+        /*if (Itmepuzzle.stoneumbrella == true && Input.GetKeyDown(KeyCode.T))
+        {
+
+            Itmepuzzle.stoneumbrella = false;
+            Stoneumbrellastate = "close";
+            stoneumbrella.umbrellaon();
+            Debug.Log("close");
+
+
+        }
+        if (Stoneumbrellastate == "close"  && Input.GetKeyDown(KeyCode.T))
+        {
+
+
+            Stoneumbrellastate = "open";
+            Debug.Log("open");
+
+
+        }*/
+
+
+        void Update()
+    {
+       
+
+        if(/*Itmepuzzle.stoneumbrella == false*/Stoneumbrellastate == "open" && on &&Input.GetKey(KeyCode.U))
+            {
+            Stoneumbrellastate = "close";
+            
+        }
+        if (/*Itmepuzzle.stoneumbrella == false*/Stoneumbrellastate == "close" && on && Input.GetKey(KeyCode.U))
+        {
+            Stoneumbrellastate = "open";
+
+        }
+        
+        /*attention.transform.position = Stoneumbrella.transform.position;*/
         if (Stoneumbrellastate == "open")
         {
             stonedoor.stonedooropen(Priority);
@@ -30,42 +100,5 @@ public class happy : MonoBehaviour
 
 
 
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        
-        if (other.CompareTag("Player"))
-            if (Itmepuzzle.stoneumbrella == false /*&& *//*Input.GetKey(KeyCode.U)*/) //공격받으면 반응
-        {
-            Debug.Log("none");
-            Itmepuzzle.stoneumbrella = true;
-            Stoneumbrellastate = "none";
-            stoneumbrella.umbrellanone();
-            /*gameObject.SetActive(false);*/
-            /*Destroy(gameObject);*/
-
-
-        }
-        {
-            if (Itmepuzzle.stoneumbrella == true && Input.GetKeyDown(KeyCode.T))
-            {
-
-                Itmepuzzle.stoneumbrella = false;
-                Stoneumbrellastate = "close";
-                stoneumbrella.umbrellaon();
-                Debug.Log("close");
-
-
-            }
-            if (Stoneumbrellastate == "close"  && Input.GetKeyDown(KeyCode.T))
-            {
-
-
-                Stoneumbrellastate = "open";
-                Debug.Log("open");
-
-
-            }
-        }
     }
 }
