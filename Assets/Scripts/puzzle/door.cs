@@ -72,10 +72,7 @@ public class door : MonoBehaviour
                 Destroy(gameObject);
 
             }
-            else
-            {
-                Debug.Log("no");
-            }
+            
             /* Debug.Log("플레이어와 충돌했습니다!");*/
             // 이 오브젝트를 제거
 

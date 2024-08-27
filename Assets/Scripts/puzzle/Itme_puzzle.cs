@@ -31,37 +31,37 @@ public class Itmepuzzle : MonoBehaviour
         if(keycolor == "red")
         {
             redkey = redkey + 1;
-            Debug.Log(redkey);
+           /* Debug.Log(redkey);*/
             
         }
         if (keycolor == "orange")
         {
             orangekey = orangekey + 1;
-            Debug.Log(orangekey);
+           /* Debug.Log(orangekey);*/
 
         }
         if (keycolor == "yellow")
         {
             yellowkey = yellowkey + 1;
-            Debug.Log(yellowkey);
+            /*Debug.Log(yellowkey);*/
 
         }
         if (keycolor == "Lightgreen")
         {
             Lightgreenkey = Lightgreenkey + 1;
-            Debug.Log(Lightgreenkey);
+            /*Debug.Log(Lightgreenkey);*/
 
         }
         if (keycolor == "blue")
         {
             bluekey = bluekey + 1;
-            Debug.Log(bluekey);
+            /*Debug.Log(bluekey);*/
 
         }
         if (keycolor == "purple")
         {
             purplekey = purplekey + 1;
-            Debug.Log(purplekey);
+            /*Debug.Log(purplekey);*/
 
         }
     }

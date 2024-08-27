@@ -6,7 +6,7 @@ public class stonedoor : MonoBehaviour
 {
 
 
-    public int doorPriority;
+    public string doorPriority;
     public int keypoint;
     public int keypointmax;
     // Start is called before the first frame update
@@ -20,14 +20,19 @@ public class stonedoor : MonoBehaviour
     {
         if(keypoint >= keypointmax)
         {
+            Destroy(gameObject);
             //문이 열림
         }
     }
-    public void stonedooropen(int priority)
+    public void stonedooropen(string  rockname, string Stoneumbrellastate, string priority)
     {
         if (doorPriority == priority)
         {
-            keypoint = keypoint + 1;
+            if(Stoneumbrellastate == "open")
+            {
+                keypoint = keypoint + 1;
+            }
+            
         }
     }
 }
