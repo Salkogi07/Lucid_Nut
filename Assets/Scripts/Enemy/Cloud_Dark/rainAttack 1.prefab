@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 223665064381553127}
   - component: {fileID: -6541356143053659814}
   - component: {fileID: -3189691436800574978}
+  - component: {fileID: 4083466356820882728}
   m_Layer: 0
   m_Name: rainAttack 1
   m_TagString: Untagged
@@ -161,3 +162,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5625, y: 0.9375}
   m_EdgeRadius: 0
+--- !u!114 &4083466356820882728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7101419246039704061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c69e07dc81d0e4fb45c3b030541ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
