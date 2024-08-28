@@ -58,12 +58,10 @@ public class PlayerAttack : MonoBehaviour
                         }
                         else
                         {
-                            EnemyHP enemy = collider.GetComponent<EnemyHP>();
+                            /*EnemyHP enemy = collider.GetComponent<EnemyHP>();
                             if (enemy != null)
                             {
                                 enemy.TakeDamage(5);
-
-<<<<<<< HEAD
                                 float effectDirection = playerMove.isFacingRight ? 1f : -1f;
                                 Vector3 effectScale = new Vector3(effectDirection, 1, 1);
                                 GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
@@ -72,15 +70,13 @@ public class PlayerAttack : MonoBehaviour
                                 Debug.Log(collider.gameObject.name);
                                 break;
                             }
-=======
                             float effectDirection = playerMove.isFacingRight ? 1f : -1f;
                             Vector3 effectScale = new Vector3(effectDirection, 1, 1);
                             GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
                             AE.transform.localScale = effectScale;
                             Destroy(AE, 0.5f);
                             Debug.Log(collider.gameObject.name);
-                            break;
->>>>>>> 96abaec83878134ad5a7765f5f141022852703f7
+                            break;*/
                         }
                     }
                 }
