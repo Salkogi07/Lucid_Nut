@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (curTime <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A) && !playerMove.isAttack)
             {
                 audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
                 Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
@@ -85,7 +85,7 @@ public class PlayerAttack : MonoBehaviour
     #region MO
     public void AttackBtn()
     {
-        if (!playerMove.isMO)
+        if (!playerMove.isMO && playerMove.isAttack)
             return;
 
         if (curTime <= 0)
