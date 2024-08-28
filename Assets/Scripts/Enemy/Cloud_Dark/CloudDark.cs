@@ -186,7 +186,7 @@ public class CloudDark : MonoBehaviour
 
                 // 2초간 X축만 따라다니기
                 float timeElapsed = 0f;
-                float fixedHeight = 20f; // 일정 고도
+                float fixedHeight = 20f+this.transform.position.y; // 일정 고도
 
                 while (timeElapsed < 1f)
                 {

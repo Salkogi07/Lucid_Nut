@@ -6130,7 +6130,7 @@ SpriteRenderer:
   m_Size: {x: 0.25, y: 0.26}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &519420028
@@ -8893,6 +8893,7 @@ MonoBehaviour:
   UmbrellaCoolTime: 0.8
   UmbrellaTime: 0.8
   umbrellaFallMultiplier: 0.5
+  Um: {fileID: 0}
 --- !u!114 &1565292977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8908,6 +8909,7 @@ MonoBehaviour:
   coolTime: 0.3
   pos: {fileID: 369425998}
   boxSize: {x: 1.8, y: 1.3}
+  AttackEffect: {fileID: 0}
 --- !u!114 &1565292978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8920,6 +8922,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb01110c3ce0c444ebc16e378b53168a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMO: 0
+  leftButton: {fileID: 0}
+  rightButton: {fileID: 0}
   moveSpeed: 10
   jumpForce: 16
   coyoteTime: 0.2
@@ -8931,6 +8936,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  wingBong: {fileID: 0}
+  dust: {fileID: 0}
   isPlatform: 0
   isJumping: 0
   isFacingRight: 0
@@ -9077,6 +9084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b45c83e473d0046a9c784ec4f75d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Shaking: {fileID: 0}
   player_HpBar: {fileID: 1189806944}
   player_HpTxt: {fileID: 289127149}
 --- !u!1 &1567684167
@@ -10127,8 +10135,8 @@ SceneRoots:
   - {fileID: 794133651}
   - {fileID: 1565292974}
   - {fileID: 1813009075}
-  - {fileID: 1962447923}
   - {fileID: 292396092}
+  - {fileID: 1962447923}
   - {fileID: 232652825}
   - {fileID: 2000569161}
   - {fileID: 785949858}

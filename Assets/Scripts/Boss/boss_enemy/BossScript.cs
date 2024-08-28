@@ -14,6 +14,7 @@ public class BossScript : MonoBehaviour
     public Lightning_fire lightningfire;
     public dark_clouds dark_cloud_spawn;
 
+
     public int BossHp = 10000;
 
     private int randN = -1;

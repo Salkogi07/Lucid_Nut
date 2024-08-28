@@ -28,13 +28,12 @@ public class PlayerAttack : MonoBehaviour
                 Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
                 foreach (Collider2D collider in collider2Ds)
                 {
-                    if (collider.CompareTag("Enemy"))
+                    if (collider.CompareTag("Enemy") || collider.CompareTag("tornado_Hp"))
                     {
-                        if (collider.name == "Tornado_boss")
+                        if (collider.name == "bossHp(Clone)")
                         {
-                            Debug.Log("토네이도보스");
-                            BossScript boss = collider.GetComponent<BossScript>();
-                            boss.BossHp -= playerAttack;
+                            tornado_bHp bossHp = collider.GetComponent<tornado_bHp>();
+                            bossHp.attBoss = true;
                         }
                         else if (collider.name == "final_boss")
                         {
@@ -50,15 +49,18 @@ public class PlayerAttack : MonoBehaviour
                         else
                         {
                             EnemyHP enemy = collider.GetComponent<EnemyHP>();
-                            enemy.TakeDamage(5);
+                            if (enemy != null)
+                            {
+                                enemy.TakeDamage(5);
 
-                            float effectDirection = playerMove.isFacingRight ? 1f : -1f;
-                            Vector3 effectScale = new Vector3(effectDirection, 1, 1);
-                            GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
-                            AE.transform.localScale = effectScale;
-                            Destroy(AE,0.5f);
-                            Debug.Log(collider.gameObject.name);
-                            break;
+                                float effectDirection = playerMove.isFacingRight ? 1f : -1f;
+                                Vector3 effectScale = new Vector3(effectDirection, 1, 1);
+                                GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
+                                AE.transform.localScale = effectScale;
+                                Destroy(AE, 0.5f);
+                                Debug.Log(collider.gameObject.name);
+                                break;
+                            }
                         }
                     }
                 }

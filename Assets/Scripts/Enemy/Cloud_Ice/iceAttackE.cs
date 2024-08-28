@@ -12,6 +12,7 @@ public class iceAttackE : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); // SpriteRenderer 컴포넌트 가져오기
         rigid = GetComponent<Rigidbody2D>();
+        Destroy(gameObject, 7f);
     }
 
     private void Update()
@@ -37,7 +38,10 @@ public class iceAttackE : MonoBehaviour
                 Destroy(explosion, 0.4f);
             }
 
-            Destroy(gameObject);
+            if (gameObject != null)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

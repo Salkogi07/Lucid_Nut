@@ -19,6 +19,7 @@ TagManager:
   - attack
   - Stone_umbrella
   - tuto
+  - tornado_Hp
   layers:
   - Default
   - TransparentFX

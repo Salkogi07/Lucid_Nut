@@ -24,7 +24,6 @@ public class SmallEnemy : MonoBehaviour
             // 플레이어의 위치를 저장합니다.
             playerPosition = player.transform.position;
             hasStoredPosition = true;
-            Debug.Log("플레이어 위치 저장: " + playerPosition);
 
             // 발사체를 생성하고 발사합니다.
             LaunchProjectile();

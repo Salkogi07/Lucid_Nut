@@ -26,7 +26,6 @@ public class dash : MonoBehaviour
     {
         if (DS && !isPreparingToDash)
         {
-            Debug.Log("대쉬");
             StartCoroutine(PrepareAndDash(targetPosition));
             DS = false; // 대쉬를 시작한 후 DS를 false로 설정
         }
