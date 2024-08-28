@@ -59,15 +59,18 @@ public class PlayerAttack : MonoBehaviour
                         else
                         {
                             EnemyHP enemy = collider.GetComponent<EnemyHP>();
-                            enemy.TakeDamage(5);
 
-                            float effectDirection = playerMove.isFacingRight ? 1f : -1f;
-                            Vector3 effectScale = new Vector3(effectDirection, 1, 1);
-                            GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
-                            AE.transform.localScale = effectScale;
-                            Destroy(AE, 0.5f);
-                            Debug.Log(collider.gameObject.name);
-                            break;
+                            if (enemy != null)
+                            {
+                                enemy.TakeDamage(5);
+                                float effectDirection = playerMove.isFacingRight ? 1f : -1f;
+                                Vector3 effectScale = new Vector3(effectDirection, 1, 1);
+                                GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
+                                AE.transform.localScale = effectScale;
+                                Destroy(AE, 0.5f);
+                                Debug.Log(collider.gameObject.name);
+                                break;
+                            }
                         }
                     }
                 }
@@ -87,7 +90,7 @@ public class PlayerAttack : MonoBehaviour
         if (!playerMove.isMO && playerMove.isAttack)
             return;
 
-        if (curTime <= 0)
+        if (curTime <= 0 && !playerMove.isAttack)
         {
             audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
@@ -114,15 +117,18 @@ public class PlayerAttack : MonoBehaviour
                     else
                     {
                         EnemyHP enemy = collider.GetComponent<EnemyHP>();
-                        enemy.TakeDamage(5);
 
-                        float effectDirection = playerMove.isFacingRight ? 1f : -1f;
-                        Vector3 effectScale = new Vector3(effectDirection, 1, 1);
-                        GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
-                        AE.transform.localScale = effectScale;
-                        Destroy(AE, 0.5f);
-                        Debug.Log(collider.gameObject.name);
-                        break;
+                        if (enemy != null)
+                        {
+                            enemy.TakeDamage(5);
+                            float effectDirection = playerMove.isFacingRight ? 1f : -1f;
+                            Vector3 effectScale = new Vector3(effectDirection, 1, 1);
+                            GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
+                            AE.transform.localScale = effectScale;
+                            Destroy(AE, 0.5f);
+                            Debug.Log(collider.gameObject.name);
+                            break;
+                        }
                     }
                 }
             }
