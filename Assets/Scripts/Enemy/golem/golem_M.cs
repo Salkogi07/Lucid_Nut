@@ -63,19 +63,6 @@ public class golem_M : MonoBehaviour
         if (nmove)
         {
             nextmove = Random.Range(-1, 2);
-<<<<<<< Updated upstream
-=======
-
-            if (nextmove == 0)
-            {
-                animator.SetBool("move", false);
-            }
-            else
-            {
-                animator.SetBool("move", true);
-            }
-
->>>>>>> Stashed changes
         }
         float nextTimeThink = Random.Range(2f, 4f);
         Invoke("think", nextTimeThink);
