@@ -19,7 +19,6 @@ public class EnemyHP : MonoBehaviour
     {
         currentHealth -= damageAmount;
         healthSlider.fillAmount = currentHealth/maxHealth;
-        Debug.Log(currentHealth / maxHealth);
         if (currentHealth <= 0)
         {
             Die();

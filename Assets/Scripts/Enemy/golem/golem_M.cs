@@ -51,6 +51,7 @@ public class golem_M : MonoBehaviour
             {
                 animator.SetBool("move", true);
             }
+
             moveSpeed = 3f;
             rigid.velocity = new Vector2(nextmove * moveSpeed, rigid.velocity.y);
             spriteRenderer.flipX = rigid.velocity.x > 0;
