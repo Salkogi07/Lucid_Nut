@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerSkill : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class PlayerSkill : MonoBehaviour
 
     public GameObject Um;
 
+    public Image Umbtn;
+    public Sprite UmF;
+    public Sprite UmT;
+
     void Awake()
     {
         playerMove = GetComponent<PlayerMove>();
@@ -33,8 +38,6 @@ public class PlayerSkill : MonoBehaviour
 
     void Update()
     {
-        Um.SetActive(isUmbrellaOpen);
-
         if (Input.GetKeyDown(KeyCode.D) && canDash)
         {
             StartCoroutine(Dash());
@@ -46,6 +49,8 @@ public class PlayerSkill : MonoBehaviour
             {
                 isUmbrellaOpen = !isUmbrellaOpen;
                 UmbrellaTime = UmbrellaCoolTime;
+                Umbtn.sprite = isUmbrellaOpen ? UmT : UmF;
+                Um.SetActive(isUmbrellaOpen);
             }
         }
         else
@@ -68,6 +73,8 @@ public class PlayerSkill : MonoBehaviour
         {
             isUmbrellaOpen = !isUmbrellaOpen;
             UmbrellaTime = UmbrellaCoolTime;
+            Umbtn.sprite = isUmbrellaOpen ? UmT : UmF;
+            Um.SetActive(isUmbrellaOpen);
         }
     }
 

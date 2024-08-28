@@ -13,18 +13,28 @@ public class PlayerAttack : MonoBehaviour
     public Vector2 boxSize;
     private int playerAttack = 100;
     public GameObject AttackEffect;
+    public AudioClip attackSound;  // 공격 사운드 클립 추가
+    private AudioSource audioSource;  // 오디오 소스 추가
 
     private void Awake()
     {
         playerMove = GetComponent<PlayerMove>();
+        audioSource = GetComponent<AudioSource>();  // 오디오 소스 컴포넌트 가져오기
+
+        if (audioSource == null)
+        {
+            // 만약 오디오 소스가 없으면 추가
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     void Update()
     {
         if (curTime <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A) && !playerMove.isAttack)
             {
+                audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
                 Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
                 foreach (Collider2D collider in collider2Ds)
                 {
@@ -53,6 +63,7 @@ public class PlayerAttack : MonoBehaviour
                             {
                                 enemy.TakeDamage(5);
 
+<<<<<<< HEAD
                                 float effectDirection = playerMove.isFacingRight ? 1f : -1f;
                                 Vector3 effectScale = new Vector3(effectDirection, 1, 1);
                                 GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
@@ -61,6 +72,15 @@ public class PlayerAttack : MonoBehaviour
                                 Debug.Log(collider.gameObject.name);
                                 break;
                             }
+=======
+                            float effectDirection = playerMove.isFacingRight ? 1f : -1f;
+                            Vector3 effectScale = new Vector3(effectDirection, 1, 1);
+                            GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
+                            AE.transform.localScale = effectScale;
+                            Destroy(AE, 0.5f);
+                            Debug.Log(collider.gameObject.name);
+                            break;
+>>>>>>> 96abaec83878134ad5a7765f5f141022852703f7
                         }
                     }
                 }
@@ -77,11 +97,12 @@ public class PlayerAttack : MonoBehaviour
     #region MO
     public void AttackBtn()
     {
-        if (!playerMove.isMO)
+        if (!playerMove.isMO && playerMove.isAttack)
             return;
 
         if (curTime <= 0)
         {
+            audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
             foreach (Collider2D collider in collider2Ds)
             {
