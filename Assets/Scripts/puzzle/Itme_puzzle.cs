@@ -71,12 +71,20 @@ public class Itmepuzzle : MonoBehaviour
         if (door.doorcolor =="red" && redkey > 0)
         {
             redkey = redkey - 1;
+<<<<<<< Updated upstream
             
+=======
+            /*door.dooropen();*/
+>>>>>>> Stashed changes
         }
         if (door.doorcolor == "orange" && orangekey>0)
         {
             orangekey = orangekey - 1;
+<<<<<<< Updated upstream
             
+=======
+            /*door.dooropen();*/
+>>>>>>> Stashed changes
         }
         else
         {
