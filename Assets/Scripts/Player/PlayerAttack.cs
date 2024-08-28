@@ -13,10 +13,19 @@ public class PlayerAttack : MonoBehaviour
     public Vector2 boxSize;
     private int playerAttack = 100;
     public GameObject AttackEffect;
+    public AudioClip attackSound;  // 공격 사운드 클립 추가
+    private AudioSource audioSource;  // 오디오 소스 추가
 
     private void Awake()
     {
         playerMove = GetComponent<PlayerMove>();
+        audioSource = GetComponent<AudioSource>();  // 오디오 소스 컴포넌트 가져오기
+
+        if (audioSource == null)
+        {
+            // 만약 오디오 소스가 없으면 추가
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -25,6 +34,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
+                audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
                 Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
                 foreach (Collider2D collider in collider2Ds)
                 {
@@ -56,7 +66,7 @@ public class PlayerAttack : MonoBehaviour
                             Vector3 effectScale = new Vector3(effectDirection, 1, 1);
                             GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
                             AE.transform.localScale = effectScale;
-                            Destroy(AE,0.5f);
+                            Destroy(AE, 0.5f);
                             Debug.Log(collider.gameObject.name);
                             break;
                         }
@@ -80,6 +90,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (curTime <= 0)
         {
+            audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
             foreach (Collider2D collider in collider2Ds)
             {
