@@ -73,6 +73,8 @@ public class PlayerSkill : MonoBehaviour
         {
             isUmbrellaOpen = !isUmbrellaOpen;
             UmbrellaTime = UmbrellaCoolTime;
+            Umbtn.sprite = isUmbrellaOpen ? UmT : UmF;
+            Um.SetActive(isUmbrellaOpen);
         }
     }
 
