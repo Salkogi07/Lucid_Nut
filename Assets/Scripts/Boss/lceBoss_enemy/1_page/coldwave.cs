@@ -13,6 +13,7 @@ public class coldwave : MonoBehaviour
     public float Warning_Time = 1f;
     float time; //시간
     public Transform player;
+    public PlayerMove PlayerMove;
 
     private Renderer attention;
     private Color originalColor;
@@ -71,5 +72,26 @@ public class coldwave : MonoBehaviour
                 on = true; //시간 재가동
             
         }
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.CompareTag("Player"))
+        {
+
+            /*PlayerMove.PlayerMove(); 20 - (20 * 12 / 100) = 17.6;*/
+
+
+        }
+       
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+           
+        }
+
+    }
+
 }
