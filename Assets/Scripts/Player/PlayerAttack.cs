@@ -68,8 +68,6 @@ public class PlayerAttack : MonoBehaviour
                                 GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
                                 AE.transform.localScale = effectScale;
                                 Destroy(AE, 0.5f);
-                                Debug.Log(collider.gameObject.name);
-                                break;
                             }
                         }
                     }
@@ -126,8 +124,6 @@ public class PlayerAttack : MonoBehaviour
                             GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
                             AE.transform.localScale = effectScale;
                             Destroy(AE, 0.5f);
-                            Debug.Log(collider.gameObject.name);
-                            break;
                         }
                     }
                 }

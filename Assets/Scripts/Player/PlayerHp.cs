@@ -11,6 +11,7 @@ public class PlayerHp : MonoBehaviour
 
     [SerializeField] Image player_HpBar;
     [SerializeField] Text player_HpTxt;
+    public GameObject menu;
 
     PlayerMove playerMove;
 
@@ -52,6 +53,8 @@ public class PlayerHp : MonoBehaviour
         {
             player_HP = 0;
             txt = "Dead";
+            menu.SetActive(true);
+            Time.timeScale = 0;
         }
         else
         {

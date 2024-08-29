@@ -8,23 +8,28 @@ public class Exit : MonoBehaviour
 {
     public GameObject menus;
     public Image image;
-    public void ExitGame()
+    public void TitleGame()
     {
-        Application.Quit();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+        //Application.Quit();
     }
 
     public void menu()
     {
+        Time.timeScale = 0f;
         menus.SetActive(true);
     }
 
     public void closemenu()
     {
+        Time.timeScale = 1f;
         menus.SetActive(false);
     }
 
     public void reGame()
     {
+        Time.timeScale = 1f;
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
@@ -32,11 +37,14 @@ public class Exit : MonoBehaviour
     void Update()
     {
         GameObject tornadoB = GameObject.Find("Tornado_boss");
-        BossScript boss = tornadoB.GetComponent<BossScript>();
-        if (boss.bossdead == true && boss != null)
+        if(tornadoB != null)
         {
-            Debug.Log("보스");
-            StartCoroutine(scen());
+            BossScript boss = tornadoB.GetComponent<BossScript>();
+            if (boss.bossdead == true && boss != null)
+            {
+                Debug.Log("보스");
+                StartCoroutine(scen());
+            }
         }
     }
 
