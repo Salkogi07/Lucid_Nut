@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerHp : MonoBehaviour
 {
-    private int player_HP = 0;
+    public int player_HP = 0;
     private int player_maxHP = 100;
     private bool isDead;
     public ShakeCam Shaking;

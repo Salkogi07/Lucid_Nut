@@ -1,6 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class BossScript : MonoBehaviour
 {
     //Page_Two
@@ -14,6 +15,7 @@ public class BossScript : MonoBehaviour
     public Lightning_fire lightningfire;
     public dark_clouds dark_cloud_spawn;
 
+    public bool bossdead = false;
 
     public int BossHp = 10000;
 
@@ -25,7 +27,16 @@ public class BossScript : MonoBehaviour
         // Call the ChooseSkill method every 30 seconds
         InvokeRepeating("ChooseSkill", 0f, 5f);
     }
-
+    private void Update()
+    {
+        if (BossHp <= 0)
+        {
+            Time.timeScale = 0.2f;
+            bossdead = true;
+            Destroy(gameObject, 2f);
+        }
+    }
+  
     private void ChooseSkill()
     {
         if (BossHp <= 2000)

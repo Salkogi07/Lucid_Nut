@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mobile/MapMO.unity
     guid: f19ee36f771ada042974b8db11699ea7
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 1ad15e200c49cdb49922c0ff66b66b38
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

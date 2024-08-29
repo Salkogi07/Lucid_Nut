@@ -19,16 +19,9 @@ public class tornado_bHp : MonoBehaviour
     {
         if (attBoss)
         {
-            Debug.Log(attBoss);
             bossScript.BossHp = bossScript.BossHp - 100;
-            Debug.Log(bossScript.BossHp);
             attBoss = false;
             Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log(boss);
-            Debug.Log(bossScript);
         }
     }
 }
