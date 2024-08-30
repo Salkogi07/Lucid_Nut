@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -7254450220595081490}
   - component: {fileID: 4411646762004401020}
   - component: {fileID: 4735910055567888248}
-  - component: {fileID: 5855614434822918124}
+  - component: {fileID: -7646200924155897350}
   m_Layer: 0
   m_Name: rock 1
   m_TagString: rock
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 7235011240405395635, guid: 1e5d118a3b7638b48a5eeaabcad33028, type: 3}
   m_Color: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -155,7 +155,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.5769231, y: 1.3076923}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
---- !u!114 &5855614434822918124
+--- !u!114 &-7646200924155897350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5049542284021208551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c69e07dc81d0e4fb45c3b030541ee1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b0b8e61444a75247b3544e55eb1d1eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
