@@ -2229,7 +2229,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ba1b60f498ac7244abbaa4b85a74c43d, type: 3}
   m_Resource: {fileID: 8300000, guid: ba1b60f498ac7244abbaa4b85a74c43d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
@@ -3463,7 +3463,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 33e8b1f650e667148ba5a3187c52b697, type: 3}
   m_Resource: {fileID: 8300000, guid: 33e8b1f650e667148ba5a3187c52b697, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
@@ -3733,7 +3733,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 98c62a5c3dcd9fb4f81471662824c9ca, type: 3}
   m_Resource: {fileID: 8300000, guid: 98c62a5c3dcd9fb4f81471662824c9ca, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4110,7 +4110,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 98c62a5c3dcd9fb4f81471662824c9ca, type: 3}
   m_Resource: {fileID: 8300000, guid: 98c62a5c3dcd9fb4f81471662824c9ca, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: -2
   Loop: 0
@@ -4239,7 +4239,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c19c5ce1e8ac3a943a7005bca94409d6, type: 3}
   m_Resource: {fileID: 8300000, guid: c19c5ce1e8ac3a943a7005bca94409d6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.8
   m_Pitch: 3
   Loop: 0
@@ -6132,7 +6132,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: db0cd368997bfac41b9ab020d042fb60, type: 3}
   m_Resource: {fileID: 8300000, guid: db0cd368997bfac41b9ab020d042fb60, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -9097,7 +9097,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dd9904d5ce0c29b4fbdf1e5e95a0104c, type: 3}
   m_Resource: {fileID: 8300000, guid: dd9904d5ce0c29b4fbdf1e5e95a0104c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
@@ -11549,12 +11549,6 @@ PlayableDirector:
     value: {fileID: 1417032891}
   - key: {fileID: -7783166086066048443, guid: 5cfda88b708f0c24db93e044520b2809, type: 2}
     value: {fileID: 1068874791}
-  - key: {fileID: 6600545093406469666, guid: 5cfda88b708f0c24db93e044520b2809, type: 2}
-    value: {fileID: 1068874790}
-  - key: {fileID: 5439326769056125058, guid: 5cfda88b708f0c24db93e044520b2809, type: 2}
-    value: {fileID: 1417032890}
-  - key: {fileID: 1460425583234316016, guid: 5cfda88b708f0c24db93e044520b2809, type: 2}
-    value: {fileID: 509632916}
   - key: {fileID: -4361007523528277136, guid: 5cfda88b708f0c24db93e044520b2809, type: 2}
     value: {fileID: 509632917}
   - key: {fileID: 8535669390789297939, guid: 5cfda88b708f0c24db93e044520b2809, type: 2}
