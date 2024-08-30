@@ -50,12 +50,13 @@ public class Exit : MonoBehaviour
 
     IEnumerator scen()
     {
+        Time.timeScale = 1f;
         Debug.Log("µé¾î");
         Color color = image.color;
         color.a += (Time.deltaTime * 2);
         image.color = color;
         yield return new WaitForSecondsRealtime(8f);
         Debug.Log("¿È");
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }

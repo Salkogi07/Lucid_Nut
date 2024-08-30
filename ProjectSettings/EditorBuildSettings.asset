@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Mobile/Title.unity
     guid: 755b5b81ac9192c4ab746c82802165d4
   - enabled: 1
-    path: Assets/Scenes/Prologue.unity
-    guid: 65be4b37b07e67848a2515a6ffd5395c
+    path: Assets/Scenes/Mobile/PrologueMO.unity
+    guid: 7693b0684196f3744b6740a247088c4b
   - enabled: 1
     path: Assets/Scenes/Mobile/MapMO.unity
     guid: 3d8a1b447d77753489da4b3184884191

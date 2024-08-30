@@ -16,6 +16,11 @@ public class TitleUI : MonoBehaviour
         StartCoroutine(FadeFlow());
     }
 
+    public void EndGame()
+    {
+        Application.Quit();
+    }
+
     IEnumerator FadeFlow()
     {
         Color alpha = Panel.color;

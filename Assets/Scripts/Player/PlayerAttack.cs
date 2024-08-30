@@ -56,19 +56,21 @@ public class PlayerAttack : MonoBehaviour
                             AttackTuto tuto = collider.GetComponent<AttackTuto>();
                             tuto.attackP = true;
                         }
-                        else
-                        {
-                            EnemyHP enemy = collider.GetComponent<EnemyHP>();
 
-                            if (enemy != null)
-                            {
-                                enemy.TakeDamage(5);
-                                float effectDirection = playerMove.isFacingRight ? 1f : -1f;
-                                Vector3 effectScale = new Vector3(effectDirection, 1, 1);
-                                GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
-                                AE.transform.localScale = effectScale;
-                                Destroy(AE, 0.5f);
-                            }
+                        EnemyHP enemy = collider.GetComponent<EnemyHP>();
+
+                        if (enemy != null)
+                        {
+                            enemy.TakeDamage(5);
+                        }
+
+                        if(collider.name != "Tornado_boss")
+                        {
+                            float effectDirection = playerMove.isFacingRight ? 1f : -1f;
+                            Vector3 effectScale = new Vector3(effectDirection, 1, 1);
+                            GameObject AE = Instantiate(AttackEffect, collider.transform.position, Quaternion.identity);
+                            AE.transform.localScale = effectScale;
+                            Destroy(AE, 0.5f);
                         }
                     }
                 }
