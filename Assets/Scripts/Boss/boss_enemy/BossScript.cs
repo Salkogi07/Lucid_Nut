@@ -33,7 +33,7 @@ public class BossScript : MonoBehaviour
         {
             Time.timeScale = 0.2f;
             bossdead = true;
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 0.5f);
         }
     }
   
