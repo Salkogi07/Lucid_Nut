@@ -53,7 +53,7 @@ public class PlayerAttack : MonoBehaviour
                         }
                         else if (collider.name == "tutorial")
                         {
-                            AttackTuto tuto = collider.GetComponent<AttackTuto>();
+                            Tutotial_Player_Attack tuto = collider.GetComponent<Tutotial_Player_Attack>();
                             tuto.attackP = true;
                         }
 
