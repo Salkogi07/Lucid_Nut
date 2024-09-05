@@ -58,25 +58,6 @@ public class PlayerSkill : MonoBehaviour
         }
     }
 
-    public void DashBtn()
-    {
-        if (canDash)
-        {
-            StartCoroutine(Dash());
-        }
-    }
-
-    public void UmbrellaBtn()
-    {
-        if (playerMove.canUmbrella())
-        {
-            isUmbrellaOpen = !isUmbrellaOpen;
-            UmbrellaTime = UmbrellaCoolTime;
-            Umbtn.sprite = isUmbrellaOpen ? UmT : UmF;
-            Um.SetActive(isUmbrellaOpen);
-        }
-    }
-
     private IEnumerator Dash()
     {
         canDash = false;
