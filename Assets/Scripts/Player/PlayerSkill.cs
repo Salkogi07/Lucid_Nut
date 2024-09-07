@@ -24,10 +24,6 @@ public class PlayerSkill : MonoBehaviour
 
     public GameObject Um;
 
-    public Image Umbtn;
-    public Sprite UmF;
-    public Sprite UmT;
-
     void Awake()
     {
         playerMove = GetComponent<PlayerMove>();
