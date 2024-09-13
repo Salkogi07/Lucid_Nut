@@ -6052,10 +6052,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_HP: 0
+  invincibilityDuration: 0.5
+  effect: {fileID: 0}
   Shaking: {fileID: 0}
   player_HpBar: {fileID: 0}
   player_HpTxt: {fileID: 0}
   menu: {fileID: 0}
+  isInvincible: 0
 --- !u!114 &519661462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6102,9 +6105,6 @@ MonoBehaviour:
   UmbrellaTime: 0.8
   umbrellaFallMultiplier: 0.5
   Um: {fileID: 0}
-  Umbtn: {fileID: 0}
-  UmF: {fileID: 0}
-  UmT: {fileID: 0}
 --- !u!114 &519661465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6134,9 +6134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb01110c3ce0c444ebc16e378b53168a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMO: 0
-  leftButton: {fileID: 0}
-  rightButton: {fileID: 0}
   moveSpeed: 10
   jumpForce: 16
   coyoteTime: 0.2
@@ -12325,7 +12322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409467247}
   - component: {fileID: 1409467246}
-  - component: {fileID: 1409467245}
+  - component: {fileID: 1409467248}
   m_Layer: 0
   m_Name: "\uC774\uC789"
   m_TagString: Untagged
@@ -12333,22 +12330,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1409467245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409467244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0c14ec6e210ce749b5cae1a511f58c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  Duration: 2
-  Durationtime: 0
-  cooltimetest: 7
 --- !u!212 &1409467246
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12418,6 +12399,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1409467248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409467244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c14ec6e210ce749b5cae1a511f58c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 45
+  Duration: 2
+  Durationtime: 0
+  cooltimetest: 7
 --- !u!1 &1513279170
 GameObject:
   m_ObjectHideFlags: 0
@@ -13497,7 +13494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1978319418
 MonoBehaviour:
   m_ObjectHideFlags: 0
