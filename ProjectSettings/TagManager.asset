@@ -19,8 +19,8 @@ TagManager:
   - attack
   - Stone_umbrella
   - tuto
-  - tornado_Hp
   - Tornado_Wall
+  - Boss
   layers:
   - Default
   - TransparentFX

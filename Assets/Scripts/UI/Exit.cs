@@ -36,16 +36,7 @@ public class Exit : MonoBehaviour
 
     void Update()
     {
-        GameObject tornadoB = GameObject.Find("Tornado_boss");
-        if(tornadoB != null)
-        {
-            BossScript boss = tornadoB.GetComponent<BossScript>();
-            if (boss.bossdead == true && boss != null)
-            {
-                Debug.Log("º¸½º");
-                StartCoroutine(scen());
-            }
-        }
+        
     }
 
     IEnumerator scen()
