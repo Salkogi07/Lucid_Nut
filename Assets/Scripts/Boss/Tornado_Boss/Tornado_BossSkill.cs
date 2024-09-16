@@ -43,7 +43,11 @@ public class Tornado_BossSkill : MonoBehaviour
         Destroy(tornado1,7);
         Destroy(tornado2,7);
 
-        yield return new WaitForSeconds(1);
+        if(tornado1 && tornado2)
+        {
+            yield return null;
+        }
+
         controller.isBossSkill = false;
     }
 
