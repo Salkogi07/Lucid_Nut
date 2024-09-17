@@ -8,6 +8,9 @@ public class PlayerDamageCol : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<PlayerHp>().Damage_HP(attackDamage);
+        if (collision.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerHp>().Damage_HP(attackDamage);
+        }
     }
 }
