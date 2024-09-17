@@ -14,6 +14,7 @@ public class Tornado_BossSkill : MonoBehaviour
     [Header("Rain_Fire info")]
     public GameObject rainProjectilePrefab;
     public GameObject dropletPrefab;
+    public GameObject explosionPrefab;
     public int numberOfDroplets = 8;
 
     private void Awake()
@@ -100,7 +101,8 @@ public class Tornado_BossSkill : MonoBehaviour
         }
 
         // 터지는 효과 구현
-        //Instantiate(explosionPrefab, rainProjectile.transform.position, Quaternion.identity); // 터짐 이펙트 생성
+        GameObject explosion = Instantiate(explosionPrefab, rainProjectile.transform.position, Quaternion.identity); // 터짐 이펙트 생성
+        Destroy(explosion, 0.5f);
         Destroy(rainProjectile); // 발사체 제거
 
         // 이제 물방울을 생성 (폭발 후)
