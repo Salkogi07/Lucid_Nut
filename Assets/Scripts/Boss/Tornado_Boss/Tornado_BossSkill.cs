@@ -116,6 +116,8 @@ public class Tornado_BossSkill : MonoBehaviour
             GameObject droplet = Instantiate(dropletPrefab, rainProjectile.transform.position + randomOffset, Quaternion.identity);
             Rigidbody2D dropletRb = droplet.GetComponent<Rigidbody2D>();
             dropletRb.velocity = direction * 5f;
+
+            //droplet이새끼 지우는거 만들어야됨
         }
 
         controller.isBossSkill = false;
