@@ -34,14 +34,14 @@ public class PlayerSkill : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D) && canDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
         }
 
         if(UmbrellaTime <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.S) && playerMove.canUmbrella())
+            if (Input.GetMouseButtonDown(1) && playerMove.canUmbrella())
             {
                 isUmbrellaOpen = !isUmbrellaOpen;
                 UmbrellaTime = UmbrellaCoolTime;

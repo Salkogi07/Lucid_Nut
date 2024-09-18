@@ -96,11 +96,11 @@ public class PlayerMove : MonoBehaviour
     {
         moveInput = 0;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
             moveInput = -1;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
             moveInput = 1;
         }
@@ -109,6 +109,9 @@ public class PlayerMove : MonoBehaviour
 
     private void Flip()
     {
+        if (isAttack)
+            return;
+
         if (isFacingRight && moveInput < 0f || !isFacingRight && moveInput > 0f)
         {
             if(isGrounded)
@@ -120,6 +123,22 @@ public class PlayerMove : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
+    public void FlipAttack(float directionX)
+    {
+        // 캐릭터의 방향을 바꾸는 로직
+        if (isFacingRight && directionX < 0f || !isFacingRight && directionX > 0f)
+        {
+            if (isGrounded)  // 캐릭터가 땅에 있을 때만 먼지 생성
+                CreateDust();
+
+            Vector3 localScale = transform.localScale;
+            isFacingRight = !isFacingRight;
+            localScale.x *= -1f;  // 캐릭터의 x축을 반전
+            transform.localScale = localScale;
+        }
+    }
+
 
     private void Jump()
     {
