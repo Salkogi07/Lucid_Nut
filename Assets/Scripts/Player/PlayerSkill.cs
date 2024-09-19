@@ -41,7 +41,7 @@ public class PlayerSkill : MonoBehaviour
 
         if(UmbrellaTime <= 0)
         {
-            if (Input.GetMouseButtonDown(1) && playerMove.canUmbrella())
+            if (Input.GetKeyDown(KeyCode.V) && playerMove.canUmbrella())
             {
                 isUmbrellaOpen = !isUmbrellaOpen;
                 UmbrellaTime = UmbrellaCoolTime;
