@@ -74,7 +74,7 @@ public class PlayerAttack : MonoBehaviour
         playerMove.FlipAttack(direction);  // 플레이어의 방향을 공격 방향으로 설정
 
         GameObject SE = Instantiate(SlashEffect, transform.position, pos.transform.rotation,transform);  // 휘두르는 이펙트 생성
-        SE.transform.rotation = direction < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
+        SE.gameObject.GetComponent<SpriteRenderer>().flipY = direction < 0 ? true : false;
         Destroy(SE, 0.3f);  // 짧은 시간 후 이펙트 삭제
 
         audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
@@ -111,8 +111,8 @@ public class PlayerAttack : MonoBehaviour
 
         playerMove.FlipAttack(direction);  // 플레이어의 방향을 공격 방향으로 설정
 
-        GameObject SE = Instantiate(SlashEffect, transform.position, pos.transform.rotation, transform);  // 휘두르는 이펙트 생성
-        SE.transform.rotation = direction < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
+        GameObject SE = Instantiate(StingEffect, transform.position, pos.transform.rotation, transform);  // 휘두르는 이펙트 생성
+        SE.gameObject.GetComponent<SpriteRenderer>().flipY = direction < 0 ? true : false;
         Destroy(SE, 0.3f);  // 짧은 시간 후 이펙트 삭제
 
         audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
