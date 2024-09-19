@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -17,6 +16,12 @@ public class PlayerAttack : MonoBehaviour
     public GameObject AttackHitEffect;
     public AudioClip attackSound;     // 공격 사운드 클립 추가
     private AudioSource audioSource;  // 오디오 소스 추가
+
+    private bool showGizmos = false;  // 기즈모 표시 여부
+    private Vector2 gizmoCenter;      // 기즈모 중앙 위치
+    private Vector2 gizmoSize;        // 기즈모 크기
+    private float gizmoDisplayTime = 0.5f; // 기즈모가 표시될 시간
+    private float gizmoTimer = 0f;    // 기즈모 타이머
 
     private void Awake()
     {
@@ -65,6 +70,16 @@ public class PlayerAttack : MonoBehaviour
         {
             curTime -= Time.deltaTime;
         }
+
+        // 기즈모 타이머 업데이트
+        if (gizmoTimer > 0)
+        {
+            gizmoTimer -= Time.deltaTime;
+        }
+        else
+        {
+            showGizmos = false;  // 타이머가 0 이하가 되면 기즈모 표시를 비활성화
+        }
     }
 
     private void PerformSlashAttack(int direction)
@@ -81,7 +96,7 @@ public class PlayerAttack : MonoBehaviour
 
         // 슬래시 범위 내 적 공격
         Vector2 hitBoxSize = boxSize;
-        Vector2 hitBoxCenter = pos.position;  // 고정된 위치에서 히트박스 생성
+        Vector2 hitBoxCenter = SE.transform.position;  // 고정된 위치에서 히트박스 생성
 
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(hitBoxCenter, hitBoxSize,pos.transform.rotation.z);  // 슬래시 크기 및 방향 반영
         foreach (Collider2D collider in collider2Ds)
@@ -103,6 +118,11 @@ public class PlayerAttack : MonoBehaviour
                 CreateHitEffect(collider.transform.position, direction);
             }
         }
+
+        showGizmos = true;
+        gizmoCenter = SE.transform.position;  // 슬래시 공격 위치
+        gizmoSize = boxSize;
+        gizmoTimer = gizmoDisplayTime;  // 기즈모 타이머 설정
     }
 
     private void PerformStingAttack(int direction)
@@ -119,7 +139,7 @@ public class PlayerAttack : MonoBehaviour
 
         // 찌르기 범위 내 적 공격
         Vector2 hitBoxSize = boxSize;
-        Vector2 hitBoxCenter = pos.position;  // 고정된 위치에서 히트박스 생성
+        Vector2 hitBoxCenter = SE.transform.position;  // 고정된 위치에서 히트박스 생성
 
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(hitBoxCenter, hitBoxSize, pos.transform.rotation.z);  // 찌르기 크기 및 방향 반영
         foreach (Collider2D collider in collider2Ds)
@@ -141,6 +161,11 @@ public class PlayerAttack : MonoBehaviour
                 CreateHitEffect(collider.transform.position, direction);
             }
         }
+
+        showGizmos = true;
+        gizmoCenter = SE.transform.position;  // 슬래시 공격 위치
+        gizmoSize = boxSize;
+        gizmoTimer = gizmoDisplayTime;  // 기즈모 타이머 설정
     }
 
     private void CreateHitEffect(Vector3 position, int direction)
@@ -155,17 +180,10 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (pos == null)
-            return;
-
-        // OverlapBox 크기와 위치
-        Vector2 hitBoxSize = boxSize;
-        Vector2 hitBoxCenter = pos.position;
-
-        // Gizmos 색상 설정 (빨간색)
-        Gizmos.color = Color.red;
-
-        // OverlapBox 범위를 그리기
-        Gizmos.DrawWireCube(hitBoxCenter, hitBoxSize);
+        if (showGizmos)
+        {
+            Gizmos.color = Color.red;  // 기즈모 색상
+            Gizmos.DrawWireCube(gizmoCenter, gizmoSize);  // 사각형 기즈모 그리기
+        }
     }
 }
