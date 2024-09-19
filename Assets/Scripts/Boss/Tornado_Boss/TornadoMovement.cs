@@ -8,14 +8,7 @@ public class TornadoMovement : MonoBehaviour
     public float pullSpeed = 10f;
     public int damageAmount = 10;
     public float pullOffsetY = 1f; // 플레이어를 위로 끌어당길 오프셋 Y값
-    private PlayerHp player;
-    private bool pullingPlayer = false;
     public GameObject wallcrashEffect;
-
-    private void Awake()
-    {
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerHp>();
-    }
 
     void Start()
     {
@@ -39,8 +32,6 @@ public class TornadoMovement : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Player 오브젝트를 현재 오브젝트로 빨아들임
-            pullingPlayer = true;
             Vector3 direction = transform.position - other.transform.position;
 
             // 목표 위치의 Y값을 조정해서 위쪽으로 끌어당김
@@ -50,17 +41,9 @@ public class TornadoMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            pullingPlayer = true;
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Tornado_Wall") && pullingPlayer)
+        if (collision.gameObject.CompareTag("Tornado_Wall"))
         {
             GameObject effect = Instantiate(wallcrashEffect,transform.position, Quaternion.identity);
             effect.GetComponent<PlayerDamageCol>().attackDamage = damageAmount;

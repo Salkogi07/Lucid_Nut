@@ -68,7 +68,7 @@ public class PlayerAttack : MonoBehaviour
 
         Vector2 len = mousePos - new Vector2(pos.transform.position.x, pos.transform.position.y);
         float angle = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
-        
+
         Quaternion lookRotation = Quaternion.Euler(0, 0, angle);
 
         playerMove.FlipAttack(direction.x);  // 플레이어의 방향을 공격 방향으로 설정
