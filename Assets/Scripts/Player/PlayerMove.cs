@@ -25,6 +25,7 @@ public class PlayerMove : MonoBehaviour
     [Header("Component")]
     public GameObject wingBong;
     public ParticleSystem dust;
+    private SpriteRenderer spriteRenderer;
     public Rigidbody2D rb { get; private set; }
     private PlayerAnimator_M animator;
     private PlayerSkill playerSkill;
@@ -54,6 +55,7 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerSkill = GetComponent<PlayerSkill>();
         animator = GetComponent<PlayerAnimator_M>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         gravityScale = rb.gravityScale;
     }
@@ -114,28 +116,24 @@ public class PlayerMove : MonoBehaviour
 
         if (isFacingRight && moveInput < 0f || !isFacingRight && moveInput > 0f)
         {
-            if(isGrounded)
+            if (isGrounded)
                 CreateDust();
 
-            Vector3 localScale = transform.localScale;
             isFacingRight = !isFacingRight;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            spriteRenderer.flipX = !spriteRenderer.flipX;  // 스프라이트의 x축을 뒤집기
         }
     }
 
-    public void FlipAttack(float directionX)
+    public void FlipAttack(int directionX)
     {
         // 캐릭터의 방향을 바꾸는 로직
-        if (isFacingRight && directionX < 0f || !isFacingRight && directionX > 0f)
+        if (isFacingRight && directionX < 0 || !isFacingRight && directionX > 0)
         {
             if (isGrounded)  // 캐릭터가 땅에 있을 때만 먼지 생성
                 CreateDust();
 
-            Vector3 localScale = transform.localScale;
             isFacingRight = !isFacingRight;
-            localScale.x *= -1f;  // 캐릭터의 x축을 반전
-            transform.localScale = localScale;
+            spriteRenderer.flipX = !spriteRenderer.flipX;  // 스프라이트의 x축을 뒤집기
         }
     }
 

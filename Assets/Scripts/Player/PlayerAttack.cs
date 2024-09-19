@@ -32,27 +32,32 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        Vector2 len = Camera.main.ScreenToWorldPoint(Input.mousePosition) - pos.transform.position;
+        float z = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
+
+        pos.transform.rotation = Quaternion.Euler(0, 0, z);
+
         if (curTime <= 0)
         {
             // 마우스 좌클릭 (휘두르기 공격)
             if (Input.GetMouseButtonDown(0) && !playerMove.isAttack)
             {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                float screenMiddle = Screen.width / 2;
+                int direction = Input.mousePosition.x > screenMiddle ? 1 : -1;
 
-                Vector2 direction = (mousePosition.x < transform.position.x) ? Vector2.left : Vector2.right;
+                Debug.Log(direction);
 
-                PerformSlashAttack(direction, mousePosition);  // 휘두르기 공격 수행
+                PerformSlashAttack(direction);  // 휘두르기 공격 수행
                 curTime = coolTime;  // 쿨타임 적용
             }
 
             // 마우스 우클릭 (찌르기 공격)
             if (Input.GetMouseButtonDown(1) && !playerMove.isAttack)
             {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                float screenMiddle = Screen.width / 2;
+                int direction = Input.mousePosition.x > screenMiddle ? 1 : -1;
 
-                Vector2 direction = (mousePosition.x < transform.position.x) ? Vector2.left : Vector2.right;
-
-                PerformStingAttack(direction, mousePosition);  // 찌르기 공격 수행
+                PerformStingAttack(direction);  // 찌르기 공격 수행
                 curTime = coolTime;  // 쿨타임 적용
             }
         }
@@ -62,19 +67,14 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void PerformSlashAttack(Vector2 direction, Vector2 mousePos)
+    private void PerformSlashAttack(int direction)
     {
         playerMove.isAttack = true;
 
-        Vector2 len = mousePos - new Vector2(pos.transform.position.x, pos.transform.position.y);
-        float angle = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
+        playerMove.FlipAttack(direction);  // 플레이어의 방향을 공격 방향으로 설정
 
-        Quaternion lookRotation = Quaternion.Euler(0, 0, angle);
-
-        playerMove.FlipAttack(direction.x);  // 플레이어의 방향을 공격 방향으로 설정
-
-        GameObject SE = Instantiate(SlashEffect, pos.position, lookRotation, transform);  // 휘두르는 이펙트 생성
-        SE.transform.localScale = new Vector3(direction.x > 0 ? 1 : -1, 1, 1);
+        GameObject SE = Instantiate(SlashEffect, transform.position, pos.transform.rotation,transform);  // 휘두르는 이펙트 생성
+        SE.transform.rotation = direction < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
         Destroy(SE, 0.3f);  // 짧은 시간 후 이펙트 삭제
 
         audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
@@ -83,7 +83,7 @@ public class PlayerAttack : MonoBehaviour
         Vector2 hitBoxSize = boxSize;
         Vector2 hitBoxCenter = pos.position;  // 고정된 위치에서 히트박스 생성
 
-        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(hitBoxCenter, hitBoxSize, angle);  // 슬래시 크기 및 방향 반영
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(hitBoxCenter, hitBoxSize,pos.transform.rotation.z);  // 슬래시 크기 및 방향 반영
         foreach (Collider2D collider in collider2Ds)
         {
             if (collider.CompareTag("Enemy"))
@@ -92,7 +92,7 @@ public class PlayerAttack : MonoBehaviour
                 if (enemy != null)
                     enemy.TakeDamage(20f);  // 데미지 적용
 
-                CreateHitEffect(collider.transform.position, direction.x);
+                CreateHitEffect(collider.transform.position, direction);
             }
             else if (collider.CompareTag("Boss"))
             {
@@ -100,24 +100,19 @@ public class PlayerAttack : MonoBehaviour
                 if (boss != null)
                     boss.TakeDamage(20);  // 데미지 적용
 
-                CreateHitEffect(collider.transform.position, direction.x);
+                CreateHitEffect(collider.transform.position, direction);
             }
         }
     }
 
-    private void PerformStingAttack(Vector2 direction, Vector2 mousePos)
+    private void PerformStingAttack(int direction)
     {
         playerMove.isAttack = true;
 
-        Vector2 len = mousePos - new Vector2(pos.transform.position.x, pos.transform.position.y);
-        float angle = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
+        playerMove.FlipAttack(direction);  // 플레이어의 방향을 공격 방향으로 설정
 
-        Quaternion lookRotation = Quaternion.Euler(0, 0, angle);
-
-        playerMove.FlipAttack(direction.x);  // 플레이어의 방향을 공격 방향으로 설정
-
-        GameObject SE = Instantiate(StingEffect, pos.position, lookRotation, transform);  // 찌르기 이펙트 생성
-        SE.transform.localScale = new Vector3(direction.x > 0 ? 1 : -1, 1, 1);
+        GameObject SE = Instantiate(SlashEffect, transform.position, pos.transform.rotation, transform);  // 휘두르는 이펙트 생성
+        SE.transform.rotation = direction < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
         Destroy(SE, 0.3f);  // 짧은 시간 후 이펙트 삭제
 
         audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
@@ -126,7 +121,7 @@ public class PlayerAttack : MonoBehaviour
         Vector2 hitBoxSize = boxSize;
         Vector2 hitBoxCenter = pos.position;  // 고정된 위치에서 히트박스 생성
 
-        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(hitBoxCenter, hitBoxSize, angle);  // 찌르기 크기 및 방향 반영
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(hitBoxCenter, hitBoxSize, pos.transform.rotation.z);  // 찌르기 크기 및 방향 반영
         foreach (Collider2D collider in collider2Ds)
         {
             if (collider.CompareTag("Enemy"))
@@ -135,7 +130,7 @@ public class PlayerAttack : MonoBehaviour
                 if (enemy != null)
                     enemy.TakeDamage(30f);  // 데미지 적용
 
-                CreateHitEffect(collider.transform.position, direction.x);
+                CreateHitEffect(collider.transform.position, direction);
             }
             else if (collider.CompareTag("Boss"))
             {
@@ -143,14 +138,14 @@ public class PlayerAttack : MonoBehaviour
                 if (boss != null)
                     boss.TakeDamage(30);  // 데미지 적용
 
-                CreateHitEffect(collider.transform.position, direction.x);
+                CreateHitEffect(collider.transform.position, direction);
             }
         }
     }
 
-    private void CreateHitEffect(Vector3 position, float direction)
+    private void CreateHitEffect(Vector3 position, int direction)
     {
-        float effectDirection = direction > 0 ? 1f : -1f;
+        int effectDirection = direction > 0 ? 1 : -1;
         Vector3 effectScale = new Vector3(effectDirection, 1, 1);
 
         GameObject AE = Instantiate(AttackHitEffect, position, Quaternion.identity);
