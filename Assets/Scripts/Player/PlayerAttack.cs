@@ -35,26 +35,24 @@ public class PlayerAttack : MonoBehaviour
         if (curTime <= 0)
         {
             // 마우스 좌클릭 (휘두르기 공격)
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !playerMove.isAttack)
             {
-                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                mousePosition.z = 0;  // 2D 환경이므로 z 축 고정
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 Vector2 direction = (mousePosition.x < transform.position.x) ? Vector2.left : Vector2.right;
 
-                PerformSlashAttack(direction);  // 휘두르기 공격 수행
+                PerformSlashAttack(direction, mousePosition);  // 휘두르기 공격 수행
                 curTime = coolTime;  // 쿨타임 적용
             }
 
             // 마우스 우클릭 (찌르기 공격)
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) && !playerMove.isAttack)
             {
-                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                mousePosition.z = 0;  // 2D 환경이므로 z 축 고정
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 Vector2 direction = (mousePosition.x < transform.position.x) ? Vector2.left : Vector2.right;
 
-                PerformStingAttack(direction);  // 찌르기 공격 수행
+                PerformStingAttack(direction, mousePosition);  // 찌르기 공격 수행
                 curTime = coolTime;  // 쿨타임 적용
             }
         }
@@ -64,16 +62,19 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void PerformSlashAttack(Vector2 direction)
+    private void PerformSlashAttack(Vector2 direction, Vector2 mousePos)
     {
         playerMove.isAttack = true;
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;  // 공격 방향에 맞춰 각도 계산
-        Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Vector2 len = mousePos - new Vector2(pos.transform.position.x, pos.transform.position.y);
+        float angle = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
+        
+        Quaternion lookRotation = Quaternion.Euler(0, 0, angle);
 
         playerMove.FlipAttack(direction.x);  // 플레이어의 방향을 공격 방향으로 설정
 
         GameObject SE = Instantiate(SlashEffect, pos.position, lookRotation, transform);  // 휘두르는 이펙트 생성
+        SE.transform.localScale = new Vector3(direction.x > 0 ? 1 : -1, 1, 1);
         Destroy(SE, 0.3f);  // 짧은 시간 후 이펙트 삭제
 
         audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
@@ -104,16 +105,19 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void PerformStingAttack(Vector2 direction)
+    private void PerformStingAttack(Vector2 direction, Vector2 mousePos)
     {
         playerMove.isAttack = true;
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;  // 공격 방향에 맞춰 각도 계산
-        Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Vector2 len = mousePos - new Vector2(pos.transform.position.x, pos.transform.position.y);
+        float angle = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
+
+        Quaternion lookRotation = Quaternion.Euler(0, 0, angle);
 
         playerMove.FlipAttack(direction.x);  // 플레이어의 방향을 공격 방향으로 설정
 
         GameObject SE = Instantiate(StingEffect, pos.position, lookRotation, transform);  // 찌르기 이펙트 생성
+        SE.transform.localScale = new Vector3(direction.x > 0 ? 1 : -1, 1, 1);
         Destroy(SE, 0.3f);  // 짧은 시간 후 이펙트 삭제
 
         audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
