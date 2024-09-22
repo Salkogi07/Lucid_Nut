@@ -13,7 +13,6 @@ public class PlayerAttack : MonoBehaviour
     public GameObject SlashEffect;    // 휘두르는 이펙트
     public GameObject StingEffect;    // 찌르기 이펙트
 
-    public GameObject AttackHitEffect;
     public AudioClip attackSound;     // 공격 사운드 클립 추가
     private AudioSource audioSource;  // 오디오 소스 추가
 
@@ -47,10 +46,7 @@ public class PlayerAttack : MonoBehaviour
             // 마우스 좌클릭 (휘두르기 공격)
             if (Input.GetMouseButtonDown(0) && !playerMove.isAttack)
             {
-                float screenMiddle = Screen.width / 2;
-                int direction = Input.mousePosition.x > screenMiddle ? 1 : -1;
-
-                Debug.Log(direction);
+                int direction = len.x > 0 ? 1 : -1;  // 캐릭터를 기준으로 오른쪽이면 1, 왼쪽이면 -1
 
                 PerformSlashAttack(direction);  // 휘두르기 공격 수행
                 curTime = coolTime;  // 쿨타임 적용
@@ -59,8 +55,7 @@ public class PlayerAttack : MonoBehaviour
             // 마우스 우클릭 (찌르기 공격)
             if (Input.GetMouseButtonDown(1) && !playerMove.isAttack)
             {
-                float screenMiddle = Screen.width / 2;
-                int direction = Input.mousePosition.x > screenMiddle ? 1 : -1;
+                int direction = len.x > 0 ? 1 : -1;  // 캐릭터를 기준으로 오른쪽이면 1, 왼쪽이면 -1
 
                 PerformStingAttack(direction);  // 찌르기 공격 수행
                 curTime = coolTime;  // 쿨타임 적용
@@ -82,6 +77,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+
     private void PerformSlashAttack(int direction)
     {
         playerMove.isAttack = true;
@@ -93,36 +89,6 @@ public class PlayerAttack : MonoBehaviour
         Destroy(SE, 0.3f);  // 짧은 시간 후 이펙트 삭제
 
         audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
-
-        // 슬래시 범위 내 적 공격
-        Vector2 hitBoxSize = boxSize;
-        Vector2 hitBoxCenter = SE.transform.position;  // 고정된 위치에서 히트박스 생성
-
-        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(hitBoxCenter, hitBoxSize,pos.transform.rotation.z);  // 슬래시 크기 및 방향 반영
-        foreach (Collider2D collider in collider2Ds)
-        {
-            if (collider.CompareTag("Enemy"))
-            {
-                EnemyHP enemy = collider.GetComponent<EnemyHP>();
-                if (enemy != null)
-                    enemy.TakeDamage(20f);  // 데미지 적용
-
-                CreateHitEffect(collider.transform.position, direction);
-            }
-            else if (collider.CompareTag("Boss"))
-            {
-                BossHp boss = collider.GetComponent<BossHp>();
-                if (boss != null)
-                    boss.TakeDamage(20);  // 데미지 적용
-
-                CreateHitEffect(collider.transform.position, direction);
-            }
-        }
-
-        showGizmos = true;
-        gizmoCenter = SE.transform.position;  // 슬래시 공격 위치
-        gizmoSize = boxSize;
-        gizmoTimer = gizmoDisplayTime;  // 기즈모 타이머 설정
     }
 
     private void PerformStingAttack(int direction)
@@ -136,54 +102,5 @@ public class PlayerAttack : MonoBehaviour
         Destroy(SE, 0.3f);  // 짧은 시간 후 이펙트 삭제
 
         audioSource.PlayOneShot(attackSound);  // 공격할 때 사운드 재생
-
-        // 찌르기 범위 내 적 공격
-        Vector2 hitBoxSize = boxSize;
-        Vector2 hitBoxCenter = SE.transform.position;  // 고정된 위치에서 히트박스 생성
-
-        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(hitBoxCenter, hitBoxSize, pos.transform.rotation.z);  // 찌르기 크기 및 방향 반영
-        foreach (Collider2D collider in collider2Ds)
-        {
-            if (collider.CompareTag("Enemy"))
-            {
-                EnemyHP enemy = collider.GetComponent<EnemyHP>();
-                if (enemy != null)
-                    enemy.TakeDamage(30f);  // 데미지 적용
-
-                CreateHitEffect(collider.transform.position, direction);
-            }
-            else if (collider.CompareTag("Boss"))
-            {
-                BossHp boss = collider.GetComponent<BossHp>();
-                if (boss != null)
-                    boss.TakeDamage(30);  // 데미지 적용
-
-                CreateHitEffect(collider.transform.position, direction);
-            }
-        }
-
-        showGizmos = true;
-        gizmoCenter = SE.transform.position;  // 슬래시 공격 위치
-        gizmoSize = boxSize;
-        gizmoTimer = gizmoDisplayTime;  // 기즈모 타이머 설정
-    }
-
-    private void CreateHitEffect(Vector3 position, int direction)
-    {
-        int effectDirection = direction > 0 ? 1 : -1;
-        Vector3 effectScale = new Vector3(effectDirection, 1, 1);
-
-        GameObject AE = Instantiate(AttackHitEffect, position, Quaternion.identity);
-        AE.transform.localScale = effectScale;
-        Destroy(AE, 0.5f);
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (showGizmos)
-        {
-            Gizmos.color = Color.red;  // 기즈모 색상
-            Gizmos.DrawWireCube(gizmoCenter, gizmoSize);  // 사각형 기즈모 그리기
-        }
     }
 }

@@ -106,7 +106,7 @@ public class PlayerMove : MonoBehaviour
         {
             moveInput = 1;
         }
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(moveInput * moveSpeed / (isAttack ? 2 : 1), rb.velocity.y);
     }
 
     private void Flip()
